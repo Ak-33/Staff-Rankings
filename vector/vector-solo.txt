@@ -1,0 +1,1 @@
+==SOLO: score: 2969, scorePerMin: 28825, scorePerMatch: 156263, wins: 0, top10: 0, top25: 5, totalk: 45, killsPerMin: 0437, killsPerMatch: 2368, deaths: 19, kd: 2368, matches: 19, winRate: 0, minutesPlayed: 103, playersOutlived: 704, lastModified: 20231230T03:59:37Z,

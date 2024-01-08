@@ -1,7 +1,11 @@
 import fortnite_api
-import re
-import string 
+
 from fortnite_api import TimeWindow
+
+import re
+
+import string 
+
 import streamlit as st 
 
 api = fortnite_api.FortniteAPI(api_key='8eeca9b5-14ca-4afd-91d6-aed25f55d5b7')

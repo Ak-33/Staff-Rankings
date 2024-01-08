@@ -1,5 +1,6 @@
 import fortnite_api 
 from fortnite_api import TimeWindow
+from fortnite_api import AccountType
 import re
 import string 
 import streamlit as st 
@@ -21,7 +22,9 @@ Tandumm_name = 'Tandumm24'
 o3zone_name = 'Samuel517'
 keauxda_name = 'KeauXDa'
 mulligan_name = "ChristianKid18"
-
+mcfly_name = 'Admiral_pile'
+saitama_name ='Kmoore123'
+trubadoor_name = 'Trub8door'
 
 
     
@@ -71,12 +74,12 @@ Tandummfile = 'Tandumm/Tandumm_stats.txt'
 Tandummsolo= 'Tandumm/Tandumm-solo.txt'
 Tandummduo= 'Tandumm/Tandumm-duo.txt'
 Tandummsquad= 'Tandumm/Tandumm-squad.txt'
- #o3zone----------------
+    #o3zone----------------
 o3zonefile = 'o3zone/o3zone_stats.txt'
 o3zonesolo= 'o3zone/o3zone-solo.txt'
 o3zoneduo= 'o3zone/o3zone-duo.txt'
 o3zonesquad= 'o3zone/o3zone-squad.txt'
- #keauxda----------------
+    #keauxda----------------
 keauxdafile = 'keauxda/keauxda_stats.txt'
 keauxdasolo= 'keauxda/keauxda-solo.txt'
 keauxdaduo= 'keauxda/keauxda-duo.txt'
@@ -86,6 +89,24 @@ mulliganfile = 'mulligan/mulligan_stats.txt'
 mulligansolo= 'mulligan/mulligan-solo.txt'
 mulliganduo= 'mulligan/mulligan-duo.txt'
 mulligansquad= 'mulligan/mulligan-squad.txt'
+    #mcfly----------------
+mcflyfile = 'mcfly/mcfly_stats.txt'
+mcflysolo= 'mcfly/mcfly-solo.txt'
+mcflyduo= 'mcfly/mcfly-duo.txt'
+mcflysquad= 'mcfly/mcfly-squad.txt'
+    #saitama----------------
+saitamafile = 'saitama/saitama_stats.txt'
+saitamasolo= 'saitama/saitama-solo.txt'
+saitamaduo= 'saitama/saitama-duo.txt'
+saitamasquad= 'saitama/saitama-squad.txt'
+    #trubadoor----------------
+trubadoorfile = 'trubadoor/trubadoor_stats.txt'
+trubadoorsolo= 'trubadoor/trubadoor-solo.txt'
+trubadoorduo= 'trubadoor/trubadoor-duo.txt'
+trubadoorsquad= 'trubadoor/trubadoor-squad.txt'
+
+
+
 
 #Pixsol---------------------------------------------------------------------------
 player_stats = api.stats.fetch_by_name(name=Ak33_name, time_window=TimeWindow.SEASON)
@@ -165,7 +186,7 @@ with open(AK33file, 'r') as file:
     for field in fields:
         if 'level' in field:
             AK33level = field.split(':')[1].strip()                 
-print(f"battlepass level: {AK33level}")
+
 
 #     #solo stats
 AK33solowins = 0
@@ -184,7 +205,6 @@ with open(AK33solo, 'r') as file:
         
         if "top10" in field:
             AK33solotop10 = field.split(':')[1].strip()   
-print(f"Solo- Wins:{AK33solowins},  Kills: {AK33solokills}, Finished top 10: {AK33solotop10}")   
     
     
     
@@ -205,7 +225,7 @@ with open(AK33duo, 'r') as file:
         if "top5" in field:
             AK33duotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{AK33duowins},  Kills: {AK33duokills}, Finished top 5: {AK33duotop5}")     
+   
     
 # #     #squads stats
 AK33squadwins = 0
@@ -222,7 +242,7 @@ with open(AK33squad, 'r') as file:
            AK33squadkills = field.split(':')[1].strip()
         if "top3" in field:
             AK33squadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{AK33squadwins},  Kills: {AK33squadkills}, Finished top 3: {AK33squadtop3}")    
+
     
 
 #vector-----------------------------------------------------------------------------
@@ -302,7 +322,7 @@ with open(vectorfile, 'r') as file:
     for field in fields:
         if 'level' in field:
             vectorlevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {vectorlevel}")
+
 
 #     #solo stats
 vectorsolowins = 0
@@ -321,7 +341,7 @@ with open(vectorsolo, 'r') as file:
         
         if "top10" in field:
             vectorsolotop10 = field.split(':')[1].strip()   
-print(f"Solo- Wins:{vectorsolowins},  Kills: {vectorsolokills}, Finished top 10: {vectorsolotop10}")   
+
     
     
     
@@ -342,7 +362,7 @@ with open(vectorduo, 'r') as file:
         if "top5" in field:
             vectorduotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{vectorduowins},  Kills: {vectorduokills}, Finished top 5: {vectorduotop5}")     
+  
     
 # #     #squads stats
 vectorsquadwins = 0
@@ -359,7 +379,7 @@ with open(vectorsquad, 'r') as file:
            vectorsquadkills = field.split(':')[1].strip()
         if "top3" in field:
             vectorsquadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{vectorsquadwins},  Kills: {vectorsquadkills}, Finished top 3: {vectorsquadtop3}")    
+   
     
 
 
@@ -442,7 +462,7 @@ with open(lokeyfile, 'r') as file:
     for field in fields:
         if 'level' in field:
             lokeylevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {lokeylevel}")
+
 
 #     #solo stats
 lokeysolowins = 0
@@ -463,7 +483,6 @@ with open(lokeysolo, 'r') as file:
             lokeysolotop10 = field.split(':')[1].strip()   
 
 
-print(f"Solo- Wins:{lokeysolowins},  Kills: {lokeysolokills}, Finished top 10: {lokeysolotop10}")
 
 
 #LeFloor-----------------------------------------------------------------------------
@@ -543,7 +562,6 @@ with open(LeFloorfile, 'r') as file:
     for field in fields:
         if 'level' in field:
             LeFloorlevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {LeFloorlevel}")
 
 #     #solo stats
 LeFloorsolowins = 0
@@ -562,11 +580,6 @@ with open(LeFloorsolo, 'r') as file:
         
         if "top10" in field:
             LeFloorsolotop10 = field.split(':')[1].strip()   
-
-
-print(f"Solo- Wins:{LeFloorsolowins},  Kills: {LeFloorsolokills}, Finished top 10: {LeFloorsolotop10}")
-
-
 
        
 #ghirradeil-----------------------------------------------------------------------------
@@ -646,7 +659,6 @@ with open(ghirradeilfile, 'r') as file:
     for field in fields:
         if 'level' in field:
             ghirradeillevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {ghirradeillevel}")
 
 #     #solo stats
 ghirradeilsolowins = 0
@@ -665,10 +677,7 @@ with open(ghirradeilsolo, 'r') as file:
         
         if "top10" in field:
             ghirradeilsolotop10 = field.split(':')[1].strip()   
-
-
-print(f"Solo- Wins:{ghirradeilsolowins},  Kills: {ghirradeilsolokills}, Finished top 10: {ghirradeilsolotop10}")   
-    
+   
     
 # #     #duo stats
 ghirradeilduowins = 0
@@ -686,7 +695,7 @@ with open(ghirradeilduo, 'r') as file:
         if "top5" in field:
             ghirradeilduotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{ghirradeilduowins},  Kills: {ghirradeilduokills}, Finished top 5: {ghirradeilduotop5}")     
+  
     
 # #     #squads stats
 ghirradeilsquadwins = 0
@@ -703,7 +712,6 @@ with open(ghirradeilsquad, 'r') as file:
            ghirradeilsquadkills = field.split(':')[1].strip()
         if "top3" in field:
             ghirradeilsquadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{ghirradeilsquadwins},  Kills: {ghirradeilsquadkills}, Finished top 3: {ghirradeilsquadtop3}")    
 
 #phlash---------------------------------------------------------------------------
 player_stats = api.stats.fetch_by_name(name=phlash_name, time_window=TimeWindow.SEASON)
@@ -714,7 +722,7 @@ with open(phlashfile, 'w') as file:
             if not attribute.startswith('__'):  # Skip special attributes
                 value = getattr(player_stats, attribute)
                 file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-print("Pixsols's Data written successfully!------------")
+print("phlash's Data written successfully!------------")
 
 with open(phlashfile, 'r') as file:
     content = file.read()
@@ -783,7 +791,6 @@ with open(phlashfile, 'r') as file:
     for field in fields:
         if 'level' in field:
             phlashlevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {phlashlevel}")
 
 #     #solo stats
 phlashsolowins = 0
@@ -802,7 +809,6 @@ with open(phlashsolo, 'r') as file:
         
         if "top10" in field:
             phlashsolotop10 = field.split(':')[1].strip()   
-print(f"Solo- Wins:{phlashsolowins},  Kills: {phlashsolokills}, Finished top 10: {phlashsolotop10}")   
     
     
     
@@ -823,7 +829,6 @@ with open(phlashduo, 'r') as file:
         if "top5" in field:
             phlashduotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{phlashduowins},  Kills: {phlashduokills}, Finished top 5: {phlashduotop5}")     
     
 # #     #squads stats
 phlashsquadwins = 0
@@ -840,7 +845,6 @@ with open(phlashsquad, 'r') as file:
            phlashsquadkills = field.split(':')[1].strip()
         if "top3" in field:
             phlashsquadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{phlashsquadwins},  Kills: {phlashsquadkills}, Finished top 3: {phlashsquadtop3}")
 
 #ryptyde---------------------------------------------------------------------------
 player_stats = api.stats.fetch_by_name(name=ryptyde_name, time_window=TimeWindow.SEASON)
@@ -920,7 +924,6 @@ with open(ryptydefile, 'r') as file:
     for field in fields:
         if 'level' in field:
             ryptydelevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {ryptydelevel}")
 
 #     #solo stats
 ryptydesolowins = 0
@@ -939,7 +942,6 @@ with open(ryptydesolo, 'r') as file:
         
         if "top10" in field:
             ryptydesolotop10 = field.split(':')[1].strip()   
-print(f"Solo- Wins:{ryptydesolowins},  Kills: {ryptydesolokills}, Finished top 10: {ryptydesolotop10}")   
     
     
     
@@ -960,7 +962,6 @@ with open(ryptydeduo, 'r') as file:
         if "top5" in field:
             ryptydeduotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{ryptydeduowins},  Kills: {ryptydeduokills}, Finished top 5: {ryptydeduotop5}")     
     
 # #     #squads stats
 ryptydesquadwins = 0
@@ -977,7 +978,6 @@ with open(ryptydesquad, 'r') as file:
            ryptydesquadkills = field.split(':')[1].strip()
         if "top3" in field:
             ryptydesquadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{ryptydesquadwins},  Kills: {ryptydesquadkills}, Finished top 3: {ryptydesquadtop3}")
 
 
 
@@ -1059,7 +1059,6 @@ with open(sideKwinderfile, 'r') as file:
     for field in fields:
         if 'level' in field:
             sideKwinderlevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {sideKwinderlevel}")
 
 #     #solo stats
 sideKwindersolowins = 0
@@ -1078,7 +1077,6 @@ with open(sideKwindersolo, 'r') as file:
         
         if "top10" in field:
             sideKwindersolotop10 = field.split(':')[1].strip()   
-print(f"Solo- Wins:{sideKwindersolowins},  Kills: {sideKwindersolokills}, Finished top 10: {sideKwindersolotop10}")   
  
     #duo stats
 sideKwinderduowins = 0
@@ -1096,7 +1094,6 @@ with open(sideKwinderduo, 'r') as file:
         if "top5" in field:
             sideKwinderduotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{sideKwinderduowins},  Kills: {sideKwinderduokills}, Finished top 5: {sideKwinderduotop5}")     
     
 # #     #squads stats
 sideKwindersquadwins = 0
@@ -1113,7 +1110,6 @@ with open(sideKwindersquad, 'r') as file:
            sideKwindersquadkills = field.split(':')[1].strip()
         if "top3" in field:
             sideKwindersquadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{sideKwindersquadwins},  Kills: {sideKwindersquadkills}, Finished top 3: {sideKwindersquadtop3}")
 
 #Tandumm---------------------------------------------------------------------------
 player_stats = api.stats.fetch_by_name(name=Tandumm_name, time_window=TimeWindow.SEASON)
@@ -1193,7 +1189,6 @@ with open(Tandummfile, 'r') as file:
     for field in fields:
         if 'level' in field:
             Tandummlevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {Tandummlevel}")
 
 #     #solo stats
 Tandummsolowins = 0
@@ -1212,7 +1207,6 @@ with open(Tandummsolo, 'r') as file:
         
         if "top10" in field:
             Tandummsolotop10 = field.split(':')[1].strip()   
-print(f"Solo- Wins:{Tandummsolowins},  Kills: {Tandummsolokills}, Finished top 10: {Tandummsolotop10}")   
     
     
     
@@ -1233,7 +1227,6 @@ with open(Tandummduo, 'r') as file:
         if "top5" in field:
             Tandummduotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{Tandummduowins},  Kills: {Tandummduokills}, Finished top 5: {Tandummduotop5}")     
     
 # #     #squads stats
 Tandummsquadwins = 0
@@ -1250,7 +1243,6 @@ with open(Tandummsquad, 'r') as file:
            Tandummsquadkills = field.split(':')[1].strip()
         if "top3" in field:
             Tandummsquadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{Tandummsquadwins},  Kills: {Tandummsquadkills}, Finished top 3: {Tandummsquadtop3}")
 
 #o3zone---------------------------------------------------------------------------
 player_stats = api.stats.fetch_by_name(name=o3zone_name, time_window=TimeWindow.SEASON)
@@ -1330,7 +1322,6 @@ with open(o3zonefile, 'r') as file:
     for field in fields:
         if 'level' in field:
             o3zonelevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {o3zonelevel}")
 
 #     #solo stats
 o3zonesolowins = 0
@@ -1349,7 +1340,6 @@ with open(o3zonesolo, 'r') as file:
         
         if "top10" in field:
             o3zonesolotop10 = field.split(':')[1].strip()   
-print(f"Solo- Wins:{o3zonesolowins},  Kills: {o3zonesolokills}, Finished top 10: {o3zonesolotop10}")   
     
     
     
@@ -1370,7 +1360,6 @@ with open(o3zoneduo, 'r') as file:
         if "top5" in field:
             o3zoneduotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{o3zoneduowins},  Kills: {o3zoneduokills}, Finished top 5: {o3zoneduotop5}")     
     
 # #     #squads stats
 o3zonesquadwins = 0
@@ -1387,7 +1376,6 @@ with open(o3zonesquad, 'r') as file:
            o3zonesquadkills = field.split(':')[1].strip()
         if "top3" in field:
             o3zonesquadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{o3zonesquadwins},  Kills: {o3zonesquadkills}, Finished top 3: {o3zonesquadtop3}")
 
 #keauxda---------------------------------------------------------------------------
 player_stats = api.stats.fetch_by_name(name=keauxda_name, time_window=TimeWindow.SEASON)
@@ -1467,7 +1455,6 @@ with open(keauxdafile, 'r') as file:
     for field in fields:
         if 'level' in field:
             keauxdalevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {keauxdalevel}")
 
 #     #solo stats
 keauxdasolowins = 0
@@ -1486,7 +1473,6 @@ with open(keauxdasolo, 'r') as file:
         
         if "top10" in field:
             keauxdasolotop10 = field.split(':')[1].strip()   
-print(f"Solo- Wins:{keauxdasolowins},  Kills: {keauxdasolokills}, Finished top 10: {keauxdasolotop10}")   
     
     
     
@@ -1507,7 +1493,6 @@ with open(keauxdaduo, 'r') as file:
         if "top5" in field:
             keauxdaduotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{keauxdaduowins},  Kills: {keauxdaduokills}, Finished top 5: {keauxdaduotop5}")     
     
 # #     #squads stats
 keauxdasquadwins = 0
@@ -1524,7 +1509,6 @@ with open(keauxdasquad, 'r') as file:
            keauxdasquadkills = field.split(':')[1].strip()
         if "top3" in field:
             keauxdasquadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{keauxdasquadwins},  Kills: {keauxdasquadkills}, Finished top 3: {keauxdasquadtop3}")
 
 #mulligan---------------------------------------------------------------------------
 player_stats = api.stats.fetch_by_name(name=mulligan_name, time_window=TimeWindow.SEASON)
@@ -1604,7 +1588,6 @@ with open(mulliganfile, 'r') as file:
     for field in fields:
         if 'level' in field:
             mulliganlevel = field.split(':')[1].strip()                 
-print(f"battlepass level: {mulliganlevel}")
 
 #     #solo stats
 mulligansolowins = 0
@@ -1623,7 +1606,6 @@ with open(mulligansolo, 'r') as file:
         
         if "top10" in field:
             mulligansolotop10 = field.split(':')[1].strip()   
-print(f"Solo- Wins:{mulligansolowins},  Kills: {mulligansolokills}, Finished top 10: {mulligansolotop10}")   
     
     
     
@@ -1644,7 +1626,6 @@ with open(mulliganduo, 'r') as file:
         if "top5" in field:
             mulliganduotop5 = field.split(':')[1].strip()        
                     
-print(f"Duo- Wins:{mulliganduowins},  Kills: {mulliganduokills}, Finished top 5: {mulliganduotop5}")     
     
 # #     #squads stats
 mulligansquadwins = 0
@@ -1661,7 +1642,402 @@ with open(mulligansquad, 'r') as file:
            mulligansquadkills = field.split(':')[1].strip()
         if "top3" in field:
             mulligansquadtop3 = field.split(':')[1].strip()             
-print(f"Squad- Wins:{mulligansquadwins},  Kills: {mulligansquadkills}, Finished top 3: {mulligansquadtop3}")
+
+#mcfly---------------------------------------------------------------------------
+player_stats = api.stats.fetch_by_name(name=mcfly_name, time_window=TimeWindow.SEASON,account_type=AccountType.PSN )
+
+with open(mcflyfile, 'w') as file:
+        
+        for attribute in dir(player_stats):
+            if not attribute.startswith('__'):  # Skip special attributes
+                value = getattr(player_stats, attribute)
+                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+print("mcflys's Data written successfully!------------")
+
+with open(mcflyfile, 'r') as file:
+    content = file.read()
+
+#gets rid of unneeded punctuation
+with open(mcflyfile, 'r') as f:
+    text = f.read()
+    words = text.split()
+    table = str.maketrans("", "", punctuation_to_remove)
+    stripped = [w.translate(table) for w in words]
+    assembled = " ".join(stripped)
+with open(mcflyfile, 'w') as f:
+    f.write(assembled)
+
+       
+    #for splits changes solo duo and squad and battlepass level properly 
+with open(mcflyfile, 'r') as f:
+    text = f.read()
+    replacements = {
+    "solo": "==SOLO",
+    "duo": "==DUO",
+    "squad": "==SQUAD",
+    "ltm": "==LTM",
+    "battlePass:": "",
+    "kills:": "totalk:"
+}
+        
+def replace_words(text, replacements):
+    for old_word, new_word in replacements.items():
+        text = text.replace(old_word, new_word)
+    return text
+updated_text = replace_words(text, replacements)
+with open(mcflyfile, 'w') as f:
+    f.write(updated_text)
+
+
+    #spits to sepret txt files
+with open(mcflyfile, 'r') as original_file:
+    content = original_file.read()
+
+# Splitting content using regular expressions to find sections
+sections = re.split(r'==\w+:', content)
+
+if len(sections) >= 4:
+    solo_section = "==SOLO:" + sections[1]
+    duo_section = "==DUO:" + sections[2]
+    squad_section = "==SQUAD:" + sections[3]
+
+    with open('mcfly/mcfly-solo.txt', 'w') as section1_file:
+        section1_file.write(solo_section.strip())
+    
+    with open('mcfly/mcfly-duo.txt', 'w') as section2_file:
+        section2_file.write(duo_section.strip())
+    
+    with open('mcfly/mcfly-squad.txt', 'w') as section3_file:
+        section3_file.write(squad_section.strip())
+else:
+    print("Sections not found in the expected format.")
+     
+   #gets BP level
+mcflylevel = 0
+with open(mcflyfile, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'level' in field:
+            mcflylevel = field.split(':')[1].strip()                 
+
+#     #solo stats
+mcflysolowins = 0
+mcflysolokills = 0
+mcflysolotop10 = 0
+with open(mcflysolo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            mcflysolowins = field.split(':')[1].strip()
+        
+        if 'totalk' in field:
+            mcflysolokills = field.split(':')[1].strip()
+        
+        if "top10" in field:
+            mcflysolotop10 = field.split(':')[1].strip()   
+    
+    
+    
+    
+# #     #duo stats
+mcflyduowins = 0
+mcflyduokills = 0
+mcflyduotop5 = 0
+with open(mcflyduo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            mcflyduowins = field.split(':')[1].strip()
+        if 'totalk' in field:
+            mcflyduokills = field.split(':')[1].strip()
+        if "top5" in field:
+            mcflyduotop5 = field.split(':')[1].strip()        
+                    
+    
+# #     #squads stats
+mcflysquadwins = 0
+mcflysquadkills = 0
+mcflysquadtop3 = 0
+with open(mcflysquad, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            mcflysquadwins = field.split(':')[1].strip()
+        if 'totalk' in field:
+           mcflysquadkills = field.split(':')[1].strip()
+        if "top3" in field:
+            mcflysquadtop3 = field.split(':')[1].strip()
+            
+#saitama---------------------------------------------------------------------------
+player_stats = api.stats.fetch_by_name(name=saitama_name, time_window=TimeWindow.SEASON, account_type=AccountType.XBL)
+
+with open(saitamafile, 'w') as file:
+        
+        for attribute in dir(player_stats):
+            if not attribute.startswith('__'):  # Skip special attributes
+                value = getattr(player_stats, attribute)
+                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+print("saitamas's Data written successfully!------------")
+
+with open(saitamafile, 'r') as file:
+    content = file.read()
+
+#gets rid of unneeded punctuation
+with open(saitamafile, 'r') as f:
+    text = f.read()
+    words = text.split()
+    table = str.maketrans("", "", punctuation_to_remove)
+    stripped = [w.translate(table) for w in words]
+    assembled = " ".join(stripped)
+with open(saitamafile, 'w') as f:
+    f.write(assembled)
+
+       
+    #for splits changes solo duo and squad and battlepass level properly 
+with open(saitamafile, 'r') as f:
+    text = f.read()
+    replacements = {
+    "solo": "==SOLO",
+    "duo": "==DUO",
+    "squad": "==SQUAD",
+    "ltm": "==LTM",
+    "battlePass:": "",
+    "kills:": "totalk:"
+}
+        
+def replace_words(text, replacements):
+    for old_word, new_word in replacements.items():
+        text = text.replace(old_word, new_word)
+    return text
+updated_text = replace_words(text, replacements)
+with open(saitamafile, 'w') as f:
+    f.write(updated_text)
+
+
+    #spits to sepret txt files
+with open(saitamafile, 'r') as original_file:
+    content = original_file.read()
+
+# Splitting content using regular expressions to find sections
+sections = re.split(r'==\w+:', content)
+
+if len(sections) >= 4:
+    solo_section = "==SOLO:" + sections[1]
+    duo_section = "==DUO:" + sections[2]
+    squad_section = "==SQUAD:" + sections[3]
+
+    with open('saitama/saitama-solo.txt', 'w') as section1_file:
+        section1_file.write(solo_section.strip())
+    
+    with open('saitama/saitama-duo.txt', 'w') as section2_file:
+        section2_file.write(duo_section.strip())
+    
+    with open('saitama/saitama-squad.txt', 'w') as section3_file:
+        section3_file.write(squad_section.strip())
+else:
+    print("Sections not found in the expected format.")
+     
+   #gets BP level
+saitamalevel = 0
+with open(saitamafile, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'level' in field:
+            saitamalevel = field.split(':')[1].strip()                 
+
+
+#     #solo stats
+saitamasolowins = 0
+saitamasolokills = 0
+saitamasolotop10 = 0
+with open(saitamasolo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            saitamasolowins = field.split(':')[1].strip()
+        
+        if 'totalk' in field:
+            saitamasolokills = field.split(':')[1].strip()
+        
+        if "top10" in field:
+            saitamasolotop10 = field.split(':')[1].strip()   
+  
+    
+# #     #duo stats
+saitamaduowins = 0
+saitamaduokills = 0
+saitamaduotop5 = 0
+with open(saitamaduo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            saitamaduowins = field.split(':')[1].strip()
+        if 'totalk' in field:
+            saitamaduokills = field.split(':')[1].strip()
+        if "top5" in field:
+            saitamaduotop5 = field.split(':')[1].strip()        
+                    
+
+    
+# #     #squads stats
+saitamasquadwins = 0
+saitamasquadkills = 0
+saitamasquadtop3 = 0
+with open(saitamasquad, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            saitamasquadwins = field.split(':')[1].strip()
+        if 'totalk' in field:
+           saitamasquadkills = field.split(':')[1].strip()
+        if "top3" in field:
+            saitamasquadtop3 = field.split(':')[1].strip() 
+
+#trubadoor---------------------------------------------------------------------------
+player_stats = api.stats.fetch_by_name(name=trubadoor_name, time_window=TimeWindow.SEASON, account_type=AccountType.XBL)
+
+with open(trubadoorfile, 'w') as file:
+        
+        for attribute in dir(player_stats):
+            if not attribute.startswith('__'):  # Skip special attributes
+                value = getattr(player_stats, attribute)
+                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+print("trubadoors's Data written successfully!------------")
+
+with open(trubadoorfile, 'r') as file:
+    content = file.read()
+
+#gets rid of unneeded punctuation
+with open(trubadoorfile, 'r') as f:
+    text = f.read()
+    words = text.split()
+    table = str.maketrans("", "", punctuation_to_remove)
+    stripped = [w.translate(table) for w in words]
+    assembled = " ".join(stripped)
+with open(trubadoorfile, 'w') as f:
+    f.write(assembled)
+
+       
+    #for splits changes solo duo and squad and battlepass level properly 
+with open(trubadoorfile, 'r') as f:
+    text = f.read()
+    replacements = {
+    "solo": "==SOLO",
+    "duo": "==DUO",
+    "squad": "==SQUAD",
+    "ltm": "==LTM",
+    "battlePass:": "",
+    "kills:": "totalk:"
+}
+        
+def replace_words(text, replacements):
+    for old_word, new_word in replacements.items():
+        text = text.replace(old_word, new_word)
+    return text
+updated_text = replace_words(text, replacements)
+with open(trubadoorfile, 'w') as f:
+    f.write(updated_text)
+
+
+    #spits to sepret txt files
+with open(trubadoorfile, 'r') as original_file:
+    content = original_file.read()
+
+# Splitting content using regular expressions to find sections
+sections = re.split(r'==\w+:', content)
+
+if len(sections) >= 4:
+    solo_section = "==SOLO:" + sections[1]
+    duo_section = "==DUO:" + sections[2]
+    squad_section = "==SQUAD:" + sections[3]
+
+    with open('trubadoor/trubadoor-solo.txt', 'w') as section1_file:
+        section1_file.write(solo_section.strip())
+    
+    with open('trubadoor/trubadoor-duo.txt', 'w') as section2_file:
+        section2_file.write(duo_section.strip())
+    
+    with open('trubadoor/trubadoor-squad.txt', 'w') as section3_file:
+        section3_file.write(squad_section.strip())
+else:
+    print("Sections not found in the expected format.")
+     
+   #gets BP level
+trubadoorlevel = 0
+with open(trubadoorfile, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'level' in field:
+            trubadoorlevel = field.split(':')[1].strip()                 
+
+#     #solo stats
+trubadoorsolowins = 0
+trubadoorsolokills = 0
+trubadoorsolotop10 = 0
+with open(trubadoorsolo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            trubadoorsolowins = field.split(':')[1].strip()
+        
+        if 'totalk' in field:
+            trubadoorsolokills = field.split(':')[1].strip()
+        
+        if "top10" in field:
+            trubadoorsolotop10 = field.split(':')[1].strip()   
+
+# #     #duo stats
+trubadoorduowins = 0
+trubadoorduokills = 0
+trubadoorduotop5 = 0
+with open(trubadoorduo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            trubadoorduowins = field.split(':')[1].strip()
+        if 'totalk' in field:
+            trubadoorduokills = field.split(':')[1].strip()
+        if "top5" in field:
+            trubadoorduotop5 = field.split(':')[1].strip()        
+              
+# #     #squads stats
+trubadoorsquadwins = 0
+trubadoorsquadkills = 0
+trubadoorsquadtop3 = 0
+with open(trubadoorsquad, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            trubadoorsquadwins = field.split(':')[1].strip()
+        if 'totalk' in field:
+           trubadoorsquadkills = field.split(':')[1].strip()
+        if "top3" in field:
+            trubadoorsquadtop3 = field.split(':')[1].strip()                                      
+
 
 
 
@@ -1717,6 +2093,19 @@ player_stats = {
     },
 'mulligan': {
        'Battlepass level':int(mulliganlevel), 'Solo kills': int(mulligansolokills), 'Solo Wins': int(mulligansolowins), 'Solo Finished top 10': int(mulligansolotop10)
+       
+    },
+
+'mcfly': {
+       'Battlepass level':int(mcflylevel), 'Solo kills': int(mcflysolokills), 'Solo Wins': int(mcflysolowins), 'Solo Finished top 10': int(mcflysolotop10)
+       
+    },
+'saitama': {
+       'Battlepass level':int(saitamalevel), 'Solo kills': int(saitamasolokills), 'Solo Wins': int(saitamasolowins), 'Solo Finished top 10': int(saitamasolotop10)
+       
+    },
+'trubadoor': {
+       'Battlepass level':int(trubadoorlevel), 'Solo kills': int(trubadoorsolokills), 'Solo Wins': int(trubadoorsolowins), 'Solo Finished top 10': int(trubadoorsolotop10)
        
     },
 

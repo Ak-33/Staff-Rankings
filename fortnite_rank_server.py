@@ -2423,7 +2423,7 @@ print("\n".join(print_rankings))
 #website - 
 st.set_page_config(page_title='Staff Fornite Rankings', layout= "centered")
 
-st.subheader("In development")
+st.subheader("testing")
 st.title("Mcall Staff Fortnite Solo Rank")
 st.write(print_rankings)
 

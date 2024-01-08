@@ -32,87 +32,87 @@ can_nun_name = 'can-nun'
     
     #files_names
         #Pixsol----------------
-AK33file = 'pixsol/AK33_stats.txt'
+AK33file ='pixsol/AK33_stats.txt'
 AK33solo= 'pixsol/AK33-solo.txt'
 AK33duo= 'pixsol/AK33-duo.txt'
 AK33squad= 'pixsol/AK33-squad.txt'
         #vector----------------
-vectorfile = 'vector/vector_stats.txt'
+vectorfile ='vector/vector_stats.txt'
 vectorsolo= 'vector/vector-solo.txt'
 vectorduo= 'vector/vector-duo.txt'
 vectorsquad= 'vector/vector-squad.txt'
         #lo-key----------------
-lokeyfile = 'lokey/lokey_stats.txt'
+lokeyfile ='lokey/lokey_stats.txt'
 lokeysolo= 'lokey/lokey-solo.txt'
 lokeyduo= 'lokey/lokey-duo.txt'
 lokeysquad= 'lokey/lokey-squad.txt'
         #LeFloor---------------
-LeFloorfile = 'LeFloor/LeFloor_stats.txt'
+LeFloorfile ='LeFloor/LeFloor_stats.txt'
 LeFloorsolo= 'LeFloor/LeFloor-solo.txt'
 LeFloorduo= 'LeFloor/LeFloor-duo.txt'
 LeFloorsquad= 'LeFloor/LeFloor-squad.txt'
         #ghirradeil----------------
-ghirradeilfile = 'ghirradeil/ghirradeil_stats.txt'
+ghirradeilfile ='ghirradeil/ghirradeil_stats.txt'
 ghirradeilsolo= 'ghirradeil/ghirradeil-solo.txt'
 ghirradeilduo= 'ghirradeil/ghirradeil-duo.txt'
 ghirradeilsquad= 'ghirradeil/ghirradeil-squad.txt'
         #phlash----------------
-phlashfile = 'phlash/phlash.txt'
+phlashfile ='phlash/phlash.txt'
 phlashsolo= 'phlash/phlash-solo.txt'
 phlashduo= 'phlash/phlash-duo.txt'
 phlashsquad= 'phlash/phlash-squad.txt'
     #ryptyde----------------
-ryptydefile = 'ryptyde/ryptyde_stats.txt'
+ryptydefile ='ryptyde/ryptyde_stats.txt'
 ryptydesolo= 'ryptyde/ryptyde-solo.txt'
 ryptydeduo= 'ryptyde/ryptyde-duo.txt'
 ryptydesquad= 'ryptyde/ryptyde-squad.txt'
     #sideKwinder----------------
-sideKwinderfile = 'sideKwinder/sideKwinder_stats.txt'
+sideKwinderfile ='sideKwinder/sideKwinder_stats.txt'
 sideKwindersolo= 'sideKwinder/sideKwinder-solo.txt'
 sideKwinderduo= 'sideKwinder/sideKwinder-duo.txt'
 sideKwindersquad= 'sideKwinder/sideKwinder-squad.txt'
     #Tandumm----------------
-Tandummfile = 'Tandumm/Tandumm_stats.txt'
+Tandummfile ='Tandumm/Tandumm_stats.txt'
 Tandummsolo= 'Tandumm/Tandumm-solo.txt'
 Tandummduo= 'Tandumm/Tandumm-duo.txt'
 Tandummsquad= 'Tandumm/Tandumm-squad.txt'
     #o3zone----------------
-o3zonefile = 'o3zone/o3zone_stats.txt'
+o3zonefile ='o3zone/o3zone_stats.txt'
 o3zonesolo= 'o3zone/o3zone-solo.txt'
 o3zoneduo= 'o3zone/o3zone-duo.txt'
 o3zonesquad= 'o3zone/o3zone-squad.txt'
     #keauxda----------------
-keauxdafile = 'keauxda/keauxda_stats.txt'
+keauxdafile ='keauxda/keauxda_stats.txt'
 keauxdasolo= 'keauxda/keauxda-solo.txt'
 keauxdaduo= 'keauxda/keauxda-duo.txt'
 keauxdasquad= 'keauxda/keauxda-squad.txt'
     #mulligan----------------
-mulliganfile = 'mulligan/mulligan_stats.txt'
+mulliganfile ='mulligan/mulligan_stats.txt'
 mulligansolo= 'mulligan/mulligan-solo.txt'
 mulliganduo= 'mulligan/mulligan-duo.txt'
 mulligansquad= 'mulligan/mulligan-squad.txt'
     #mcfly----------------
-mcflyfile = 'mcfly/mcfly_stats.txt'
+mcflyfile ='mcfly/mcfly_stats.txt'
 mcflysolo= 'mcfly/mcfly-solo.txt'
 mcflyduo= 'mcfly/mcfly-duo.txt'
 mcflysquad= 'mcfly/mcfly-squad.txt'
     #saitama----------------
-saitamafile = 'saitama/saitama_stats.txt'
+saitamafile ='saitama/saitama_stats.txt'
 saitamasolo= 'saitama/saitama-solo.txt'
 saitamaduo= 'saitama/saitama-duo.txt'
 saitamasquad= 'saitama/saitama-squad.txt'
     #trubadoor----------------
-trubadoorfile = 'trubadoor/trubadoor_stats.txt'
+trubadoorfile ='trubadoor/trubadoor_stats.txt'
 trubadoorsolo= 'trubadoor/trubadoor-solo.txt'
 trubadoorduo= 'trubadoor/trubadoor-duo.txt'
 trubadoorsquad= 'trubadoor/trubadoor-squad.txt'
     #romKulus----------------
-romKulusfile = 'romKulus/romKulus_stats.txt'
+romKulusfile ='romKulus/romKulus_stats.txt'
 romKulussolo= 'romKulus/romKulus-solo.txt'
 romKulusduo= 'romKulus/romKulus-duo.txt'
 romKulussquad= 'romKulus/romKulus-squad.txt'
     #can_nun----------------
-can_nunfile = 'can_nun/can_nun_stats.txt'
+can_nunfile ='can_nun/can_nun_stats.txt'
 can_nunsolo= 'can_nun/can_nun-solo.txt'
 can_nunduo= 'can_nun/can_nun-duo.txt'
 can_nunsquad= 'can_nun/can_nun-squad.txt'
@@ -252,7 +252,140 @@ with open(AK33squad, 'r') as file:
         if 'totalk' in field:
            AK33squadkills = field.split(':')[1].strip()
         if "top3" in field:
-            AK33squadtop3 = field.split(':')[1].strip()             
+            AK33squadtop3 = field.split(':')[1].strip()      
+            
+#mcfly---------------------------------------------------------------------------
+player_stats = api.stats.fetch_by_name(name=mcfly_name, time_window=TimeWindow.SEASON,account_type=AccountType.PSN )
+
+with open(mcflyfile, 'w') as file:
+        
+        for attribute in dir(player_stats):
+            if not attribute.startswith('__'):  # Skip special attributes
+                value = getattr(player_stats, attribute)
+                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+print("mcflys's Data written successfully!------------")
+
+with open(mcflyfile, 'r') as file:
+    content = file.read()
+
+#gets rid of unneeded punctuation
+with open(mcflyfile, 'r') as f:
+    text = f.read()
+    words = text.split()
+    table = str.maketrans("", "", punctuation_to_remove)
+    stripped = [w.translate(table) for w in words]
+    assembled = " ".join(stripped)
+with open(mcflyfile, 'w') as f:
+    f.write(assembled)
+
+       
+    #for splits changes solo duo and squad and battlepass level properly 
+with open(mcflyfile, 'r') as f:
+    text = f.read()
+    replacements = {
+    "solo": "==SOLO",
+    "duo": "==DUO",
+    "squad": "==SQUAD",
+    "ltm": "==LTM",
+    "battlePass:": "",
+    "kills:": "totalk:"
+}
+        
+def replace_words(text, replacements):
+    for old_word, new_word in replacements.items():
+        text = text.replace(old_word, new_word)
+    return text
+updated_text = replace_words(text, replacements)
+with open(mcflyfile, 'w') as f:
+    f.write(updated_text)
+
+
+    #spits to sepret txt files
+with open(mcflyfile, 'r') as original_file:
+    content = original_file.read()
+
+# Splitting content using regular expressions to find sections
+sections = re.split(r'==\w+:', content)
+
+if len(sections) >= 4:
+    solo_section = "==SOLO:" + sections[1]
+    duo_section = "==DUO:" + sections[2]
+    squad_section = "==SQUAD:" + sections[3]
+
+    with open('mcfly/mcfly-solo.txt', 'w') as section1_file:
+        section1_file.write(solo_section.strip())
+    
+    with open('mcfly/mcfly-duo.txt', 'w') as section2_file:
+        section2_file.write(duo_section.strip())
+    
+    with open('mcfly/mcfly-squad.txt', 'w') as section3_file:
+        section3_file.write(squad_section.strip())
+else:
+    print("Sections not found in the expected format.")
+     
+   #gets BP level
+mcflylevel = 0
+with open(mcflyfile, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'level' in field:
+            mcflylevel = field.split(':')[1].strip()                 
+
+#     #solo stats
+mcflysolowins = 0
+mcflysolokills = 0
+mcflysolotop10 = 0
+with open(mcflysolo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            mcflysolowins = field.split(':')[1].strip()
+        
+        if 'totalk' in field:
+            mcflysolokills = field.split(':')[1].strip()
+        
+        if "top10" in field:
+            mcflysolotop10 = field.split(':')[1].strip()   
+    
+    
+    
+    
+# #     #duo stats
+mcflyduowins = 0
+mcflyduokills = 0
+mcflyduotop5 = 0
+with open(mcflyduo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            mcflyduowins = field.split(':')[1].strip()
+        if 'totalk' in field:
+            mcflyduokills = field.split(':')[1].strip()
+        if "top5" in field:
+            mcflyduotop5 = field.split(':')[1].strip()        
+                    
+    
+# #     #squads stats
+mcflysquadwins = 0
+mcflysquadkills = 0
+mcflysquadtop3 = 0
+with open(mcflysquad, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            mcflysquadwins = field.split(':')[1].strip()
+        if 'totalk' in field:
+           mcflysquadkills = field.split(':')[1].strip()
+        if "top3" in field:
+            mcflysquadtop3 = field.split(':')[1].strip()       
 
     
 
@@ -1654,138 +1787,7 @@ with open(mulligansquad, 'r') as file:
         if "top3" in field:
             mulligansquadtop3 = field.split(':')[1].strip()             
 
-#mcfly---------------------------------------------------------------------------
-player_stats = api.stats.fetch_by_name(name=mcfly_name, time_window=TimeWindow.SEASON,account_type=AccountType.PSN )
 
-with open(mcflyfile, 'w') as file:
-        
-        for attribute in dir(player_stats):
-            if not attribute.startswith('__'):  # Skip special attributes
-                value = getattr(player_stats, attribute)
-                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-print("mcflys's Data written successfully!------------")
-
-with open(mcflyfile, 'r') as file:
-    content = file.read()
-
-#gets rid of unneeded punctuation
-with open(mcflyfile, 'r') as f:
-    text = f.read()
-    words = text.split()
-    table = str.maketrans("", "", punctuation_to_remove)
-    stripped = [w.translate(table) for w in words]
-    assembled = " ".join(stripped)
-with open(mcflyfile, 'w') as f:
-    f.write(assembled)
-
-       
-    #for splits changes solo duo and squad and battlepass level properly 
-with open(mcflyfile, 'r') as f:
-    text = f.read()
-    replacements = {
-    "solo": "==SOLO",
-    "duo": "==DUO",
-    "squad": "==SQUAD",
-    "ltm": "==LTM",
-    "battlePass:": "",
-    "kills:": "totalk:"
-}
-        
-def replace_words(text, replacements):
-    for old_word, new_word in replacements.items():
-        text = text.replace(old_word, new_word)
-    return text
-updated_text = replace_words(text, replacements)
-with open(mcflyfile, 'w') as f:
-    f.write(updated_text)
-
-
-    #spits to sepret txt files
-with open(mcflyfile, 'r') as original_file:
-    content = original_file.read()
-
-# Splitting content using regular expressions to find sections
-sections = re.split(r'==\w+:', content)
-
-if len(sections) >= 4:
-    solo_section = "==SOLO:" + sections[1]
-    duo_section = "==DUO:" + sections[2]
-    squad_section = "==SQUAD:" + sections[3]
-
-    with open('mcfly/mcfly-solo.txt', 'w') as section1_file:
-        section1_file.write(solo_section.strip())
-    
-    with open('mcfly/mcfly-duo.txt', 'w') as section2_file:
-        section2_file.write(duo_section.strip())
-    
-    with open('mcfly/mcfly-squad.txt', 'w') as section3_file:
-        section3_file.write(squad_section.strip())
-else:
-    print("Sections not found in the expected format.")
-     
-   #gets BP level
-mcflylevel = 0
-with open(mcflyfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            mcflylevel = field.split(':')[1].strip()                 
-
-#     #solo stats
-mcflysolowins = 0
-mcflysolokills = 0
-mcflysolotop10 = 0
-with open(mcflysolo, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if "wins" in field: 
-            mcflysolowins = field.split(':')[1].strip()
-        
-        if 'totalk' in field:
-            mcflysolokills = field.split(':')[1].strip()
-        
-        if "top10" in field:
-            mcflysolotop10 = field.split(':')[1].strip()   
-    
-    
-    
-    
-# #     #duo stats
-mcflyduowins = 0
-mcflyduokills = 0
-mcflyduotop5 = 0
-with open(mcflyduo, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if "wins" in field: 
-            mcflyduowins = field.split(':')[1].strip()
-        if 'totalk' in field:
-            mcflyduokills = field.split(':')[1].strip()
-        if "top5" in field:
-            mcflyduotop5 = field.split(':')[1].strip()        
-                    
-    
-# #     #squads stats
-mcflysquadwins = 0
-mcflysquadkills = 0
-mcflysquadtop3 = 0
-with open(mcflysquad, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if "wins" in field: 
-            mcflysquadwins = field.split(':')[1].strip()
-        if 'totalk' in field:
-           mcflysquadkills = field.split(':')[1].strip()
-        if "top3" in field:
-            mcflysquadtop3 = field.split(':')[1].strip()
             
 #saitama---------------------------------------------------------------------------
 player_stats = api.stats.fetch_by_name(name=saitama_name, time_window=TimeWindow.SEASON, account_type=AccountType.XBL)
@@ -2315,8 +2317,14 @@ with open(can_nunsquad, 'r') as file:
 player_stats = {
     'AK33': {
        'Battlepass level':int(AK33level), 'Solo kills': int(AK33solokills), 'Solo Wins': int(AK33solowins), 'Solo Finished top 10': int(AK33solotop10)
+              
+    },
+    
+     'mcfly': {
+       'Battlepass level':int(mcflylevel), 'Solo kills': int(mcflysolokills), 'Solo Wins': int(mcflysolowins), 'Solo Finished top 10': int(mcflysolotop10)
        
     },
+    
     'Vector': {
        'Battlepass level':int(vectorlevel), 'Solo kills': int(vectorsolokills),  'Solo Wins': int(vectorsolowins), 'Solo Finished top 10': int(vectorsolotop10)
         
@@ -2364,11 +2372,7 @@ player_stats = {
        'Battlepass level':int(mulliganlevel), 'Solo kills': int(mulligansolokills), 'Solo Wins': int(mulligansolowins), 'Solo Finished top 10': int(mulligansolotop10)
        
     },
-
-    'mcfly': {
-       'Battlepass level':int(mcflylevel), 'Solo kills': int(mcflysolokills), 'Solo Wins': int(mcflysolowins), 'Solo Finished top 10': int(mcflysolotop10)
-       
-    },
+   
     'saitama': {
        'Battlepass level':int(saitamalevel), 'Solo kills': int(saitamasolokills), 'Solo Wins': int(saitamasolowins), 'Solo Finished top 10': int(saitamasolotop10)
        

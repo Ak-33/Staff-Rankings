@@ -2356,36 +2356,37 @@ player_stats = {
        
     },
      
-'keauxda': {
+    'keauxda': {
        'Battlepass level':int(keauxdalevel), 'Solo kills': int(keauxdasolokills), 'Solo Wins': int(keauxdasolowins), 'Solo Finished top 10': int(keauxdasolotop10)
        
     },
-'mulligan': {
+    'mulligan': {
        'Battlepass level':int(mulliganlevel), 'Solo kills': int(mulligansolokills), 'Solo Wins': int(mulligansolowins), 'Solo Finished top 10': int(mulligansolotop10)
        
     },
 
-'mcfly': {
+    'mcfly': {
        'Battlepass level':int(mcflylevel), 'Solo kills': int(mcflysolokills), 'Solo Wins': int(mcflysolowins), 'Solo Finished top 10': int(mcflysolotop10)
        
     },
-'saitama': {
+    'saitama': {
        'Battlepass level':int(saitamalevel), 'Solo kills': int(saitamasolokills), 'Solo Wins': int(saitamasolowins), 'Solo Finished top 10': int(saitamasolotop10)
        
     },
-'trubadoor': {
+    'trubadoor': {
        'Battlepass level':int(trubadoorlevel), 'Solo kills': int(trubadoorsolokills), 'Solo Wins': int(trubadoorsolowins), 'Solo Finished top 10': int(trubadoorsolotop10)
        
     },
-'romKulus': {
+    'romKulus': {
        'Battlepass level':int(romKuluslevel), 'Solo kills': int(romKulussolokills), 'Solo Wins': int(romKulussolowins), 'Solo Finished top 10': int(romKulussolotop10)
              
     },
-'can_nun': {
+    'can_nun': {
        'Battlepass level':int(can_nunlevel), 'Solo kills': int(can_nunsolokills), 'Solo Wins': int(can_nunsolowins), 'Solo Finished top 10': int(can_nunsolotop10)
        },
 
    }
+
 
 # Define ranking function for kills in each category
 def rank_players_by_category(category):

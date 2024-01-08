@@ -1,6 +1,2 @@
-streamlit
-fortnite_api
-string 
-re
-TimeWindow
-
+fortnite_api==2.5.5
+streamlit==1.29.0

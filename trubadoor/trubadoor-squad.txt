@@ -1,0 +1,1 @@
+==SQUAD: score: 32141, scorePerMin: 279, scorePerMatch: 297602, wins: 14, top3: 27, top6: 41, totalk: 310, killsPerMin: 0269, killsPerMatch: 287, deaths: 94, kd: 3298, matches: 108, winRate: 12963, minutesPlayed: 1152, playersOutlived: 6178, lastModified: 20240108T06:06:30Z,

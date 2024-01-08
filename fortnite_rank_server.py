@@ -30,60 +30,60 @@ keauxda_name = 'KeauXDa'
     
     #files_names
         #Pixsol----------------
-AK33file = 'Fortnite_list/pixsol/AK33_stats.txt'
-AK33solo= 'Fortnite_list/pixsol/AK33-solo.txt'
-AK33duo= 'Fortnite_list/pixsol/AK33-duo.txt'
-AK33squad= 'Fortnite_list/pixsol/AK33-squad.txt'
+AK33file = 'pixsol/AK33_stats.txt'
+AK33solo= 'pixsol/AK33-solo.txt'
+AK33duo= 'pixsol/AK33-duo.txt'
+AK33squad= 'pixsol/AK33-squad.txt'
         #vector----------------
-vectorfile = 'Fortnite_list/vector/vector_stats.txt'
-vectorsolo= 'Fortnite_list/vector/vector-solo.txt'
-vectorduo= 'Fortnite_list/vector/vector-duo.txt'
-vectorsquad= 'Fortnite_list/vector/vector-squad.txt'
+vectorfile = 'vector/vector_stats.txt'
+vectorsolo= 'vector/vector-solo.txt'
+vectorduo= 'vector/vector-duo.txt'
+vectorsquad= 'vector/vector-squad.txt'
         #lo-key----------------
-lokeyfile = 'Fortnite_list/lokey/lokey_stats.txt'
-lokeysolo= 'Fortnite_list/lokey/lokey-solo.txt'
-lokeyduo= 'Fortnite_list/lokey/lokey-duo.txt'
-lokeysquad= 'Fortnite_list/lokey/lokey-squad.txt'
+lokeyfile = 'lokey/lokey_stats.txt'
+lokeysolo= 'lokey/lokey-solo.txt'
+lokeyduo= 'lokey/lokey-duo.txt'
+lokeysquad= 'lokey/lokey-squad.txt'
         #LeFloor---------------
-LeFloorfile = 'Fortnite_list/LeFloor/LeFloor_stats.txt'
-LeFloorsolo= 'Fortnite_list/LeFloor/LeFloor-solo.txt'
-LeFloorduo= 'Fortnite_list/LeFloor/LeFloor-duo.txt'
-LeFloorsquad= 'Fortnite_list/LeFloor/LeFloor-squad.txt'
+LeFloorfile = 'LeFloor/LeFloor_stats.txt'
+LeFloorsolo= 'LeFloor/LeFloor-solo.txt'
+LeFloorduo= 'LeFloor/LeFloor-duo.txt'
+LeFloorsquad= 'LeFloor/LeFloor-squad.txt'
         #ghirradeil----------------
-ghirradeilfile = 'Fortnite_list/ghirradeil/ghirradeil_stats.txt'
-ghirradeilsolo= 'Fortnite_list/ghirradeil/ghirradeil-solo.txt'
-ghirradeilduo= 'Fortnite_list/ghirradeil/ghirradeil-duo.txt'
-ghirradeilsquad= 'Fortnite_list/ghirradeil/ghirradeil-squad.txt'
+ghirradeilfile = 'ghirradeil/ghirradeil_stats.txt'
+ghirradeilsolo= 'ghirradeil/ghirradeil-solo.txt'
+ghirradeilduo= 'ghirradeil/ghirradeil-duo.txt'
+ghirradeilsquad= 'ghirradeil/ghirradeil-squad.txt'
         #phlash----------------
-phlashfile = 'Fortnite_list/phlash/phlash.txt'
-phlashsolo= 'Fortnite_list/phlash/phlash-solo.txt'
-phlashduo= 'Fortnite_list/phlash/phlash-duo.txt'
-phlashsquad= 'Fortnite_list/phlash/phlash-squad.txt'
+phlashfile = 'phlash/phlash.txt'
+phlashsolo= 'phlash/phlash-solo.txt'
+phlashduo= 'phlash/phlash-duo.txt'
+phlashsquad= 'phlash/phlash-squad.txt'
     #ryptyde----------------
-ryptydefile = 'Fortnite_list/ryptyde/ryptyde_stats.txt'
-ryptydesolo= 'Fortnite_list/ryptyde/ryptyde-solo.txt'
-ryptydeduo= 'Fortnite_list/ryptyde/ryptyde-duo.txt'
-ryptydesquad= 'Fortnite_list/ryptyde/ryptyde-squad.txt'
+ryptydefile = 'ryptyde/ryptyde_stats.txt'
+ryptydesolo= 'ryptyde/ryptyde-solo.txt'
+ryptydeduo= 'ryptyde/ryptyde-duo.txt'
+ryptydesquad= 'ryptyde/ryptyde-squad.txt'
     #sideKwinder----------------
-sideKwinderfile = 'Fortnite_list/sideKwinder/sideKwinder_stats.txt'
-sideKwindersolo= 'Fortnite_list/sideKwinder/sideKwinder-solo.txt'
-sideKwinderduo= 'Fortnite_list/sideKwinder/sideKwinder-duo.txt'
-sideKwindersquad= 'Fortnite_list/sideKwinder/sideKwinder-squad.txt'
+sideKwinderfile = 'sideKwinder/sideKwinder_stats.txt'
+sideKwindersolo= 'sideKwinder/sideKwinder-solo.txt'
+sideKwinderduo= 'sideKwinder/sideKwinder-duo.txt'
+sideKwindersquad= 'sideKwinder/sideKwinder-squad.txt'
     #Tandumm----------------
-Tandummfile = 'Fortnite_list/Tandumm/Tandumm_stats.txt'
-Tandummsolo= 'Fortnite_list/Tandumm/Tandumm-solo.txt'
-Tandummduo= 'Fortnite_list/Tandumm/Tandumm-duo.txt'
-Tandummsquad= 'Fortnite_list/Tandumm/Tandumm-squad.txt'
+Tandummfile = 'Tandumm/Tandumm_stats.txt'
+Tandummsolo= 'Tandumm/Tandumm-solo.txt'
+Tandummduo= 'Tandumm/Tandumm-duo.txt'
+Tandummsquad= 'Tandumm/Tandumm-squad.txt'
  #o3zone----------------
-o3zonefile = 'Fortnite_list/o3zone/o3zone_stats.txt'
-o3zonesolo= 'Fortnite_list/o3zone/o3zone-solo.txt'
-o3zoneduo= 'Fortnite_list/o3zone/o3zone-duo.txt'
-o3zonesquad= 'Fortnite_list/o3zone/o3zone-squad.txt'
+o3zonefile = 'o3zone/o3zone_stats.txt'
+o3zonesolo= 'o3zone/o3zone-solo.txt'
+o3zoneduo= 'o3zone/o3zone-duo.txt'
+o3zonesquad= 'o3zone/o3zone-squad.txt'
  #keauxda----------------
-keauxdafile = 'Fortnite_list/keauxda/keauxda_stats.txt'
-keauxdasolo= 'Fortnite_list/keauxda/keauxda-solo.txt'
-keauxdaduo= 'Fortnite_list/keauxda/keauxda-duo.txt'
-keauxdasquad= 'Fortnite_list/keauxda/keauxda-squad.txt'
+keauxdafile = 'keauxda/keauxda_stats.txt'
+keauxdasolo= 'keauxda/keauxda-solo.txt'
+keauxdaduo= 'keauxda/keauxda-duo.txt'
+keauxdasquad= 'keauxda/keauxda-squad.txt'
 
 #Pixsol---------------------------------------------------------------------------
 player_stats = api.stats.fetch_by_name(name=Ak33_name, time_window=TimeWindow.SEASON)
@@ -143,13 +143,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/pixsol/Ak33-solo.txt', 'w') as section1_file:
+    with open('pixsol/Ak33-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/pixsol/AK33-duo.txt', 'w') as section2_file:
+    with open('pixsol/AK33-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/pixsol/AK33-squad.txt', 'w') as section3_file:
+    with open('pixsol/AK33-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -280,13 +280,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/vector/vector-solo.txt', 'w') as section1_file:
+    with open('vector/vector-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/vector/vector-duo.txt', 'w') as section2_file:
+    with open('vector/vector-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/vector/vector-squad.txt', 'w') as section3_file:
+    with open('vector/vector-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -420,13 +420,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/lokey/lokey-solo.txt', 'w') as section1_file:
+    with open('lokey/lokey-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/lokey/lokey-duo.txt', 'w') as section2_file:
+    with open('lokey/lokey-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/lokey/lokey-squad.txt', 'w') as section3_file:
+    with open('lokey/lokey-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -521,13 +521,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/LeFloor/LeFloor-solo.txt', 'w') as section1_file:
+    with open('LeFloor/LeFloor-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/LeFloor/LeFloor-duo.txt', 'w') as section2_file:
+    with open('LeFloor/LeFloor-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/LeFloor/LeFloor-squad.txt', 'w') as section3_file:
+    with open('LeFloor/LeFloor-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -624,13 +624,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/ghirradeil/ghirradeil-solo.txt', 'w') as section1_file:
+    with open('ghirradeil/ghirradeil-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/ghirradeil/ghirradeil-duo.txt', 'w') as section2_file:
+    with open('ghirradeil/ghirradeil-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/ghirradeil/ghirradeil-squad.txt', 'w') as section3_file:
+    with open('ghirradeil/ghirradeil-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -761,13 +761,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/phlash/phlash-solo.txt', 'w') as section1_file:
+    with open('phlash/phlash-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/phlash/phlash-duo.txt', 'w') as section2_file:
+    with open('phlash/phlash-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/phlash/phlash-squad.txt', 'w') as section3_file:
+    with open('phlash/phlash-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -898,13 +898,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/ryptyde/ryptyde-solo.txt', 'w') as section1_file:
+    with open('ryptyde/ryptyde-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/ryptyde/ryptyde-duo.txt', 'w') as section2_file:
+    with open('ryptyde/ryptyde-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/ryptyde/ryptyde-squad.txt', 'w') as section3_file:
+    with open('ryptyde/ryptyde-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -1037,13 +1037,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/sideKwinder/sideKwinder-solo.txt', 'w') as section1_file:
+    with open('sideKwinder/sideKwinder-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/sideKwinder/sideKwinder-duo.txt', 'w') as section2_file:
+    with open('sideKwinder/sideKwinder-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/sideKwinder/sideKwinder-squad.txt', 'w') as section3_file:
+    with open('sideKwinder/sideKwinder-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -1171,13 +1171,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/Tandumm/Tandumm-solo.txt', 'w') as section1_file:
+    with open('Tandumm/Tandumm-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/Tandumm/Tandumm-duo.txt', 'w') as section2_file:
+    with open('Tandumm/Tandumm-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/Tandumm/Tandumm-squad.txt', 'w') as section3_file:
+    with open('Tandumm/Tandumm-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -1308,13 +1308,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/o3zone/o3zone-solo.txt', 'w') as section1_file:
+    with open('o3zone/o3zone-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/o3zone/o3zone-duo.txt', 'w') as section2_file:
+    with open('o3zone/o3zone-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/o3zone/o3zone-squad.txt', 'w') as section3_file:
+    with open('o3zone/o3zone-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")
@@ -1445,13 +1445,13 @@ if len(sections) >= 4:
     duo_section = "==DUO:" + sections[2]
     squad_section = "==SQUAD:" + sections[3]
 
-    with open('Fortnite_list/keauxda/keauxda-solo.txt', 'w') as section1_file:
+    with open('keauxda/keauxda-solo.txt', 'w') as section1_file:
         section1_file.write(solo_section.strip())
     
-    with open('Fortnite_list/keauxda/keauxda-duo.txt', 'w') as section2_file:
+    with open('keauxda/keauxda-duo.txt', 'w') as section2_file:
         section2_file.write(duo_section.strip())
     
-    with open('Fortnite_list/keauxda/keauxda-squad.txt', 'w') as section3_file:
+    with open('keauxda/keauxda-squad.txt', 'w') as section3_file:
         section3_file.write(squad_section.strip())
 else:
     print("Sections not found in the expected format.")

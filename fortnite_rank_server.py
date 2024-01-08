@@ -25,6 +25,8 @@ mulligan_name = "ChristianKid18"
 mcfly_name = 'Admiral_pile'
 saitama_name ='Kmoore123'
 trubadoor_name = 'Trub8door'
+romKulus_name = 'Cr1spyNugg3t'
+can_nun_name = 'can-nun'
 
 
     
@@ -104,7 +106,16 @@ trubadoorfile = 'trubadoor/trubadoor_stats.txt'
 trubadoorsolo= 'trubadoor/trubadoor-solo.txt'
 trubadoorduo= 'trubadoor/trubadoor-duo.txt'
 trubadoorsquad= 'trubadoor/trubadoor-squad.txt'
-
+    #romKulus----------------
+romKulusfile = 'romKulus/romKulus_stats.txt'
+romKulussolo= 'romKulus/romKulus-solo.txt'
+romKulusduo= 'romKulus/romKulus-duo.txt'
+romKulussquad= 'romKulus/romKulus-squad.txt'
+    #can_nun----------------
+can_nunfile = 'can_nun/can_nun_stats.txt'
+can_nunsolo= 'can_nun/can_nun-solo.txt'
+can_nunduo= 'can_nun/can_nun-duo.txt'
+can_nunsquad= 'can_nun/can_nun-squad.txt'
 
 
 
@@ -2036,7 +2047,265 @@ with open(trubadoorsquad, 'r') as file:
         if 'totalk' in field:
            trubadoorsquadkills = field.split(':')[1].strip()
         if "top3" in field:
-            trubadoorsquadtop3 = field.split(':')[1].strip()                                      
+            trubadoorsquadtop3 = field.split(':')[1].strip()
+            #romKulus---------------------------------------------------------------------------
+player_stats = api.stats.fetch_by_name(name=romKulus_name, time_window=TimeWindow.SEASON)
+
+with open(romKulusfile, 'w') as file:
+        
+        for attribute in dir(player_stats):
+            if not attribute.startswith('__'):  # Skip special attributes
+                value = getattr(player_stats, attribute)
+                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+print("romKuluss's Data written successfully!------------")
+
+with open(romKulusfile, 'r') as file:
+    content = file.read()
+
+#gets rid of unneeded punctuation
+with open(romKulusfile, 'r') as f:
+    text = f.read()
+    words = text.split()
+    table = str.maketrans("", "", punctuation_to_remove)
+    stripped = [w.translate(table) for w in words]
+    assembled = " ".join(stripped)
+with open(romKulusfile, 'w') as f:
+    f.write(assembled)
+
+       
+    #for splits changes solo duo and squad and battlepass level properly 
+with open(romKulusfile, 'r') as f:
+    text = f.read()
+    replacements = {
+    "solo": "==SOLO",
+    "duo": "==DUO",
+    "squad": "==SQUAD",
+    "ltm": "==LTM",
+    "battlePass:": "",
+    "kills:": "totalk:"
+}
+        
+def replace_words(text, replacements):
+    for old_word, new_word in replacements.items():
+        text = text.replace(old_word, new_word)
+    return text
+updated_text = replace_words(text, replacements)
+with open(romKulusfile, 'w') as f:
+    f.write(updated_text)
+
+
+    #spits to sepret txt files
+with open(romKulusfile, 'r') as original_file:
+    content = original_file.read()
+
+# Splitting content using regular expressions to find sections
+sections = re.split(r'==\w+:', content)
+
+if len(sections) >= 4:
+    solo_section = "==SOLO:" + sections[1]
+    duo_section = "==DUO:" + sections[2]
+    squad_section = "==SQUAD:" + sections[3]
+
+    with open('romKulus/romKulus-solo.txt', 'w') as section1_file:
+        section1_file.write(solo_section.strip())
+    
+    with open('romKulus/romKulus-duo.txt', 'w') as section2_file:
+        section2_file.write(duo_section.strip())
+    
+    with open('romKulus/romKulus-squad.txt', 'w') as section3_file:
+        section3_file.write(squad_section.strip())
+else:
+    print("Sections not found in the expected format.")
+     
+   #gets BP level
+romKuluslevel = 0
+with open(romKulusfile, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'level' in field:
+            romKuluslevel = field.split(':')[1].strip()                 
+
+#     #solo stats
+romKulussolowins = 0
+romKulussolokills = 0
+romKulussolotop10 = 0
+with open(romKulussolo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            romKulussolowins = field.split(':')[1].strip()
+        
+        if 'totalk' in field:
+            romKulussolokills = field.split(':')[1].strip()
+        
+        if "top10" in field:
+            romKulussolotop10 = field.split(':')[1].strip()   
+
+# #     #duo stats
+romKulusduowins = 0
+romKulusduokills = 0
+romKulusduotop5 = 0
+with open(romKulusduo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            romKulusduowins = field.split(':')[1].strip()
+        if 'totalk' in field:
+            romKulusduokills = field.split(':')[1].strip()
+        if "top5" in field:
+            romKulusduotop5 = field.split(':')[1].strip()        
+              
+# #     #squads stats
+romKulussquadwins = 0
+romKulussquadkills = 0
+romKulussquadtop3 = 0
+with open(romKulussquad, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            romKulussquadwins = field.split(':')[1].strip()
+        if 'totalk' in field:
+           romKulussquadkills = field.split(':')[1].strip()
+        if "top3" in field:
+            romKulussquadtop3 = field.split(':')[1].strip()          
+
+#can_nun---------------------------------------------------------------------------
+player_stats = api.stats.fetch_by_name(name=can_nun_name, time_window=TimeWindow.SEASON)
+
+with open(can_nunfile, 'w') as file:
+        
+        for attribute in dir(player_stats):
+            if not attribute.startswith('__'):  # Skip special attributes
+                value = getattr(player_stats, attribute)
+                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+print("can_nuns's Data written successfully!------------")
+
+with open(can_nunfile, 'r') as file:
+    content = file.read()
+
+#gets rid of unneeded punctuation
+with open(can_nunfile, 'r') as f:
+    text = f.read()
+    words = text.split()
+    table = str.maketrans("", "", punctuation_to_remove)
+    stripped = [w.translate(table) for w in words]
+    assembled = " ".join(stripped)
+with open(can_nunfile, 'w') as f:
+    f.write(assembled)
+
+       
+    #for splits changes solo duo and squad and battlepass level properly 
+with open(can_nunfile, 'r') as f:
+    text = f.read()
+    replacements = {
+    "solo": "==SOLO",
+    "duo": "==DUO",
+    "squad": "==SQUAD",
+    "ltm": "==LTM",
+    "battlePass:": "",
+    "kills:": "totalk:"
+}
+        
+def replace_words(text, replacements):
+    for old_word, new_word in replacements.items():
+        text = text.replace(old_word, new_word)
+    return text
+updated_text = replace_words(text, replacements)
+with open(can_nunfile, 'w') as f:
+    f.write(updated_text)
+
+
+    #spits to sepret txt files
+with open(can_nunfile, 'r') as original_file:
+    content = original_file.read()
+
+# Splitting content using regular expressions to find sections
+sections = re.split(r'==\w+:', content)
+
+if len(sections) >= 4:
+    solo_section = "==SOLO:" + sections[1]
+    duo_section = "==DUO:" + sections[2]
+    squad_section = "==SQUAD:" + sections[3]
+
+    with open('can_nun/can_nun-solo.txt', 'w') as section1_file:
+        section1_file.write(solo_section.strip())
+    
+    with open('can_nun/can_nun-duo.txt', 'w') as section2_file:
+        section2_file.write(duo_section.strip())
+    
+    with open('can_nun/can_nun-squad.txt', 'w') as section3_file:
+        section3_file.write(squad_section.strip())
+else:
+    print("Sections not found in the expected format.")
+     
+   #gets BP level
+can_nunlevel = 0
+with open(can_nunfile, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'level' in field:
+            can_nunlevel = field.split(':')[1].strip()                 
+
+#     #solo stats
+can_nunsolowins = 0
+can_nunsolokills = 0
+can_nunsolotop10 = 0
+with open(can_nunsolo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            can_nunsolowins = field.split(':')[1].strip()
+        
+        if 'totalk' in field:
+            can_nunsolokills = field.split(':')[1].strip()
+        
+        if "top10" in field:
+            can_nunsolotop10 = field.split(':')[1].strip()   
+
+# #     #duo stats
+can_nunduowins = 0
+can_nunduokills = 0
+can_nunduotop5 = 0
+with open(can_nunduo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            can_nunduowins = field.split(':')[1].strip()
+        if 'totalk' in field:
+            can_nunduokills = field.split(':')[1].strip()
+        if "top5" in field:
+            can_nunduotop5 = field.split(':')[1].strip()        
+              
+# #     #squads stats
+can_nunsquadwins = 0
+can_nunsquadkills = 0
+can_nunsquadtop3 = 0
+with open(can_nunsquad, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            can_nunsquadwins = field.split(':')[1].strip()
+        if 'totalk' in field:
+           can_nunsquadkills = field.split(':')[1].strip()
+        if "top3" in field:
+            can_nunsquadtop3 = field.split(':')[1].strip()             
+                                         
 
 
 
@@ -2108,6 +2377,13 @@ player_stats = {
        'Battlepass level':int(trubadoorlevel), 'Solo kills': int(trubadoorsolokills), 'Solo Wins': int(trubadoorsolowins), 'Solo Finished top 10': int(trubadoorsolotop10)
        
     },
+'romKulus': {
+       'Battlepass level':int(romKuluslevel), 'Solo kills': int(romKulussolokills), 'Solo Wins': int(romKulussolowins), 'Solo Finished top 10': int(romKulussolotop10)
+             
+    },
+'can_nun': {
+       'Battlepass level':int(can_nunlevel), 'Solo kills': int(can_nunsolokills), 'Solo Wins': int(can_nunsolowins), 'Solo Finished top 10': int(can_nunsolotop10)
+       },
 
    }
 

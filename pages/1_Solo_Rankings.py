@@ -93,18 +93,7 @@ can_nunsquad='pages/can_nun/can_nun-squad.txt'
 
 
 #Pixsol---------------------------------------------------------------------------    
-   #gets BP level
-AK33level = 0
-with open(AK33file, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            AK33level = field.split(':')[1].strip()                 
-
-
-#     #solo stats
+  #solo stats
 AK33solowins = 0
 AK33solokills = 0
 AK33solotop10 = 0
@@ -124,16 +113,6 @@ with open(AK33solo, 'r') as file:
         
 
 #mcfly---------------------------------------------------------------------------   
-   #gets BP level
-mcflylevel = 0
-with open(mcflyfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            mcflylevel = field.split(':')[1].strip()                 
-
 #     #solo stats
 mcflysolowins = 0
 mcflysolokills = 0
@@ -153,17 +132,6 @@ with open(mcflysolo, 'r') as file:
             mcflysolotop10 = field.split(':')[1].strip()   
               
 #vector-----------------------------------------------------------------------------
-#BP level
-vectorlevel = 0
-with open(vectorfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            vectorlevel = field.split(':')[1].strip()                 
-
-
 #     #solo stats
 vectorsolowins = 0
 vectorsolokills = 0
@@ -183,16 +151,6 @@ with open(vectorsolo, 'r') as file:
             vectorsolotop10 = field.split(':')[1].strip()   
 
 #lokey-----------------------------------------------------------------------------
-#     #gets BP level
-lokeylevel = 0
-with open(lokeyfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            lokeylevel = field.split(':')[1].strip()                 
-
 #solo stats
 lokeysolowins = 0
 lokeysolokills = 0
@@ -212,16 +170,6 @@ with open(lokeysolo, 'r') as file:
             lokeysolotop10 = field.split(':')[1].strip()   
 
 #LeFloor-----------------------------------------------------------------------------
-#     #gets BP level
-LeFloorlevel = 0
-with open(LeFloorfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            LeFloorlevel = field.split(':')[1].strip()                 
-
 #     #solo stats
 LeFloorsolowins = 0
 LeFloorsolokills = 0
@@ -241,16 +189,6 @@ with open(LeFloorsolo, 'r') as file:
             LeFloorsolotop10 = field.split(':')[1].strip()   
 
 #ghirradeil-----------------------------------------------------------------------------
-#     #gets BP level
-ghirradeillevel = 0
-with open(ghirradeilfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            ghirradeillevel = field.split(':')[1].strip()                 
-
 #     #solo stats
 ghirradeilsolowins = 0
 ghirradeilsolokills = 0
@@ -270,17 +208,7 @@ with open(ghirradeilsolo, 'r') as file:
             ghirradeilsolotop10 = field.split(':')[1].strip()   
             
 #phlash---------------------------------------------------------------------------     
-   #gets BP level
-phlashlevel = 0
-with open(phlashfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            phlashlevel = field.split(':')[1].strip()                 
-
-#     #solo stats
+#solo stats
 phlashsolowins = 0
 phlashsolokills = 0
 phlashsolotop10 = 0
@@ -299,16 +227,6 @@ with open(phlashsolo, 'r') as file:
             phlashsolotop10 = field.split(':')[1].strip()   
    
 #ryptyde---------------------------------------------------------------------------    
-   #gets BP level
-ryptydelevel = 0
-with open(ryptydefile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            ryptydelevel = field.split(':')[1].strip()                 
-
 #     #solo stats
 ryptydesolowins = 0
 ryptydesolokills = 0
@@ -328,17 +246,7 @@ with open(ryptydesolo, 'r') as file:
             ryptydesolotop10 = field.split(':')[1].strip()   
 
 #sideKwinder---------------------------------------------------------------------------    
-   #gets BP level
-sideKwinderlevel = 0
-with open(sideKwinderfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            sideKwinderlevel = field.split(':')[1].strip()                 
-
-#     #solo stats
+    #solo stats
 sideKwindersolowins = 0
 sideKwindersolokills = 0
 sideKwindersolotop10 = 0
@@ -357,16 +265,6 @@ with open(sideKwindersolo, 'r') as file:
             sideKwindersolotop10 = field.split(':')[1].strip()   
 
 #Tandumm---------------------------------------------------------------------------    
-   #gets BP level
-Tandummlevel = 0
-with open(Tandummfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            Tandummlevel = field.split(':')[1].strip()                 
-
 #solo stats
 Tandummsolowins = 0
 Tandummsolokills = 0
@@ -386,16 +284,6 @@ with open(Tandummsolo, 'r') as file:
             Tandummsolotop10 = field.split(':')[1].strip()   
 
 #o3zone---------------------------------------------------------------------------    
-   #gets BP level
-o3zonelevel = 0
-with open(o3zonefile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            o3zonelevel = field.split(':')[1].strip()                 
-
 #     #solo stats
 o3zonesolowins = 0
 o3zonesolokills = 0
@@ -415,15 +303,6 @@ with open(o3zonesolo, 'r') as file:
             o3zonesolotop10 = field.split(':')[1].strip()   
 
 #keauxda--------------------------------------------------------------------------- 
-   #gets BP level
-keauxdalevel = 0
-with open(keauxdafile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            keauxdalevel = field.split(':')[1].strip()                 
 
 #     #solo stats
 keauxdasolowins = 0
@@ -444,17 +323,7 @@ with open(keauxdasolo, 'r') as file:
             keauxdasolotop10 = field.split(':')[1].strip()   
 
 #mulligan---------------------------------------------------------------------------     
-   #gets BP level
-mulliganlevel = 0
-with open(mulliganfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            mulliganlevel = field.split(':')[1].strip()                 
-
-#     #solo stats
+ #     #solo stats
 mulligansolowins = 0
 mulligansolokills = 0
 mulligansolotop10 = 0
@@ -473,16 +342,6 @@ with open(mulligansolo, 'r') as file:
             mulligansolotop10 = field.split(':')[1].strip()   
 
 #saitama---------------------------------------------------------------------------     
-   #gets BP level
-saitamalevel = 0
-with open(saitamafile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            saitamalevel = field.split(':')[1].strip()                 
-
 #solo stats
 saitamasolowins = 0
 saitamasolokills = 0
@@ -502,16 +361,6 @@ with open(saitamasolo, 'r') as file:
             saitamasolotop10 = field.split(':')[1].strip()   
 
 #trubadoor---------------------------------------------------------------------------
-   #gets BP level
-trubadoorlevel = 0
-with open(trubadoorfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            trubadoorlevel = field.split(':')[1].strip()                 
-
 #     #solo stats
 trubadoorsolowins = 0
 trubadoorsolokills = 0
@@ -531,16 +380,6 @@ with open(trubadoorsolo, 'r') as file:
             trubadoorsolotop10 = field.split(':')[1].strip()   
 
 #romKulus---------------------------------------------------------------------------     
-   #gets BP level
-romKuluslevel = 0
-with open(romKulusfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            romKuluslevel = field.split(':')[1].strip()                 
-
 #     #solo stats
 romKulussolowins = 0
 romKulussolokills = 0
@@ -560,16 +399,6 @@ with open(romKulussolo, 'r') as file:
             romKulussolotop10 = field.split(':')[1].strip()   
 
 #can_nun---------------------------------------------------------------------------    
-   #gets BP level
-can_nunlevel = 0
-with open(can_nunfile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
- 
-    for field in fields:
-        if 'level' in field:
-            can_nunlevel = field.split(':')[1].strip()                 
-
 #     #solo stats
 can_nunsolowins = 0
 can_nunsolokills = 0
@@ -592,77 +421,77 @@ with open(can_nunsolo, 'r') as file:
 
 player_stats = {
     'AK33': {
-       'Battlepass level':int(AK33level), 'Solo kills': int(AK33solokills), 'Solo Wins': int(AK33solowins), 'Solo Finished top 10': int(AK33solotop10)
+        'Solo kills': int(AK33solokills), 'Solo Wins': int(AK33solowins), 'Solo Finished top 10': int(AK33solotop10)
               
     },
     
      'mcfly': {
-       'Battlepass level':int(mcflylevel), 'Solo kills': int(mcflysolokills), 'Solo Wins': int(mcflysolowins), 'Solo Finished top 10': int(mcflysolotop10)
+        'Solo kills': int(mcflysolokills), 'Solo Wins': int(mcflysolowins), 'Solo Finished top 10': int(mcflysolotop10)
        
     },
     
     'Vector': {
-       'Battlepass level':int(vectorlevel), 'Solo kills': int(vectorsolokills),  'Solo Wins': int(vectorsolowins), 'Solo Finished top 10': int(vectorsolotop10)
+        'Solo kills': int(vectorsolokills),  'Solo Wins': int(vectorsolowins), 'Solo Finished top 10': int(vectorsolotop10)
         
     },
     'lokey': {
-       'Battlepass level':int(lokeylevel), 'Solo kills': int(lokeysolokills),  'Solo Wins': int(lokeysolowins), 'Solo Finished top 10': int(lokeysolotop10)
+        'Solo kills': int(lokeysolokills),  'Solo Wins': int(lokeysolowins), 'Solo Finished top 10': int(lokeysolotop10)
     },
     
     'LeFloor': {
-       'Battlepass level':int(LeFloorlevel), 'Solo kills': int(LeFloorsolokills),  'Solo Wins': int(LeFloorsolowins), 'Solo Finished top 10': int(LeFloorsolotop10)
+       'Solo kills': int(LeFloorsolokills),  'Solo Wins': int(LeFloorsolowins), 'Solo Finished top 10': int(LeFloorsolotop10)
     },
     
      'ghirradeil': {
-       'Battlepass level':int(ghirradeillevel), 'Solo kills': int(ghirradeilsolokills),  'Solo Wins': int(ghirradeilsolowins), 'Solo Finished top 10': int(ghirradeilsolotop10)
+        'Solo kills': int(ghirradeilsolokills),  'Solo Wins': int(ghirradeilsolowins), 'Solo Finished top 10': int(ghirradeilsolotop10)
     },
      
      'phlash': {
-       'Battlepass level':int(phlashlevel), 'Solo kills': int(phlashsolokills),  'Solo Wins': int(phlashsolowins), 'Solo Finished top 10': int(phlashsolotop10)
+        'Solo kills': int(phlashsolokills),  'Solo Wins': int(phlashsolowins), 'Solo Finished top 10': int(phlashsolotop10)
     },
      
      'ryptyde': {
-       'Battlepass level':int(ryptydelevel), 'Solo kills': int(ryptydesolokills),  'Solo Wins': int(ryptydesolowins), 'Solo Finished top 10': int(ryptydesolotop10)
+        'Solo kills': int(ryptydesolokills),  'Solo Wins': int(ryptydesolowins), 'Solo Finished top 10': int(ryptydesolotop10)
     },
      
      'sideKwinder': {
-       'Battlepass level':int(sideKwinderlevel), 'Solo kills': int(sideKwindersolokills), 'Solo Wins': int(sideKwindersolowins), 'Solo Finished top 10': int(sideKwindersolotop10)
+        'Solo kills': int(sideKwindersolokills), 'Solo Wins': int(sideKwindersolowins), 'Solo Finished top 10': int(sideKwindersolotop10)
        
     },
      
      'Tandumm': {
-       'Battlepass level':int(Tandummlevel), 'Solo kills': int(Tandummsolokills), 'Solo Wins': int(Tandummsolowins), 'Solo Finished top 10': int(Tandummsolotop10)
+        'Solo kills': int(Tandummsolokills), 'Solo Wins': int(Tandummsolowins), 'Solo Finished top 10': int(Tandummsolotop10)
        
     },
      
      'o3zone': {
-       'Battlepass level':int(o3zonelevel), 'Solo kills': int(o3zonesolokills), 'Solo Wins': int(o3zonesolowins), 'Solo Finished top 10': int(o3zonesolotop10)
+       'Solo kills': int(o3zonesolokills), 'Solo Wins': int(o3zonesolowins), 'Solo Finished top 10': int(o3zonesolotop10)
        
     },
      
     'keauxda': {
-       'Battlepass level':int(keauxdalevel), 'Solo kills': int(keauxdasolokills), 'Solo Wins': int(keauxdasolowins), 'Solo Finished top 10': int(keauxdasolotop10)
+     'Solo kills': int(keauxdasolokills), 'Solo Wins': int(keauxdasolowins), 'Solo Finished top 10': int(keauxdasolotop10)
        
     },
     'mulligan': {
-       'Battlepass level':int(mulliganlevel), 'Solo kills': int(mulligansolokills), 'Solo Wins': int(mulligansolowins), 'Solo Finished top 10': int(mulligansolotop10)
+       'Solo kills': int(mulligansolokills), 'Solo Wins': int(mulligansolowins), 'Solo Finished top 10': int(mulligansolotop10)
        
     },
    
     'saitama': {
-       'Battlepass level':int(saitamalevel), 'Solo kills': int(saitamasolokills), 'Solo Wins': int(saitamasolowins), 'Solo Finished top 10': int(saitamasolotop10)
+        'Solo kills': int(saitamasolokills), 'Solo Wins': int(saitamasolowins), 'Solo Finished top 10': int(saitamasolotop10)
        
     },
     'trubadoor': {
-       'Battlepass level':int(trubadoorlevel), 'Solo kills': int(trubadoorsolokills), 'Solo Wins': int(trubadoorsolowins), 'Solo Finished top 10': int(trubadoorsolotop10)
+        'Solo kills': int(trubadoorsolokills), 'Solo Wins': int(trubadoorsolowins), 'Solo Finished top 10': int(trubadoorsolotop10)
        
     },
     'romKulus': {
-       'Battlepass level':int(romKuluslevel), 'Solo kills': int(romKulussolokills), 'Solo Wins': int(romKulussolowins), 'Solo Finished top 10': int(romKulussolotop10)
+        'Solo kills': int(romKulussolokills), 'Solo Wins': int(romKulussolowins), 'Solo Finished top 10': int(romKulussolotop10)
              
     },
     'can_nun': {
-       'Battlepass level':int(can_nunlevel), 'Solo kills': int(can_nunsolokills), 'Solo Wins': int(can_nunsolowins), 'Solo Finished top 10': int(can_nunsolotop10)
+      'Solo kills': int(can_nunsolokills), 'Solo Wins': int(can_nunsolowins), 'Solo Finished top 10': int(can_nunsolotop10)
        },
 
    }
@@ -675,7 +504,7 @@ def rank_players_by_category(category):
     return sorted_stats
 
 # Generate rankings for each category
-categories = ['Battlepass level', 'Solo kills', 'Solo Wins', 'Solo Finished top 10',]
+categories = ['Solo kills', 'Solo Wins', 'Solo Finished top 10',]
 rankings_data = {}  # Assuming rankings_data contains formatted rankings for each category
 
 print_solo_rankings = []

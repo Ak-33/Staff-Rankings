@@ -1,28 +1,9 @@
---- BATTLEPASS LEVEL ---
-1. AK33: 128
-2. mcfly: 121
-3. saitama: 105
-4. keauxda: 86
-5. can_nun: 79
-6. ghirradeil: 65
-7. LeFloor: 64
-8. trubadoor: 64
-9. romKulus: 61
-10. lokey: 60
-11. phlash: 53
-12. ryptyde: 52
-13. Tandumm: 49
-14. o3zone: 49
-15. Vector: 47
-16. sideKwinder: 44
-17. mulligan: 19
-
 --- SOLO KILLS ---
-1. can_nun: 371
+1. can_nun: 386
 2. AK33: 320
 3. romKulus: 281
-4. keauxda: 254
-5. phlash: 88
+4. keauxda: 263
+5. phlash: 92
 6. o3zone: 86
 7. mcfly: 53
 8. Vector: 45

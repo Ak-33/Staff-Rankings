@@ -1,5 +1,5 @@
 --- DUO KILLS ---
-1. keauxda: 335
+1. keauxda: 336
 2. saitama: 211
 3. trubadoor: 173
 4. mcfly: 159
@@ -7,7 +7,7 @@
 6. AK33: 148
 7. Vector: 117
 8. o3zone: 113
-9. can_nun: 95
+9. can_nun: 98
 10. ghirradeil: 59
 11. ryptyde: 42
 12. sideKwinder: 27

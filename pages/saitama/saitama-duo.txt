@@ -1,0 +1,1 @@
+==DUO: score: 21558, scorePerMin: 26747, scorePerMatch: 303634, wins: 8, top5: 23, top12: 38, totalk: 211, killsPerMin: 0262, killsPerMatch: 2972, deaths: 63, kd: 3349, matches: 71, winRate: 11268, minutesPlayed: 806, playersOutlived: 4431, lastModified: 20240104T02:02:27Z, trio: None,

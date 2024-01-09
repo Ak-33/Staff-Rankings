@@ -1,0 +1,56 @@
+--- SOLO KILLS ---
+1. can_nun: 386
+2. AK33: 320
+3. romKulus: 281
+4. keauxda: 263
+5. phlash: 92
+6. o3zone: 86
+7. mcfly: 53
+8. Vector: 45
+9. saitama: 35
+10. sideKwinder: 15
+11. ghirradeil: 8
+12. trubadoor: 7
+13. Tandumm: 6
+14. lokey: 0
+15. LeFloor: 0
+16. ryptyde: 0
+17. mulligan: 0
+
+--- SOLO WINS ---
+1. keauxda: 6
+2. romKulus: 6
+3. AK33: 4
+4. can_nun: 4
+5. saitama: 2
+6. ghirradeil: 1
+7. phlash: 1
+8. sideKwinder: 1
+9. mcfly: 0
+10. Vector: 0
+11. lokey: 0
+12. LeFloor: 0
+13. ryptyde: 0
+14. Tandumm: 0
+15. o3zone: 0
+16. mulligan: 0
+17. trubadoor: 0
+
+--- SOLO FINISHED TOP 10 ---
+1. romKulus: 27
+2. AK33: 22
+3. can_nun: 19
+4. keauxda: 15
+5. phlash: 8
+6. mcfly: 4
+7. o3zone: 4
+8. saitama: 4
+9. ghirradeil: 1
+10. sideKwinder: 1
+11. Vector: 0
+12. lokey: 0
+13. LeFloor: 0
+14. ryptyde: 0
+15. Tandumm: 0
+16. mulligan: 0
+17. trubadoor: 0

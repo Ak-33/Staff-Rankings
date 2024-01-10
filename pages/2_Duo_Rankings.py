@@ -158,9 +158,9 @@ with open(lokeyduo, 'r') as file:
         if "wins" in field: 
             lokeyduowins = field.split(':')[1].strip()
         if 'totalk' in field:
-            lokeyuokills = field.split(':')[1].strip()
+            lokeyduokills = field.split(':')[1].strip()
         if "top5" in field:
-            lokeyuotop5 = field.split(':')[1].strip()        
+            lokeyduotop5 = field.split(':')[1].strip()        
 
 #LeFloor-----------------------------------------------------------------------------
 
@@ -176,9 +176,9 @@ with open(LeFloorduo, 'r') as file:
         if "wins" in field: 
             LeFloorduowins = field.split(':')[1].strip()
         if 'totalk' in field:
-            LeFlooruokills = field.split(':')[1].strip()
+            LeFloorduokills = field.split(':')[1].strip()
         if "top5" in field:
-            LeFlooruotop5 = field.split(':')[1].strip()        
+            LeFloorduotop5 = field.split(':')[1].strip()        
       
 
 #ghirradeil-----------------------------------------------------------------------------

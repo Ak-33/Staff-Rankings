@@ -1,2 +1,18 @@
----  KD ---
-1. can_nun: 3576
+--- KD ---
+1. LeFloor: 9.28
+2. mcfly: 7.37
+3. AK33: 5.24
+4. lokey: 4.58
+5. Vector: 4.07
+6. romKulus: 3.69
+7. Can nun: 3.58
+8. saitama: 3.44
+9. Tandumm: 3.31
+10. trubadoor: 3.28
+11. sideKwinder: 3.27
+12. ghirradeil: 3.24
+13. o3zone: 3.15
+14. keauxda: 2.73
+15. mulligan: 2.23
+16. phlash: 2.08
+17. ryptyde: 0.77

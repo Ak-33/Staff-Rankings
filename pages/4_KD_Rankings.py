@@ -337,9 +337,10 @@ can_nunkd = float(can_nunkd)
 def standardize_number(num):
     str_num = str(num)
     if '.' in str_num and len(str_num) == 4:  # Check for 3-digit numbers with a single decimal place
-        return round(num / 100, 2)  # Divide by 100 to get the desired result
+        return round(num / 10, 2)  # Divide by 10 instead of 100
     else:
         return round(num / 10**(len(str_num) - 3), 2)
+
 
 
 standardized_AK33kd = standardize_number(AK33kd)
@@ -469,4 +470,5 @@ with open(kd_data, "r") as file:
 
 st.set_page_config(page_title='K/D Rankings', layout= "centered")
 st.title ('K/D Rankings')
+st.caption("Included data: Solos, Duos, Trios, Squads and LTM(s) BR modes")
 st.write(kd_data_content)   

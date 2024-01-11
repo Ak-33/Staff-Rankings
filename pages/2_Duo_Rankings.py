@@ -7,86 +7,115 @@ AK33file ='pages/pixsol/AK33_stats.txt'
 AK33solo='pages/pixsol/AK33-solo.txt'
 AK33duo='pages/pixsol/AK33-duo.txt'
 AK33squad='pages/pixsol/AK33-squad.txt'
+AK33all='pages/pixsol/AK33-all.txt'
         #vector----------------
 vectorfile ='pages/vector/vector_stats.txt'
 vectorsolo='pages/vector/vector-solo.txt'
 vectorduo='pages/vector/vector-duo.txt'
 vectorsquad='pages/vector/vector-squad.txt'
+vectorall='pages/vector/vector-all.txt'
         #lo-key----------------
 lokeyfile ='pages/lokey/lokey_stats.txt'
 lokeysolo='pages/lokey/lokey-solo.txt'
 lokeyduo='pages/lokey/lokey-duo.txt'
 lokeysquad='pages/lokey/lokey-squad.txt'
+lokeyall='pages/lokey/lokey-all.txt'
         #LeFloor---------------
 LeFloorfile ='pages/LeFloor/LeFloor_stats.txt'
 LeFloorsolo='pages/LeFloor/LeFloor-solo.txt'
 LeFloorduo='pages/LeFloor/LeFloor-duo.txt'
 LeFloorsquad='pages/LeFloor/LeFloor-squad.txt'
+LeFloorall='pages/LeFloor/LeFloor-all.txt'
+
         #ghirradeil----------------
 ghirradeilfile ='pages/ghirradeil/ghirradeil_stats.txt'
 ghirradeilsolo='pages/ghirradeil/ghirradeil-solo.txt'
 ghirradeilduo='pages/ghirradeil/ghirradeil-duo.txt'
 ghirradeilsquad='pages/ghirradeil/ghirradeil-squad.txt'
+ghirradeilall='pages/ghirradeil/ghirradeil-all.txt'
+
         #phlash----------------
 phlashfile ='pages/phlash/phlash.txt'
 phlashsolo='pages/phlash/phlash-solo.txt'
 phlashduo='pages/phlash/phlash-duo.txt'
 phlashsquad='pages/phlash/phlash-squad.txt'
+phlashall='pages/phlash/phlash-all.txt'
+
     #ryptyde----------------
 ryptydefile ='pages/ryptyde/ryptyde_stats.txt'
 ryptydesolo='pages/ryptyde/ryptyde-solo.txt'
 ryptydeduo='pages/ryptyde/ryptyde-duo.txt'
 ryptydesquad='pages/ryptyde/ryptyde-squad.txt'
+ryptydeall='pages/ryptyde/ryptyde-all.txt'
+
     #sideKwinder----------------
 sideKwinderfile ='pages/sideKwinder/sideKwinder_stats.txt'
 sideKwindersolo='pages/sideKwinder/sideKwinder-solo.txt'
 sideKwinderduo='pages/sideKwinder/sideKwinder-duo.txt'
 sideKwindersquad='pages/sideKwinder/sideKwinder-squad.txt'
+sideKwinderall='pages/sideKwinder/sideKwinder-all.txt'
+
     #Tandumm----------------
 Tandummfile ='pages/Tandumm/Tandumm_stats.txt'
 Tandummsolo='pages/Tandumm/Tandumm-solo.txt'
 Tandummduo='pages/Tandumm/Tandumm-duo.txt'
 Tandummsquad='pages/Tandumm/Tandumm-squad.txt'
+Tandummall='pages/Tandumm/Tandumm-all.txt'
+
     #o3zone----------------
 o3zonefile ='pages/o3zone/o3zone_stats.txt'
 o3zonesolo='pages/o3zone/o3zone-solo.txt'
 o3zoneduo='pages/o3zone/o3zone-duo.txt'
 o3zonesquad='pages/o3zone/o3zone-squad.txt'
+o3zoneall='pages/o3zone/o3zone-all.txt'
+
     #keauxda----------------
 keauxdafile ='pages/keauxda/keauxda_stats.txt'
 keauxdasolo='pages/keauxda/keauxda-solo.txt'
 keauxdaduo='pages/keauxda/keauxda-duo.txt'
 keauxdasquad='pages/keauxda/keauxda-squad.txt'
+keauxdaall='pages/keauxda/keauxda-all.txt'
+
     #mulligan----------------
 mulliganfile ='pages/mulligan/mulligan_stats.txt'
 mulligansolo='pages/mulligan/mulligan-solo.txt'
 mulliganduo='pages/mulligan/mulligan-duo.txt'
 mulligansquad='pages/mulligan/mulligan-squad.txt'
+mulliganall='pages/mulligan/mulligan-all.txt'
+
     #mcfly----------------
 mcflyfile ='pages/mcfly/mcfly_stats.txt'
 mcflysolo='pages/mcfly/mcfly-solo.txt'
 mcflyduo='pages/mcfly/mcfly-duo.txt'
 mcflysquad='pages/mcfly/mcfly-squad.txt'
+mcflyall='pages/mcfly/mcfly-all.txt'
+
     #saitama----------------
 saitamafile ='pages/saitama/saitama_stats.txt'
 saitamasolo='pages/saitama/saitama-solo.txt'
 saitamaduo='pages/saitama/saitama-duo.txt'
 saitamasquad='pages/saitama/saitama-squad.txt'
+saitamaall='pages/saitama/saitama-all.txt'
+
     #trubadoor----------------
 trubadoorfile ='pages/trubadoor/trubadoor_stats.txt'
 trubadoorsolo='pages/trubadoor/trubadoor-solo.txt'
 trubadoorduo='pages/trubadoor/trubadoor-duo.txt'
 trubadoorsquad='pages/trubadoor/trubadoor-squad.txt'
+trubadoorall='pages/trubadoor/trubadoor-all.txt'
+
     #romKulus----------------
 romKulusfile ='pages/romKulus/romKulus_stats.txt'
 romKulussolo='pages/romKulus/romKulus-solo.txt'
 romKulusduo='pages/romKulus/romKulus-duo.txt'
 romKulussquad='pages/romKulus/romKulus-squad.txt'
+romKulusall='pages/romKulus/romKulus-all.txt'
     #can_nun----------------
 can_nunfile ='pages/can_nun/can_nun_stats.txt'
 can_nunsolo='pages/can_nun/can_nun-solo.txt'
 can_nunduo='pages/can_nun/can_nun-duo.txt'
 can_nunsquad='pages/can_nun/can_nun-squad.txt'
+can_nunall='pages/can_nun/can_nun-all.txt'
 
 
 
@@ -503,6 +532,7 @@ with open(Duo_data, "r") as file:
 
 st.set_page_config(page_title='Duo Rankings', layout= "centered")
 st.title ('Duo Rankings')
+st.caption("Includes data from the duo BR mode")
 st.write(Duo_data_content)   
 
 

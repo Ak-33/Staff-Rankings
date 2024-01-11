@@ -527,6 +527,7 @@ with open(Solo_data, "r") as file:
 
 st.set_page_config(page_title='Solo Rankings', layout= "centered")
 st.title ('Solo Rankings')
+st.caption("Includes data from the solo BR mode")
 st.write(Solo_data_content)   
 
 

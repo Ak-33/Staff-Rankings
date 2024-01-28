@@ -28,92 +28,121 @@ trubadoor_name ='Trub8door'
 romKulus_name ='Cr1spyNugg3t'
 can_nun_name ='can-nun'
 
-  #files_names
+    #files_names
         #Pixsol----------------
 AK33file ='pages/pixsol/AK33_stats.txt'
 AK33solo='pages/pixsol/AK33-solo.txt'
 AK33duo='pages/pixsol/AK33-duo.txt'
 AK33squad='pages/pixsol/AK33-squad.txt'
+AK33all='pages/pixsol/AK33-all.txt'
         #vector----------------
 vectorfile ='pages/vector/vector_stats.txt'
 vectorsolo='pages/vector/vector-solo.txt'
 vectorduo='pages/vector/vector-duo.txt'
 vectorsquad='pages/vector/vector-squad.txt'
+vectorall='pages/vector/vector-all.txt'
         #lo-key----------------
 lokeyfile ='pages/lokey/lokey_stats.txt'
 lokeysolo='pages/lokey/lokey-solo.txt'
 lokeyduo='pages/lokey/lokey-duo.txt'
 lokeysquad='pages/lokey/lokey-squad.txt'
+lokeyall='pages/lokey/lokey-all.txt'
         #LeFloor---------------
 LeFloorfile ='pages/LeFloor/LeFloor_stats.txt'
 LeFloorsolo='pages/LeFloor/LeFloor-solo.txt'
 LeFloorduo='pages/LeFloor/LeFloor-duo.txt'
 LeFloorsquad='pages/LeFloor/LeFloor-squad.txt'
+LeFloorall='pages/LeFloor/LeFloor-all.txt'
+
         #ghirradeil----------------
 ghirradeilfile ='pages/ghirradeil/ghirradeil_stats.txt'
 ghirradeilsolo='pages/ghirradeil/ghirradeil-solo.txt'
 ghirradeilduo='pages/ghirradeil/ghirradeil-duo.txt'
 ghirradeilsquad='pages/ghirradeil/ghirradeil-squad.txt'
+ghirradeilall='pages/ghirradeil/ghirradeil-all.txt'
+
         #phlash----------------
 phlashfile ='pages/phlash/phlash.txt'
 phlashsolo='pages/phlash/phlash-solo.txt'
 phlashduo='pages/phlash/phlash-duo.txt'
 phlashsquad='pages/phlash/phlash-squad.txt'
+phlashall='pages/phlash/phlash-all.txt'
+
     #ryptyde----------------
 ryptydefile ='pages/ryptyde/ryptyde_stats.txt'
 ryptydesolo='pages/ryptyde/ryptyde-solo.txt'
 ryptydeduo='pages/ryptyde/ryptyde-duo.txt'
 ryptydesquad='pages/ryptyde/ryptyde-squad.txt'
+ryptydeall='pages/ryptyde/ryptyde-all.txt'
+
     #sideKwinder----------------
 sideKwinderfile ='pages/sideKwinder/sideKwinder_stats.txt'
 sideKwindersolo='pages/sideKwinder/sideKwinder-solo.txt'
 sideKwinderduo='pages/sideKwinder/sideKwinder-duo.txt'
 sideKwindersquad='pages/sideKwinder/sideKwinder-squad.txt'
+sideKwinderall='pages/sideKwinder/sideKwinder-all.txt'
+
     #Tandumm----------------
 Tandummfile ='pages/Tandumm/Tandumm_stats.txt'
 Tandummsolo='pages/Tandumm/Tandumm-solo.txt'
 Tandummduo='pages/Tandumm/Tandumm-duo.txt'
 Tandummsquad='pages/Tandumm/Tandumm-squad.txt'
+Tandummall='pages/Tandumm/Tandumm-all.txt'
+
     #o3zone----------------
 o3zonefile ='pages/o3zone/o3zone_stats.txt'
 o3zonesolo='pages/o3zone/o3zone-solo.txt'
 o3zoneduo='pages/o3zone/o3zone-duo.txt'
 o3zonesquad='pages/o3zone/o3zone-squad.txt'
+o3zoneall='pages/o3zone/o3zone-all.txt'
+
     #keauxda----------------
 keauxdafile ='pages/keauxda/keauxda_stats.txt'
 keauxdasolo='pages/keauxda/keauxda-solo.txt'
 keauxdaduo='pages/keauxda/keauxda-duo.txt'
 keauxdasquad='pages/keauxda/keauxda-squad.txt'
+keauxdaall='pages/keauxda/keauxda-all.txt'
+
     #mulligan----------------
 mulliganfile ='pages/mulligan/mulligan_stats.txt'
 mulligansolo='pages/mulligan/mulligan-solo.txt'
 mulliganduo='pages/mulligan/mulligan-duo.txt'
 mulligansquad='pages/mulligan/mulligan-squad.txt'
+mulliganall='pages/mulligan/mulligan-all.txt'
+
     #mcfly----------------
 mcflyfile ='pages/mcfly/mcfly_stats.txt'
 mcflysolo='pages/mcfly/mcfly-solo.txt'
 mcflyduo='pages/mcfly/mcfly-duo.txt'
 mcflysquad='pages/mcfly/mcfly-squad.txt'
+mcflyall='pages/mcfly/mcfly-all.txt'
+
     #saitama----------------
 saitamafile ='pages/saitama/saitama_stats.txt'
 saitamasolo='pages/saitama/saitama-solo.txt'
 saitamaduo='pages/saitama/saitama-duo.txt'
 saitamasquad='pages/saitama/saitama-squad.txt'
+saitamaall='pages/saitama/saitama-all.txt'
+
     #trubadoor----------------
 trubadoorfile ='pages/trubadoor/trubadoor_stats.txt'
 trubadoorsolo='pages/trubadoor/trubadoor-solo.txt'
 trubadoorduo='pages/trubadoor/trubadoor-duo.txt'
 trubadoorsquad='pages/trubadoor/trubadoor-squad.txt'
+trubadoorall='pages/trubadoor/trubadoor-all.txt'
+
     #romKulus----------------
 romKulusfile ='pages/romKulus/romKulus_stats.txt'
 romKulussolo='pages/romKulus/romKulus-solo.txt'
 romKulusduo='pages/romKulus/romKulus-duo.txt'
 romKulussquad='pages/romKulus/romKulus-squad.txt'
+romKulusall='pages/romKulus/romKulus-all.txt'
     #can_nun----------------
 can_nunfile ='pages/can_nun/can_nun_stats.txt'
 can_nunsolo='pages/can_nun/can_nun-solo.txt'
 can_nunduo='pages/can_nun/can_nun-duo.txt'
 can_nunsquad='pages/can_nun/can_nun-squad.txt'
+can_nunall='pages/can_nun/can_nun-all.txt'
 
 st.set_page_config(
     page_title="McCall Staff Rankings",
@@ -132,7 +161,6 @@ with st.spinner("# Please wait - Do not select a category until done"):
     st.write("""After wainting on this initial loading screen all data will be loaded. Do not retern to the "Home Page" unless you want to refreash the data.""")
     st.write("This is a python script I wrote so me and my staff brothers can compare one another in fortnite. If you want to learn more about Camp McCall vist this [link](%s)." % url, """Also, the maker for this site (Pixsol) has a personal Webpage called "[PixsolsProps](%s)" feel free give it a visit""" % Purl)
     st.caption (""""McCall Staff Rankings" is not endorsed nor partnered with, Camp McCall or the SCBC in any offical capacity""")
-
 
 
     #Pixsol---------------------------------------------------------------------------
@@ -167,6 +195,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -189,9 +218,11 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
+        
 
         with open('pages/pixsol/Ak33-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -201,6 +232,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/pixsol/AK33-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/pixsol/AK33-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())
     else:
         print("Sections not found in the expected format.")
 
@@ -237,6 +271,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "duo": "==DUO",
         "squad": "==SQUAD",
         "ltm": "==LTM",
+        "overall": "==ALL",
         "battlePass:": "",
         "kills:": "totalk:"
     }
@@ -258,9 +293,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/mcfly/mcfly-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -270,6 +306,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/mcfly/mcfly-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/mcfly/mcfly-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -306,6 +345,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "duo": "==DUO",
         "squad": "==SQUAD",
         "ltm": "==LTM",
+        "overall": "==ALL",
         "battlePass:": "",
         "kills:": "totalk:"
     }
@@ -325,9 +365,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/vector/vector-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -337,6 +378,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/vector/vector-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/vector/vector-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
 
@@ -372,6 +416,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -393,9 +438,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/lokey/lokey-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -405,6 +451,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/lokey/lokey-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/lokey/lokey-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -440,6 +489,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -461,9 +511,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/LeFloor/LeFloor-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -473,6 +524,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/LeFloor/LeFloor-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/LeFloor/LeFloor-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -508,6 +562,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -529,9 +584,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/ghirradeil/ghirradeil-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -541,6 +597,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/ghirradeil/ghirradeil-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/ghirradeil/ghirradeil-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -575,6 +634,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         replacements = {
         "solo": "==SOLO",
         "duo": "==DUO",
+        "overall": "==ALL",
         "squad": "==SQUAD",
         "ltm": "==LTM",
         "battlePass:": "",
@@ -598,9 +658,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/phlash/phlash-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -610,6 +671,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/phlash/phlash-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/phlash/phlash-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -645,6 +709,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -667,9 +732,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/ryptyde/ryptyde-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -679,6 +745,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/ryptyde/ryptyde-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/ryptyde/ryptyde-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -714,6 +783,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -736,9 +806,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/sideKwinder/sideKwinder-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -748,6 +819,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/sideKwinder/sideKwinder-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/sideKwinder/sideKwinder-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
 
@@ -783,6 +857,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -805,9 +880,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/Tandumm/Tandumm-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -817,6 +893,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/Tandumm/Tandumm-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/Tandumm/Tandumm-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -852,6 +931,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -874,9 +954,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/o3zone/o3zone-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -886,6 +967,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/o3zone/o3zone-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/o3zone/o3zone-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -921,6 +1005,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -943,9 +1028,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/keauxda/keauxda-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -955,6 +1041,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/keauxda/keauxda-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/keauxda/keauxda-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -990,6 +1079,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -1012,9 +1102,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/mulligan/mulligan-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -1024,6 +1115,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/mulligan/mulligan-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/mulligan/mulligan-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
 
@@ -1059,6 +1153,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -1081,9 +1176,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/saitama/saitama-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -1093,6 +1189,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/saitama/saitama-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/saitama/saitama-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -1129,6 +1228,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "duo": "==DUO",
         "squad": "==SQUAD",
         "ltm": "==LTM",
+        "overall": "==ALL",
         "battlePass:": "",
         "kills:": "totalk:"
     }
@@ -1150,9 +1250,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/trubadoor/trubadoor-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -1162,6 +1263,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/trubadoor/trubadoor-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/trubadoor/trubadoor-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -1197,6 +1301,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "solo": "==SOLO",
         "duo": "==DUO",
         "squad": "==SQUAD",
+        "overall": "==ALL",
         "ltm": "==LTM",
         "battlePass:": "",
         "kills:": "totalk:"
@@ -1219,9 +1324,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/romKulus/romKulus-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -1231,6 +1337,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/romKulus/romKulus-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/romKulus/romKulus-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
         
@@ -1267,6 +1376,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         "duo": "==DUO",
         "squad": "==SQUAD",
         "ltm": "==LTM",
+        "overall": "==ALL",
         "battlePass:": "",
         "kills:": "totalk:"
     }
@@ -1288,9 +1398,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
     sections = re.split(r'==\w+:', content)
 
     if len(sections) >= 4:
-        solo_section = "==SOLO:" + sections[1]
-        duo_section = "==DUO:" + sections[2]
-        squad_section = "==SQUAD:" + sections[3]
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
 
         with open('pages/can_nun/can_nun-solo.txt', 'w') as section1_file:
             section1_file.write(solo_section.strip())
@@ -1300,6 +1411,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
         
         with open('pages/can_nun/can_nun-squad.txt', 'w') as section3_file:
             section3_file.write(squad_section.strip())
+            
+        with open('pages/can_nun/can_nun-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")     
            

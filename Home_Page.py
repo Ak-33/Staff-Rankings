@@ -145,7 +145,7 @@ can_nunsquad='pages/can_nun/can_nun-squad.txt'
 can_nunall='pages/can_nun/can_nun-all.txt'
 
 st.set_page_config(
-    page_title="McCall Staff Rankings - V1.1.2",
+    page_title="McCall Staff Rankings - V1.2.0",
     page_icon="🔫",
     layout= "wide"
 )

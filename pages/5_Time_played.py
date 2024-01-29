@@ -522,7 +522,7 @@ with open(Time, "r") as file:
 
 st.set_page_config(page_title='Time Played', layout= "centered")
 st.title ('Time Played')
-st.caption("Time played in hours")
+st.caption("Time played in hours - BR modes")
 st.write(time_data_content)   
 
 

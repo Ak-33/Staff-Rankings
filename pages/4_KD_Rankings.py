@@ -314,52 +314,258 @@ with open(can_nunall, 'r') as file:
             can_nunkd = field.split(':')[1].strip()                 
 
 
-#K/D print stats-----------------------------------------------------------------------------------------
 
-AK33kd = float(AK33kd)
-mcflykd = float(mcflykd)
-vectorkd = float(vectorkd)
-lokeykd = float(lokeykd)
-LeFloorkd = float(LeFloorkd)
-ghirradeilkd = float(ghirradeilkd)
-phlashkd = float(phlashkd)
-ryptydekd = float(ryptydekd)
-sideKwinderkd = float(sideKwinderkd)
-Tandummkd = float(Tandummkd)
-o3zonekd = float(o3zonekd)
-keauxdakd = float(keauxdakd)
-mulligankd = float(mulligankd)
-saitamakd = float(saitamakd)
-trubadoorkd = float(trubadoorkd)
-romKuluskd = float(romKuluskd)
-can_nunkd = float(can_nunkd)
+#Changes all KD variables from strings to integers for calculations
+AK33kd = int(AK33kd)
+mcflykd = int(mcflykd)
+vectorkd = int(vectorkd)
+lokeykd = int(lokeykd)
+LeFloorkd = int(LeFloorkd)
+ghirradeilkd = int(ghirradeilkd)
+phlashkd = int(phlashkd)
+ryptydekd = int(ryptydekd)
+sideKwinderkd = int(sideKwinderkd)
+Tandummkd = int(Tandummkd)
+o3zonekd = int(o3zonekd)
+keauxdakd = int(keauxdakd)
+mulligankd = int(mulligankd)
+saitamakd = int(saitamakd)
+trubadoorkd = int(trubadoorkd)
+romKuluskd = int(romKuluskd)
+can_nunkd = int(can_nunkd)
 
-def standardize_number(num):
-    str_num = str(num)
-    if '.' in str_num and len(str_num) == 4:  # Check for 3-digit numbers with a single decimal place
-        return round(num / 10, 2)  # Divide by 10 instead of 100
-    else:
-        return round(num / 10**(len(str_num) - 3), 2)
+#Def to couint how many digits are in the kd stat
+def countDigits(n):
+   ans = 0
+   while (n):
+      ans = ans + 1
+      n = n // 10
+   return ans
+
+#sets the varibule count_Xkd. Counts the Xkd stat for every user 
+count_AK33kd = countDigits(AK33kd)
+count_mcflykd = countDigits(mcflykd)
+count_vectorkd = countDigits(vectorkd)
+count_lokeykd = countDigits(lokeykd)
+count_LeFloorkd = countDigits(LeFloorkd)
+count_ghirradeilkd = countDigits(ghirradeilkd)
+count_phlashkd = countDigits(phlashkd)
+count_ryptydekd = countDigits(ryptydekd)
+count_sideKwinderkd = countDigits(sideKwinderkd)
+count_Tandummkd = countDigits(Tandummkd)
+count_o3zonekd = countDigits(o3zonekd)
+count_keauxdakd = countDigits(keauxdakd)
+count_mulligankd = countDigits(mulligankd)
+count_saitamakd = countDigits(saitamakd)
+count_trubadoorkd = countDigits(trubadoorkd)
+count_romKuluskd = countDigits(romKuluskd)
+count_can_nunkd = countDigits(can_nunkd)
 
 
+#rounds all KD stats to 2 decimal places
+# Pixsol---------------------------------------------------------------------------   
+if count_AK33kd == 2:
+    AK33kd = AK33kd * 0.10
 
-standardized_AK33kd = standardize_number(AK33kd)
-standardized_mcflykd = standardize_number(mcflykd)
-standardized_vectorkd = standardize_number(vectorkd)
-standardized_lokeykd = standardize_number(lokeykd)
-standardized_LeFloorkd = standardize_number(LeFloorkd)
-standardized_ghirradeilkd = standardize_number(ghirradeilkd)
-standardized_phlashkd = standardize_number(phlashkd)
-standardized_ryptydekd = standardize_number(ryptydekd)
-standardized_sideKwinderkd = standardize_number(sideKwinderkd)
-standardized_Tandummkd = standardize_number(Tandummkd)
-standardized_o3zonekd = standardize_number(o3zonekd)
-standardized_keauxdakd = standardize_number(keauxdakd)
-standardized_mulligankd = standardize_number(mulligankd)
-standardized_saitamakd = standardize_number(saitamakd)
-standardized_trubadoorkd = standardize_number(trubadoorkd)
-standardized_romKuluskd = standardize_number(romKuluskd)
-standardized_can_nunkd = standardize_number(can_nunkd)
+elif count_AK33kd == 3:
+    AK33kd = AK33kd * 0.01
+
+elif count_AK33kd == 4 or 5:
+    AK33kd = AK33kd * 0.001
+  
+standardized_AK33kd = ("{:.2f}".format(AK33kd))
+
+# mcflykd---------------------------------------------------------------------------   
+if count_mcflykd == 2:
+    mcflykd = mcflykd * 0.10
+
+elif count_mcflykd == 3:
+    mcflykd = mcflykd * 0.01
+
+elif count_mcflykd == 4 or 5:
+    mcflykd = mcflykd * 0.001
+  
+standardized_mcflykd = ("{:.2f}".format(mcflykd))
+
+# NULL---------------------------------------------------------------------------   
+if count_vectorkd == 2:
+    NULL_ = vectorkd * 0.10
+
+elif count_vectorkd == 3:
+    vectorkd = vectorkd * 0.01
+
+elif count_vectorkd == 4 or 5:
+    vectorkd = vectorkd * 0.001
+  
+standardized_vectorkd = ("{:.2f}".format(vectorkd))
+
+# lokeykd---------------------------------------------------------------------------   
+if count_lokeykd == 2:
+    lokeykd = lokeykd * 0.10
+
+elif count_lokeykd == 3:
+    lokeykd = lokeykd * 0.01
+
+elif count_lokeykd == 4 or 5:
+    lokeykd = lokeykd * 0.001
+  
+standardized_lokeykd = ("{:.2f}".format(lokeykd))
+
+# LeFloorkd---------------------------------------------------------------------------   
+if count_LeFloorkd == 2:
+    LeFloorkd = LeFloorkd * 0.10
+
+elif count_LeFloorkd == 3:
+    LeFloorkd = LeFloorkd * 0.01
+
+elif count_LeFloorkd == 4 or 5:
+    LeFloorkd = LeFloorkd * 0.001
+  
+standardized_LeFloorkd = ("{:.2f}".format(LeFloorkd))
+
+# ghirradeilkd---------------------------------------------------------------------------   
+if count_ghirradeilkd == 2:
+    ghirradeilkd = ghirradeilkd * 0.10
+
+elif count_ghirradeilkd == 3:
+    ghirradeilkd = ghirradeilkd * 0.01
+
+elif count_ghirradeilkd == 4 or 5:
+    ghirradeilkd = ghirradeilkd * 0.001
+  
+standardized_ghirradeilkd = ("{:.2f}".format(ghirradeilkd))
+
+# phlashkd ---------------------------------------------------------------------------   
+if count_phlashkd == 2:
+    phlashkd  = phlashkd  * 0.10
+
+elif count_phlashkd == 3:
+    phlashkd  = phlashkd  * 0.01
+
+elif count_phlashkd == 4 or 5:
+    phlashkd  = phlashkd  * 0.001
+  
+standardized_phlashkd  = ("{:.2f}".format(phlashkd ))
+
+# ryptydekd---------------------------------------------------------------------------   
+if count_ryptydekd  == 2:
+    ryptydekd = ryptydekd * 0.10
+
+elif count_ryptydekd  == 3:
+    ryptydekd = ryptydekd * 0.01
+
+elif count_ryptydekd  == 4 or 5:
+    ryptydekd = ryptydekd * 0.001
+  
+standardized_ryptydekd = ("{:.2f}".format(ryptydekd))
+
+# sideKwinderkd---------------------------------------------------------------------------   
+if count_sideKwinderkd == 2:
+    sideKwinderkd = sideKwinderkd * 0.10
+
+elif count_sideKwinderkd == 3:
+    sideKwinderkd = sideKwinderkd * 0.01
+
+elif count_sideKwinderkd == 4 or 5:
+    sideKwinderkd = sideKwinderkd * 0.001
+  
+standardized_sideKwinderkd = ("{:.2f}".format(sideKwinderkd))
+
+# Tandummkd---------------------------------------------------------------------------   
+if count_Tandummkd == 2:
+    Tandummkd = Tandummkd * 0.10
+
+elif count_Tandummkd == 3:
+    Tandummkd = Tandummkd * 0.01
+
+elif count_Tandummkd == 4 or 5:
+    Tandummkd = Tandummkd * 0.001
+  
+standardized_Tandummkd = ("{:.2f}".format(Tandummkd))
+
+# o3zonekd---------------------------------------------------------------------------   
+if count_o3zonekd == 2:
+    o3zonekd = o3zonekd * 0.10
+
+elif count_o3zonekd == 3:
+    o3zonekd = o3zonekd * 0.01
+
+elif count_o3zonekd == 4 or 5:
+    o3zonekd = o3zonekd * 0.001
+  
+standardized_o3zonekd = ("{:.2f}".format(o3zonekd))
+
+# keauxdakd---------------------------------------------------------------------------   
+if count_keauxdakd == 2:
+    keauxdakd = keauxdakd * 0.10
+
+elif count_keauxdakd == 3:
+    keauxdakd = keauxdakd * 0.01
+
+elif count_keauxdakd == 4 or 5:
+    keauxdakd = keauxdakd * 0.001
+  
+standardized_keauxdakd = ("{:.2f}".format(keauxdakd))
+
+# mulligankd---------------------------------------------------------------------------   
+if count_mulligankd == 2:
+    mulligankd = mulligankd * 0.10
+
+elif count_mulligankd == 3:
+    mulligankd = mulligankd * 0.01
+
+elif count_mulligankd == 4 or 5:
+    mulligankd = mulligankd * 0.001
+  
+standardized_mulligankd = ("{:.2f}".format(mulligankd))
+
+# saitamakd---------------------------------------------------------------------------   
+if count_saitamakd == 2:
+    saitamakd = saitamakd * 0.10
+
+elif count_saitamakd == 3:
+    saitamakd = saitamakd * 0.01
+
+elif count_saitamakd == 4 or 5:
+    saitamakd = saitamakd * 0.001
+  
+standardized_saitamakd = ("{:.2f}".format(saitamakd))
+
+# NULL---------------------------------------------------------------------------   
+if count_trubadoorkd == 2:
+    trubadoorkd = trubadoorkd * 0.10
+
+elif count_trubadoorkd == 3:
+    trubadoorkd = trubadoorkd * 0.01
+
+elif count_trubadoorkd == 4 or 5:
+    trubadoorkd = trubadoorkd * 0.001
+  
+standardized_trubadoorkd = ("{:.2f}".format(trubadoorkd))
+
+# romKuluskd---------------------------------------------------------------------------   
+if count_romKuluskd == 2:
+    romKuluskd = romKuluskd * 0.10
+
+elif count_romKuluskd == 3:
+    romKuluskd = romKuluskd * 0.01
+
+elif count_romKuluskd == 4 or 5:
+    romKuluskd = romKuluskd * 0.001
+  
+standardized_romKuluskd = ("{:.2f}".format(romKuluskd))
+
+# can_nunkd---------------------------------------------------------------------------   
+if count_can_nunkd == 2:
+    can_nunkd = can_nunkd * 0.10
+
+elif count_can_nunkd == 3:
+    can_nunkd = can_nunkd * 0.01
+
+elif count_can_nunkd == 4 or 5:
+    can_nunkd = can_nunkd * 0.001
+  
+standardized_can_nunkd = ("{:.2f}".format(can_nunkd))
 
 
 
@@ -440,9 +646,9 @@ player_stats = {
    }
 
 
-# Define ranking function for kills in each category
+# Define ranking function for ranking in each category
 def rank_players_by_category(category):
-    category_stats = [(player, stats[category]) for player, stats in player_stats.items()]
+    category_stats = [(player, float(stats[category])) for player, stats in player_stats.items()] #different from other pages- this turns everything to a float
     sorted_stats = sorted(category_stats, key=lambda x: x[1], reverse=True)
     return sorted_stats
 
@@ -456,10 +662,10 @@ for category in categories:
     rankings = rank_players_by_category(category)
     category_rankings = f"--- {category.upper()} ---\n"
     for idx, (player, stat) in enumerate(rankings, start=1):
-        category_rankings += f"{idx}. {player}: {stat}\n"
+        category_rankings += f"{idx}. {player}: {stat:.2f}\n" #different from other pages- Keep a "0" after one deccmial palce example 1.1 shows up at 1.0
     rankings_data[category] = category_rankings
     print_kd_rankings.append(category_rankings)
- 
+
 with open(kd_data, 'w') as f:
      f.write('\n'.join(print_kd_rankings))
 

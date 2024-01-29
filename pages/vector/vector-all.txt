@@ -1,1 +1,0 @@
-==OVERALL score: 16533, scorePerMin: 30961, scorePerMatch: 413325, wins: 12, top3: 18, top6: 24, totalk: 114, killsPerMin: 0213, killsPerMatch: 285, deaths: 28, kd: 4071, matches: 40, winRate: 30, minutesPlayed: 534, playersOutlived: 2739, lastModified: 20240109T18:45:24Z,

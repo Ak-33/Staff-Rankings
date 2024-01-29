@@ -1,0 +1,56 @@
+--- SQUAD KILLS ---
+1. LeFloor: 1078
+2. ryptyde: 653
+3. mcfly: 635
+4. saitama: 620
+5. romKulus: 424
+6. trubadoor: 374
+7. AK33: 334
+8. lokey: 326
+9. Tandumm: 275
+10. Vector: 231
+11. can_nun: 171
+12. keauxda: 165
+13. o3zone: 159
+14. ghirradeil: 120
+15. sideKwinder: 120
+16. phlash: 39
+17. mulligan: 29
+
+--- SQUAD WINS ---
+1. LeFloor: 55
+2. saitama: 43
+3. ryptyde: 42
+4. mcfly: 29
+5. Tandumm: 28
+6. AK33: 26
+7. Vector: 25
+8. lokey: 23
+9. can_nun: 19
+10. keauxda: 18
+11. romKulus: 17
+12. o3zone: 16
+13. trubadoor: 15
+14. phlash: 9
+15. sideKwinder: 9
+16. ghirradeil: 6
+17. mulligan: 0
+
+--- SQUAD FINISHED TOP 3 ---
+1. LeFloor: 90
+2. saitama: 85
+3. ryptyde: 68
+4. mcfly: 57
+5. Tandumm: 53
+6. romKulus: 48
+7. AK33: 41
+8. Vector: 38
+9. lokey: 32
+10. trubadoor: 32
+11. keauxda: 30
+12. o3zone: 27
+13. can_nun: 25
+14. ghirradeil: 18
+15. sideKwinder: 18
+16. phlash: 16
+17. mulligan: 5

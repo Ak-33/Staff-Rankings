@@ -671,15 +671,14 @@ with open(kd_data, 'w') as f:
 
 with open(kd_data, "r") as file:
    kd_data_content = file.read()
-   
-print(print_kd_rankings)  
-   
+     
 
 #website - 
 
 st.set_page_config(page_title='K/D Rankings', layout= "centered")
 st.title ('K/D Rankings')
 st.caption("Included data: Solos, Duos, Trios, Squads and LTM(s) BR modes")
+st.write(print_kd_rankings)
 st.write(kd_data_content)   
 
 

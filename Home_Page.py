@@ -154,7 +154,7 @@ apollloall='pages/apolllo/apolllo-all.txt'
 
 
 st.set_page_config(
-    page_title="McCall Staff Rankings - V1.3.0",
+    page_title="McCall Staff Rankings - V1.3.1",
     page_icon="🔫",
     layout= "wide"
 )

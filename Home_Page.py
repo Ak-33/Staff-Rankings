@@ -27,6 +27,7 @@ saitama_name ='Kmoore123'
 trubadoor_name ='Trub8door'
 romKulus_name ='Cr1spyNugg3t'
 can_nun_name ='can-nun'
+apolllo_name = "Milwaukee Wiscon"
 
     #files_names
         #Pixsol----------------
@@ -143,6 +144,14 @@ can_nunsolo='pages/can_nun/can_nun-solo.txt'
 can_nunduo='pages/can_nun/can_nun-duo.txt'
 can_nunsquad='pages/can_nun/can_nun-squad.txt'
 can_nunall='pages/can_nun/can_nun-all.txt'
+    #apolllo----------------
+apolllofile ='pages/apolllo/apolllo_stats.txt'
+apolllosolo='pages/apolllo/apolllo-solo.txt'
+apollloduo='pages/apolllo/apolllo-duo.txt'
+apolllosquad='pages/apolllo/apolllo-squad.txt'
+apollloall='pages/apolllo/apolllo-all.txt'
+
+
 
 st.set_page_config(
     page_title="McCall Staff Rankings - V1.3.0",
@@ -1415,7 +1424,88 @@ with st.spinner("# Please wait - Do not select a category until done"):
         with open('pages/can_nun/can_nun-all.txt', 'w') as section4_file:
             section4_file.write(all_section.strip())  
     else:
-        print("Sections not found in the expected format.")     
+        print("Sections not found in the expected format.")  
+        
+
+#apolllo---------------------------------------------------------------------------
+player_stats = api.stats.fetch_by_name(name=apolllo_name, time_window=TimeWindow.SEASON)
+
+with open(apolllofile, 'w') as file:
+        
+        for attribute in dir(player_stats):
+            if not attribute.startswith('__'):  # Skip special attributes
+                value = getattr(player_stats, attribute)
+                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+print("apolllos's Data written successfully!------------")
+
+with open(apolllofile, 'r') as file:
+    content = file.read()
+
+#gets rid of unneeded punctuation
+with open(apolllofile, 'r') as f:
+    text = f.read()
+    words = text.split()
+    table = str.maketrans("", "", punctuation_to_remove)
+    stripped = [w.translate(table) for w in words]
+    assembled = " ".join(stripped)
+with open(apolllofile, 'w') as f:
+    f.write(assembled)
+
+    
+    #for splits changes solo duo and squad and battlepass level properly 
+with open(apolllofile, 'r') as f:
+    text = f.read()
+    replacements = {
+    "solo": "==SOLO",
+    "duo": "==DUO",
+    "squad": "==SQUAD",
+    "overall": "==ALL",
+    "ltm": "==LTM",
+    "battlePass:": "",
+    "kills:": "totalk:"
+}
+        
+def replace_words(text, replacements):
+    for old_word, new_word in replacements.items():
+        text = text.replace(old_word, new_word)
+    return text
+updated_text = replace_words(text, replacements)
+with open(apolllofile, 'w') as f:
+    f.write(updated_text)
+
+
+    #spits to sepret txt files
+with open(apolllofile, 'r') as original_file:
+    content = original_file.read()
+
+# Splitting content using regular expressions to find sections
+sections = re.split(r'==\w+:', content)
+
+if len(sections) >= 4:
+    all_section = "==ALL:" + sections[1]
+    solo_section = "==SOLO:" + sections[2]
+    duo_section = "==DUO:" + sections[3]
+    squad_section = "==SQUAD:" + sections[4]
+    
+
+    with open('pages/apolllo/apolllo-solo.txt', 'w') as section1_file:
+        section1_file.write(solo_section.strip())
+    
+    with open('pages/apolllo/apolllo-duo.txt', 'w') as section2_file:
+        section2_file.write(duo_section.strip())
+    
+    with open('pages/apolllo/apolllo-squad.txt', 'w') as section3_file:
+        section3_file.write(squad_section.strip())
+        
+    with open('pages/apolllo/apolllo-all.txt', 'w') as section4_file:
+        section4_file.write(all_section.strip())
+else:
+    print("Sections not found in the expected format.")
+        
+        
+        
+        
            
+ #end of users. Add more above ------------------------------------------------------------------------------------------------------          
 st.success('Thank you for waiting! You may now select a category! Only Retern to the "Home Page" if you want to refreash the data.')    
 

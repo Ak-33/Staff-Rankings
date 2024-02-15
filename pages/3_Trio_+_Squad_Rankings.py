@@ -4,90 +4,41 @@ Squad_data = 'pages\squad_data.txt'
 
  #files_names
         #Pixsol----------------
-AK33file ='pages/pixsol/AK33_stats.txt'
-AK33solo='pages/pixsol/AK33-solo.txt'
-AK33duo='pages/pixsol/AK33-duo.txt'
 AK33squad='pages/pixsol/AK33-squad.txt'
         #vector----------------
-vectorfile ='pages/vector/vector_stats.txt'
-vectorsolo='pages/vector/vector-solo.txt'
-vectorduo='pages/vector/vector-duo.txt'
 vectorsquad='pages/vector/vector-squad.txt'
         #lo-key----------------
-lokeyfile ='pages/lokey/lokey_stats.txt'
-lokeysolo='pages/lokey/lokey-solo.txt'
-lokeyduo='pages/lokey/lokey-duo.txt'
 lokeysquad='pages/lokey/lokey-squad.txt'
         #LeFloor---------------
-LeFloorfile ='pages/LeFloor/LeFloor_stats.txt'
-LeFloorsolo='pages/LeFloor/LeFloor-solo.txt'
-LeFloorduo='pages/LeFloor/LeFloor-duo.txt'
 LeFloorsquad='pages/LeFloor/LeFloor-squad.txt'
         #ghirradeil----------------
-ghirradeilfile ='pages/ghirradeil/ghirradeil_stats.txt'
-ghirradeilsolo='pages/ghirradeil/ghirradeil-solo.txt'
-ghirradeilduo='pages/ghirradeil/ghirradeil-duo.txt'
 ghirradeilsquad='pages/ghirradeil/ghirradeil-squad.txt'
         #phlash----------------
-phlashfile ='pages/phlash/phlash.txt'
-phlashsolo='pages/phlash/phlash-solo.txt'
-phlashduo='pages/phlash/phlash-duo.txt'
 phlashsquad='pages/phlash/phlash-squad.txt'
     #ryptyde----------------
-ryptydefile ='pages/ryptyde/ryptyde_stats.txt'
-ryptydesolo='pages/ryptyde/ryptyde-solo.txt'
-ryptydeduo='pages/ryptyde/ryptyde-duo.txt'
 ryptydesquad='pages/ryptyde/ryptyde-squad.txt'
     #sideKwinder----------------
-sideKwinderfile ='pages/sideKwinder/sideKwinder_stats.txt'
-sideKwindersolo='pages/sideKwinder/sideKwinder-solo.txt'
-sideKwinderduo='pages/sideKwinder/sideKwinder-duo.txt'
 sideKwindersquad='pages/sideKwinder/sideKwinder-squad.txt'
     #Tandumm----------------
-Tandummfile ='pages/Tandumm/Tandumm_stats.txt'
-Tandummsolo='pages/Tandumm/Tandumm-solo.txt'
-Tandummduo='pages/Tandumm/Tandumm-duo.txt'
 Tandummsquad='pages/Tandumm/Tandumm-squad.txt'
     #o3zone----------------
-o3zonefile ='pages/o3zone/o3zone_stats.txt'
-o3zonesolo='pages/o3zone/o3zone-solo.txt'
-o3zoneduo='pages/o3zone/o3zone-duo.txt'
 o3zonesquad='pages/o3zone/o3zone-squad.txt'
     #keauxda----------------
-keauxdafile ='pages/keauxda/keauxda_stats.txt'
-keauxdasolo='pages/keauxda/keauxda-solo.txt'
-keauxdaduo='pages/keauxda/keauxda-duo.txt'
 keauxdasquad='pages/keauxda/keauxda-squad.txt'
     #mulligan----------------
-mulliganfile ='pages/mulligan/mulligan_stats.txt'
-mulligansolo='pages/mulligan/mulligan-solo.txt'
-mulliganduo='pages/mulligan/mulligan-duo.txt'
 mulligansquad='pages/mulligan/mulligan-squad.txt'
     #mcfly----------------
-mcflyfile ='pages/mcfly/mcfly_stats.txt'
-mcflysolo='pages/mcfly/mcfly-solo.txt'
-mcflyduo='pages/mcfly/mcfly-duo.txt'
 mcflysquad='pages/mcfly/mcfly-squad.txt'
     #saitama----------------
-saitamafile ='pages/saitama/saitama_stats.txt'
-saitamasolo='pages/saitama/saitama-solo.txt'
-saitamaduo='pages/saitama/saitama-duo.txt'
 saitamasquad='pages/saitama/saitama-squad.txt'
     #trubadoor----------------
-trubadoorfile ='pages/trubadoor/trubadoor_stats.txt'
-trubadoorsolo='pages/trubadoor/trubadoor-solo.txt'
-trubadoorduo='pages/trubadoor/trubadoor-duo.txt'
 trubadoorsquad='pages/trubadoor/trubadoor-squad.txt'
     #romKulus----------------
-romKulusfile ='pages/romKulus/romKulus_stats.txt'
-romKulussolo='pages/romKulus/romKulus-solo.txt'
-romKulusduo='pages/romKulus/romKulus-duo.txt'
 romKulussquad='pages/romKulus/romKulus-squad.txt'
     #can_nun----------------
-can_nunfile ='pages/can_nun/can_nun_stats.txt'
-can_nunsolo='pages/can_nun/can_nun-solo.txt'
-can_nunduo='pages/can_nun/can_nun-duo.txt'
 can_nunsquad='pages/can_nun/can_nun-squad.txt'
+    #apolllo----------------
+apolllosquad='pages/apolllo/apolllo-squad.txt'
 
 #Pixsol---------------------------------------------------------------------------
 #squadssquads stats
@@ -394,13 +345,28 @@ with open(can_nunsquad, 'r') as file:
         if 'totalk' in field:
            can_nunsquadkills = field.split(':')[1].strip()
         if "top3" in field:
-            can_nunsquadtop3 = field.split(':')[1].strip()             
+            can_nunsquadtop3 = field.split(':')[1].strip()     
+            
+#apolllo---------------------------------------------------------------------------
+
+ #squads stats
+apolllosquadwins = 0
+apolllosquadkills = 0
+apolllosquadtop3 = 0
+with open(apolllosquad, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            apolllosquadwins = field.split(':')[1].strip()
+        if 'totalk' in field:
+           apolllosquadkills = field.split(':')[1].strip()
+        if "top3" in field:
+            apolllosquadtop3 = field.split(':')[1].strip()          
                                          
 
-
-
-
-#Squad print stats-----------------------------------------------------------------------------------------
+#Squad print stats and add more users above-----------------------------------------------------------------------------------------
 
 player_stats = {
     'AK33': {
@@ -473,6 +439,10 @@ player_stats = {
     },
     'can_nun': {
        'Squad kills': int(can_nunsquadkills), 'Squad Wins': int(can_nunsquadwins), 'Squad Finished top 3': int(can_nunsquadtop3)
+       },
+     
+     'apolllo': {
+       'Squad kills': int(apolllosquadkills), 'Squad Wins': int(apolllosquadwins), 'Squad Finished top 3': int(apolllosquadtop3)
        },
 
    }

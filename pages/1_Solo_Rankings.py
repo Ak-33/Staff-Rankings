@@ -39,6 +39,9 @@ romKulussolo='pages/romKulus/romKulus-solo.txt'
 can_nunsolo='pages/can_nun/can_nun-solo.txt'
     #apolllo----------------
 apolllosolo='pages/apolllo/apolllo-solo.txt'
+    #jaknkife----------------
+jaknkifesolo='pages/jaknkife/jaknkife-solo.txt'
+
 
 
 
@@ -387,8 +390,26 @@ with open(apolllosolo, 'r') as file:
         
         if "top10" in field:
             apolllosolotop10 = field.split(':')[1].strip()  
-           
 
+#jaknkife-----------------------------------------------------------------------------
+#solo stats
+jaknkifesolowins = 0
+jaknkifesolokills = 0
+jaknkifesolotop10 = 0
+with open(jaknkifesolo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+
+    for field in fields:
+        if "wins" in field: 
+            jaknkifesolowins = field.split(':')[1].strip()
+        
+        if 'totalk' in field:
+            jaknkifesolokills = field.split(':')[1].strip()
+        
+        if "top10" in field:
+            jaknkifesolotop10 = field.split(':')[1].strip()  
+           
 #Solo print stats and add more users above-----------------------------------------------------------------------------------------
 
 player_stats = {
@@ -469,6 +490,11 @@ player_stats = {
     'apolllo': {
         'Solo kills': int(apolllosolokills), 'Solo Wins': int(apolllosolowins), 'Solo Finished top 10': int(apolllosolotop10)
         },
+    
+    'jaknkife': {
+      'Solo kills': int(jaknkifesolokills), 'Solo Wins': int(jaknkifesolowins), 'Solo Finished top 10': int(jaknkifesolotop10)
+       },
+
    }
 
 

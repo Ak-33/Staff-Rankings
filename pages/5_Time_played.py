@@ -51,6 +51,8 @@ can_nunall='pages/can_nun/can_nun-all.txt'
     
     #null----------------
 apollloall='pages/apolllo/apolllo-all.txt'
+    #jaknkife----------------
+jaknkifeall='pages/jaknkife/jaknkife-all.txt'
 
 
 #Pixsol---------------------------------------------------------------------------    
@@ -257,6 +259,16 @@ with open(apollloall, 'r') as file:
         if 'minutesPlayed' in field:
             apolllotime = field.split(':')[1].strip()                           
 
+#jaknkife---------------------------------------------------------------------------   
+   #gets time
+jaknkifetime = 0
+with open(jaknkifeall, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'minutesPlayed' in field:
+            jaknkifetime = field.split(':')[1].strip()  
 
 
 #Changes all time variables from strings to integers for calculations
@@ -278,6 +290,7 @@ trubadoortime = int(trubadoortime)
 romKulustime = int(romKulustime)
 can_nuntime = int(can_nuntime)
 apolllotime = int(apolllotime)
+jaknkifetime = int(jaknkifetime)
 
 #divided by 60 for minutes to hours and rounds all time to 1 decimal 
 # Pixsol---------------------------------------------------------------------------   
@@ -361,6 +374,11 @@ standardized_can_nuntime = ("{:.1f}".format(can_nuntime))
 apolllotime = apolllotime /60
 standardized_apolllotime = ("{:.1f}".format(apolllotime))
 
+# jaknkifetime--------------------------------------------------------------------------- 
+jaknkifetime = jaknkifetime /60
+standardized_jaknkifetime = ("{:.1f}".format(jaknkifetime))
+
+
 
 
 player_stats = {
@@ -440,6 +458,10 @@ player_stats = {
     'apolllo': {
         'time':(standardized_apolllotime),
         },
+    
+    'jaknkife': {
+       'time':(standardized_jaknkifetime),
+       },
 
    }
 

@@ -38,6 +38,9 @@ romKulusduo='pages/romKulus/romKulus-duo.txt'
 can_nunduo='pages/can_nun/can_nun-duo.txt'
     #apolllo----------------
 apollloduo='pages/apolllo/apolllo-duo.txt'
+    #jaknkife----------------
+jaknkifeduo='pages/jaknkife/jaknkife-duo.txt'
+
 
 #Pixsol---------------------------------------------------------------------------
 #duo stats
@@ -357,7 +360,25 @@ with open(apollloduo, 'r') as file:
         if 'totalk' in field:
             apollloduokills = field.split(':')[1].strip()
         if "top5" in field:
-            apollloduotop5 = field.split(':')[1].strip()        
+            apollloduotop5 = field.split(':')[1].strip()
+            
+#jaknkife-----------------------------------------------------------------------------
+#duo stats
+jaknkifeduowins = 0
+jaknkifeduokills = 0
+jaknkifeduotop5 = 0
+with open(jaknkifeduo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            jaknkifeduowins = field.split(':')[1].strip()
+        if 'totalk' in field:
+            jaknkifeduokills = field.split(':')[1].strip()
+        if "top5" in field:
+            jaknkifeduotop5 = field.split(':')[1].strip()        
+         
    
 
 #Solo print stats and add more users above-----------------------------------------------------------------------------------------
@@ -439,6 +460,11 @@ player_stats = {
      
      'apolllo': {
         'Duo kills': int(apollloduokills), 'Duo Wins': int(apollloduowins), 'Duo Finished top 5': int(apollloduotop5)
+       },
+     
+     
+      'jaknkife': {
+        'Duo kills': int(jaknkifeduokills), 'Duo Wins': int(jaknkifeduowins), 'Duo Finished top 5': int(jaknkifeduotop5)
        },
 
    }

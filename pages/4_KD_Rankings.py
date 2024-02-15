@@ -38,6 +38,9 @@ romKulusall='pages/romKulus/romKulus-all.txt'
 can_nunall='pages/can_nun/can_nun-all.txt'
     #apolllo----------------
 apollloall='pages/apolllo/apolllo-all.txt'
+    #jaknkife----------------
+jaknkifeall='pages/jaknkife/jaknkife-all.txt'
+
 
 
 
@@ -243,7 +246,19 @@ with open(can_nunall, 'r') as file:
  
     for field in fields:
         if 'kd' in field:
-            can_nunkd = field.split(':')[1].strip()                      
+            can_nunkd = field.split(':')[1].strip()
+            
+#jaknkife---------------------------------------------------------------------------   
+   #gets kd
+jaknkifekd = 0
+with open(jaknkifeall, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'kd' in field:
+            jaknkifekd = field.split(':')[1].strip()    
+                           
 
 
 
@@ -266,6 +281,7 @@ trubadoorkd = int(trubadoorkd)
 romKuluskd = int(romKuluskd)
 apolllokd = int(apolllokd)            
 can_nunkd = int(can_nunkd)
+jaknkifekd = int(jaknkifekd)
 
 #Def to couint how many digits are in the kd stat
 def countDigits(n):
@@ -295,6 +311,7 @@ count_romKuluskd = countDigits(romKuluskd)
 count_can_nunkd = countDigits(can_nunkd)
 count_apolllokd = countDigits(apolllokd)
 count_can_nunkd = countDigits(can_nunkd)
+count_jaknkifekd = countDigits(jaknkifekd)
 
 
 
@@ -517,6 +534,19 @@ elif count_can_nunkd == 4 or 5:
 standardized_can_nun = ("{:.2f}".format(can_nun))
 
 
+# jaknkife---------------------------------------------------------------------------   
+if count_jaknkifekd == 2:
+    jaknkife = jaknkifekd * 0.10
+
+elif count_jaknkifekd == 3:
+    jaknkife = jaknkifekd * 0.01
+
+elif count_jaknkifekd == 4 or 5:
+    jaknkife = jaknkifekd * 0.001
+  
+standardized_jaknkife = ("{:.2f}".format(jaknkife))
+
+
 player_stats = {
     'AK33': {
        'KD':(standardized_AK33kd), 
@@ -594,6 +624,10 @@ player_stats = {
  
   'can_nun': {
        'KD':(standardized_can_nun),
+       },
+  
+  'jaknkife': {
+       'KD':(standardized_jaknkife),
        },
 
 

@@ -39,6 +39,9 @@ romKulussquad='pages/romKulus/romKulus-squad.txt'
 can_nunsquad='pages/can_nun/can_nun-squad.txt'
     #apolllo----------------
 apolllosquad='pages/apolllo/apolllo-squad.txt'
+    #jaknkife----------------
+jaknkifesquad='pages/jaknkife/jaknkife-squad.txt'
+
 
 #Pixsol---------------------------------------------------------------------------
 #squadssquads stats
@@ -363,7 +366,25 @@ with open(apolllosquad, 'r') as file:
         if 'totalk' in field:
            apolllosquadkills = field.split(':')[1].strip()
         if "top3" in field:
-            apolllosquadtop3 = field.split(':')[1].strip()          
+            apolllosquadtop3 = field.split(':')[1].strip()
+            
+#jaknkife---------------------------------------------------------------------------
+
+ #squads stats
+jaknkifesquadwins = 0
+jaknkifesquadkills = 0
+jaknkifesquadtop3 = 0
+with open(jaknkifesquad, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if "wins" in field: 
+            jaknkifesquadwins = field.split(':')[1].strip()
+        if 'totalk' in field:
+           jaknkifesquadkills = field.split(':')[1].strip()
+        if "top3" in field:
+            jaknkifesquadtop3 = field.split(':')[1].strip()            
                                          
 
 #Squad print stats and add more users above-----------------------------------------------------------------------------------------
@@ -443,6 +464,10 @@ player_stats = {
      
      'apolllo': {
        'Squad kills': int(apolllosquadkills), 'Squad Wins': int(apolllosquadwins), 'Squad Finished top 3': int(apolllosquadtop3)
+       },
+     
+      'jaknkife': {
+       'Squad kills': int(jaknkifesquadkills), 'Squad Wins': int(jaknkifesquadwins), 'Squad Finished top 3': int(jaknkifesquadtop3)
        },
 
    }

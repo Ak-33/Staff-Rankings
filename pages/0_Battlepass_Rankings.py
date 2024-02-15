@@ -39,6 +39,8 @@ romKulusfile ='pages/romKulus/romKulus_stats.txt'
 can_nunfile ='pages/can_nun/can_nun_stats.txt'
     #apolllo----------------
 apolllofile ='pages/apolllo/apolllo_stats.txt'
+  #jaknkife----------------
+jaknkifefile ='pages/jaknkife/jaknkife_stats.txt'
 
 
 #Pixsol---------------------------------------------------------------------------    
@@ -244,7 +246,19 @@ with open(apolllofile, 'r') as file:
  
     for field in fields:
         if 'level' in field:
-            apolllolevel = field.split(':')[1].strip()                              
+            apolllolevel = field.split(':')[1].strip() 
+            
+#jaknkife--------------------------------------------------------------------------- 
+   #gets BP level
+jaknkifelevel = 0
+with open(jaknkifefile, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'level' in field:
+            jaknkifelevel = field.split(':')[1].strip()  
+                                        
 
 
 #Solo print stats and add more users above-----------------------------------------------------------------------------------------
@@ -325,6 +339,10 @@ player_stats = {
     
     'apolllo': {
        'Battlepass level':int(apolllolevel),
+       },
+    
+    'jaknkife': {
+       'Battlepass level':int(jaknkifelevel),
        },
 
    }

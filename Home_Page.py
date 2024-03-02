@@ -162,7 +162,7 @@ jaknkifeall='pages/jaknkife/jaknkife-all.txt'
 
 
 st.set_page_config(
-    page_title="McCall Staff Rankings - V1.3.1",
+    page_title="McCall Staff Rankings - V:PEW PEW 22s DAD CLAPS",
     page_icon="🔫",
     layout= "wide"
 )

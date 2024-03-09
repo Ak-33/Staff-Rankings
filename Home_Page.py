@@ -179,7 +179,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
     st.write("This is a python script I wrote so me and my staff brothers can compare one another in fortnite. If you want to learn more about Camp McCall vist this [link](%s)." % url, """Also, the maker for this site (Pixsol) has a personal Webpage called "[PixsolsProps](%s)" feel free give it a visit""" % Purl)
     st.caption (""""McCall Staff Rankings" is not endorsed nor partnered with, Camp McCall or the SCBC in any offical capacity""")
 
-
+try:
     #Pixsol---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=Ak33_name, time_window=TimeWindow.SEASON)
 
@@ -254,7 +254,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())
     else:
         print("Sections not found in the expected format.")
-
+except:
+    print("no matches played")
+try:   
     #mcfly---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=mcfly_name, time_window=TimeWindow.SEASON,account_type=AccountType.PSN )
 
@@ -328,7 +330,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:        
     #vector-----------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=vector_name, time_window=TimeWindow.SEASON)
 
@@ -400,7 +404,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-
+except:
+    print('no matches played')
+try:
     #lokey-----------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=lokey_name, time_window=TimeWindow.SEASON)
 
@@ -473,7 +479,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:       
     #LeFloor-----------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=LeFloor_name, time_window=TimeWindow.SEASON)
 
@@ -544,9 +552,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             
         with open('pages/LeFloor/LeFloor-all.txt', 'w') as section4_file:
             section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:       
     #ghirradeil-----------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=ghirradeil_name, time_window=TimeWindow.SEASON)
 
@@ -619,7 +627,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:       
     #phlash---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=phlash_name, time_window=TimeWindow.SEASON)
 
@@ -693,7 +703,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:       
     #ryptyde---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=ryptyde_name, time_window=TimeWindow.SEASON)
 
@@ -767,7 +779,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:       
     #sideKwinder---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=sideKwinder_name, time_window=TimeWindow.SEASON)
 
@@ -841,7 +855,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-
+except:
+    print('no matches played')
+try:
     #Tandumm---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=Tandumm_name, time_window=TimeWindow.SEASON)
 
@@ -915,7 +931,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:        
     #o3zone---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=o3zone_name, time_window=TimeWindow.SEASON)
 
@@ -989,7 +1007,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:       
     #keauxda---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=keauxda_name, time_window=TimeWindow.SEASON)
 
@@ -1063,8 +1083,10 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
-    #mulligan---------------------------------------------------------------------------
+except:
+    print('no matches played')
+try:       
+   #mulligan---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=mulligan_name, time_window=TimeWindow.SEASON)
 
     with open(mulliganfile, 'w') as file:
@@ -1137,7 +1159,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-
+except:
+    print('no matches played')
+try:
     #saitama---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=saitama_name, time_window=TimeWindow.SEASON, account_type=AccountType.XBL)
 
@@ -1211,7 +1235,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:       
     #trubadoor---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=trubadoor_name, time_window=TimeWindow.SEASON, account_type=AccountType.XBL)
 
@@ -1285,7 +1311,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:       
     #romKulus---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=romKulus_name, time_window=TimeWindow.SEASON)
 
@@ -1359,7 +1387,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
             section4_file.write(all_section.strip())  
     else:
         print("Sections not found in the expected format.")
-        
+except:
+    print('no matches played')
+try:       
     #can_nun---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=can_nun_name, time_window=TimeWindow.SEASON)
 
@@ -1432,160 +1462,166 @@ with st.spinner("# Please wait - Do not select a category until done"):
         with open('pages/can_nun/can_nun-all.txt', 'w') as section4_file:
             section4_file.write(all_section.strip())  
     else:
-        print("Sections not found in the expected format.")  
+        print("Sections not found in the expected format.")
+except:
+    print('no matches played')
+       
+try:
+    #apolllo---------------------------------------------------------------------------
+    player_stats = api.stats.fetch_by_name(name=apolllo_name, time_window=TimeWindow.SEASON)
+
+    with open(apolllofile, 'w') as file:
+            
+            for attribute in dir(player_stats):
+                if not attribute.startswith('__'):  # Skip special attributes
+                    value = getattr(player_stats, attribute)
+                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+    print("apolllos's Data written successfully!------------")
+
+    with open(apolllofile, 'r') as file:
+        content = file.read()
+
+    #gets rid of unneeded punctuation
+    with open(apolllofile, 'r') as f:
+        text = f.read()
+        words = text.split()
+        table = str.maketrans("", "", punctuation_to_remove)
+        stripped = [w.translate(table) for w in words]
+        assembled = " ".join(stripped)
+    with open(apolllofile, 'w') as f:
+        f.write(assembled)
+
+        
+        #for splits changes solo duo and squad and battlepass level properly 
+    with open(apolllofile, 'r') as f:
+        text = f.read()
+        replacements = {
+        "solo": "==SOLO",
+        "duo": "==DUO",
+        "squad": "==SQUAD",
+        "overall": "==ALL",
+        "ltm": "==LTM",
+        "battlePass:": "",
+        "kills:": "totalk:"
+    }
+            
+    def replace_words(text, replacements):
+        for old_word, new_word in replacements.items():
+            text = text.replace(old_word, new_word)
+        return text
+    updated_text = replace_words(text, replacements)
+    with open(apolllofile, 'w') as f:
+        f.write(updated_text)
+
+
+        #spits to sepret txt files
+    with open(apolllofile, 'r') as original_file:
+        content = original_file.read()
+
+    # Splitting content using regular expressions to find sections
+    sections = re.split(r'==\w+:', content)
+
+    if len(sections) >= 4:
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
         
 
-#apolllo---------------------------------------------------------------------------
-player_stats = api.stats.fetch_by_name(name=apolllo_name, time_window=TimeWindow.SEASON)
-
-with open(apolllofile, 'w') as file:
+        with open('pages/apolllo/apolllo-solo.txt', 'w') as section1_file:
+            section1_file.write(solo_section.strip())
         
-        for attribute in dir(player_stats):
-            if not attribute.startswith('__'):  # Skip special attributes
-                value = getattr(player_stats, attribute)
-                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-print("apolllos's Data written successfully!------------")
-
-with open(apolllofile, 'r') as file:
-    content = file.read()
-
-#gets rid of unneeded punctuation
-with open(apolllofile, 'r') as f:
-    text = f.read()
-    words = text.split()
-    table = str.maketrans("", "", punctuation_to_remove)
-    stripped = [w.translate(table) for w in words]
-    assembled = " ".join(stripped)
-with open(apolllofile, 'w') as f:
-    f.write(assembled)
-
-    
-    #for splits changes solo duo and squad and battlepass level properly 
-with open(apolllofile, 'r') as f:
-    text = f.read()
-    replacements = {
-    "solo": "==SOLO",
-    "duo": "==DUO",
-    "squad": "==SQUAD",
-    "overall": "==ALL",
-    "ltm": "==LTM",
-    "battlePass:": "",
-    "kills:": "totalk:"
-}
+        with open('pages/apolllo/apolllo-duo.txt', 'w') as section2_file:
+            section2_file.write(duo_section.strip())
         
-def replace_words(text, replacements):
-    for old_word, new_word in replacements.items():
-        text = text.replace(old_word, new_word)
-    return text
-updated_text = replace_words(text, replacements)
-with open(apolllofile, 'w') as f:
-    f.write(updated_text)
-
-
-    #spits to sepret txt files
-with open(apolllofile, 'r') as original_file:
-    content = original_file.read()
-
-# Splitting content using regular expressions to find sections
-sections = re.split(r'==\w+:', content)
-
-if len(sections) >= 4:
-    all_section = "==ALL:" + sections[1]
-    solo_section = "==SOLO:" + sections[2]
-    duo_section = "==DUO:" + sections[3]
-    squad_section = "==SQUAD:" + sections[4]
-    
-
-    with open('pages/apolllo/apolllo-solo.txt', 'w') as section1_file:
-        section1_file.write(solo_section.strip())
-    
-    with open('pages/apolllo/apolllo-duo.txt', 'w') as section2_file:
-        section2_file.write(duo_section.strip())
-    
-    with open('pages/apolllo/apolllo-squad.txt', 'w') as section3_file:
-        section3_file.write(squad_section.strip())
+        with open('pages/apolllo/apolllo-squad.txt', 'w') as section3_file:
+            section3_file.write(squad_section.strip())
+            
+        with open('pages/apolllo/apolllo-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())
+    else:
+        print("Sections not found in the expected format.")
+except:
+    print('no matches played')
         
-    with open('pages/apolllo/apolllo-all.txt', 'w') as section4_file:
-        section4_file.write(all_section.strip())
-else:
-    print("Sections not found in the expected format.")
-    
-    
-#jaknkife---------------------------------------------------------------------------
-player_stats = api.stats.fetch_by_name(name=jaknkife_name, time_window=TimeWindow.SEASON)
+try:      
+    #jaknkife---------------------------------------------------------------------------
+    player_stats = api.stats.fetch_by_name(name=jaknkife_name, time_window=TimeWindow.SEASON)
 
-with open(jaknkifefile, 'w') as file:
+    with open(jaknkifefile, 'w') as file:
+            
+            for attribute in dir(player_stats):
+                if not attribute.startswith('__'):  # Skip special attributes
+                    value = getattr(player_stats, attribute)
+                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+    print("jaknkifes's Data written successfully!------------")
+
+    with open(jaknkifefile, 'r') as file:
+        content = file.read()
+
+    #gets rid of unneeded punctuation
+    with open(jaknkifefile, 'r') as f:
+        text = f.read()
+        words = text.split()
+        table = str.maketrans("", "", punctuation_to_remove)
+        stripped = [w.translate(table) for w in words]
+        assembled = " ".join(stripped)
+    with open(jaknkifefile, 'w') as f:
+        f.write(assembled)
+
         
-        for attribute in dir(player_stats):
-            if not attribute.startswith('__'):  # Skip special attributes
-                value = getattr(player_stats, attribute)
-                file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-print("jaknkifes's Data written successfully!------------")
+        #for splits changes solo duo and squad and battlepass level properly 
+    with open(jaknkifefile, 'r') as f:
+        text = f.read()
+        replacements = {
+        "solo": "==SOLO",
+        "duo": "==DUO",
+        "squad": "==SQUAD",
+        "overall": "==ALL",
+        "ltm": "==LTM",
+        "battlePass:": "",
+        "kills:": "totalk:"
+    }
+            
+    def replace_words(text, replacements):
+        for old_word, new_word in replacements.items():
+            text = text.replace(old_word, new_word)
+        return text
+    updated_text = replace_words(text, replacements)
+    with open(jaknkifefile, 'w') as f:
+        f.write(updated_text)
 
-with open(jaknkifefile, 'r') as file:
-    content = file.read()
 
-#gets rid of unneeded punctuation
-with open(jaknkifefile, 'r') as f:
-    text = f.read()
-    words = text.split()
-    table = str.maketrans("", "", punctuation_to_remove)
-    stripped = [w.translate(table) for w in words]
-    assembled = " ".join(stripped)
-with open(jaknkifefile, 'w') as f:
-    f.write(assembled)
+        #spits to sepret txt files
+    with open(jaknkifefile, 'r') as original_file:
+        content = original_file.read()
 
-    
-    #for splits changes solo duo and squad and battlepass level properly 
-with open(jaknkifefile, 'r') as f:
-    text = f.read()
-    replacements = {
-    "solo": "==SOLO",
-    "duo": "==DUO",
-    "squad": "==SQUAD",
-    "overall": "==ALL",
-    "ltm": "==LTM",
-    "battlePass:": "",
-    "kills:": "totalk:"
-}
+    # Splitting content using regular expressions to find sections
+    sections = re.split(r'==\w+:', content)
+
+    if len(sections) >= 4:
+        all_section = "==ALL:" + sections[1]
+        solo_section = "==SOLO:" + sections[2]
+        duo_section = "==DUO:" + sections[3]
+        squad_section = "==SQUAD:" + sections[4]
         
-def replace_words(text, replacements):
-    for old_word, new_word in replacements.items():
-        text = text.replace(old_word, new_word)
-    return text
-updated_text = replace_words(text, replacements)
-with open(jaknkifefile, 'w') as f:
-    f.write(updated_text)
 
-
-    #spits to sepret txt files
-with open(jaknkifefile, 'r') as original_file:
-    content = original_file.read()
-
-# Splitting content using regular expressions to find sections
-sections = re.split(r'==\w+:', content)
-
-if len(sections) >= 4:
-    all_section = "==ALL:" + sections[1]
-    solo_section = "==SOLO:" + sections[2]
-    duo_section = "==DUO:" + sections[3]
-    squad_section = "==SQUAD:" + sections[4]
-    
-
-    with open('pages/jaknkife/jaknkife-solo.txt', 'w') as section1_file:
-        section1_file.write(solo_section.strip())
-    
-    with open('pages/jaknkife/jaknkife-duo.txt', 'w') as section2_file:
-        section2_file.write(duo_section.strip())
-    
-    with open('pages/jaknkife/jaknkife-squad.txt', 'w') as section3_file:
-        section3_file.write(squad_section.strip())
+        with open('pages/jaknkife/jaknkife-solo.txt', 'w') as section1_file:
+            section1_file.write(solo_section.strip())
         
-    with open('pages/jaknkife/jaknkife-all.txt', 'w') as section4_file:
-        section4_file.write(all_section.strip())
-else:
-    print("Sections not found in the expected format.")
+        with open('pages/jaknkife/jaknkife-duo.txt', 'w') as section2_file:
+            section2_file.write(duo_section.strip())
         
+        with open('pages/jaknkife/jaknkife-squad.txt', 'w') as section3_file:
+            section3_file.write(squad_section.strip())
+            
+        with open('pages/jaknkife/jaknkife-all.txt', 'w') as section4_file:
+            section4_file.write(all_section.strip())
+    else:
+        print("Sections not found in the expected format.")
+except:
+    print('no matches played')
+            
         
         
         

@@ -214,7 +214,6 @@ with open(trubadoorall, 'r') as file:
         if 'kd' in field:
             trubadoorkd = field.split(':')[1].strip()                 
 
-
 #romKulus---------------------------------------------------------------------------     
    #gets kd
 romKuluskd = 0
@@ -258,7 +257,7 @@ with open(jaknkifeall, 'r') as file:
     for field in fields:
         if 'kd' in field:
             jaknkifekd = field.split(':')[1].strip()    
-                           
+                         
 
 
 
@@ -318,7 +317,10 @@ count_jaknkifekd = countDigits(jaknkifekd)
 
 #rounds all KD stats to 2 decimal places
 # Pixsol---------------------------------------------------------------------------   
-if count_AK33kd == 2:
+if count_AK33kd == 1:
+    AK33kd = AK33kd * 1.00
+
+elif count_AK33kd == 2:
     AK33kd = AK33kd * 0.10
 
 elif count_AK33kd == 3:
@@ -330,7 +332,10 @@ elif count_AK33kd == 4 or 5:
 standardized_AK33kd = ("{:.2f}".format(AK33kd))
 
 # mcflykd---------------------------------------------------------------------------   
-if count_mcflykd == 2:
+if count_mcflykd == 1:
+    mcflykd = mcflykd * 1.00
+
+elif count_mcflykd == 2:
     mcflykd = mcflykd * 0.10
 
 elif count_mcflykd == 3:
@@ -342,7 +347,10 @@ elif count_mcflykd == 4 or 5:
 standardized_mcflykd = ("{:.2f}".format(mcflykd))
 
 # vectorkd---------------------------------------------------------------------------   
-if count_vectorkd == 2:
+if count_mcflykd == 1:
+    vectorkd = vectorkd * 1.00
+    
+elif count_vectorkd == 2:
     vectorkd = vectorkd * 0.10
 
 elif count_vectorkd == 3:
@@ -354,7 +362,10 @@ elif count_vectorkd == 4 or 5:
 standardized_vectorkd = ("{:.2f}".format(vectorkd))
 
 # lokeykd---------------------------------------------------------------------------   
-if count_lokeykd == 2:
+if count_lokeykd == 1:
+    lokeykd = lokeykd * 1.00
+
+elif count_lokeykd == 2:
     lokeykd = lokeykd * 0.10
 
 elif count_lokeykd == 3:
@@ -366,6 +377,9 @@ elif count_lokeykd == 4 or 5:
 standardized_lokeykd = ("{:.2f}".format(lokeykd))
 
 # LeFloorkd---------------------------------------------------------------------------   
+if count_LeFloorkd == 1:
+    LeFloorkd = LeFloorkd * 1.00
+
 if count_LeFloorkd == 2:
     LeFloorkd = LeFloorkd * 0.10
 
@@ -378,7 +392,10 @@ elif count_LeFloorkd == 4 or 5:
 standardized_LeFloorkd = ("{:.2f}".format(LeFloorkd))
 
 # ghirradeilkd---------------------------------------------------------------------------   
-if count_ghirradeilkd == 2:
+if count_ghirradeilkd == 1:
+    ghirradeilkd = ghirradeilkd * 1.00
+
+elif count_ghirradeilkd == 2:
     ghirradeilkd = ghirradeilkd * 0.10
 
 elif count_ghirradeilkd == 3:
@@ -390,7 +407,10 @@ elif count_ghirradeilkd == 4 or 5:
 standardized_ghirradeilkd = ("{:.2f}".format(ghirradeilkd))
 
 # phlashkd ---------------------------------------------------------------------------   
-if count_phlashkd == 2:
+if count_phlashkd == 1:
+    phlashkd = phlashkd * 1.00
+
+elif count_phlashkd == 2:
     phlashkd  = phlashkd  * 0.10
 
 elif count_phlashkd == 3:
@@ -402,6 +422,9 @@ elif count_phlashkd == 4 or 5:
 standardized_phlashkd  = ("{:.2f}".format(phlashkd ))
 
 # ryptydekd---------------------------------------------------------------------------   
+if count_ryptydekd == 1:
+    ryptydekd = ryptydekd * 1.00
+
 if count_ryptydekd  == 2:
     ryptydekd = ryptydekd * 0.10
 
@@ -414,6 +437,9 @@ elif count_ryptydekd  == 4 or 5:
 standardized_ryptydekd = ("{:.2f}".format(ryptydekd))
 
 # sideKwinderkd---------------------------------------------------------------------------   
+if count_sideKwinderkd == 1:
+    AK33kd = AK33kd * 1.00
+
 if count_sideKwinderkd == 2:
     sideKwinderkd = sideKwinderkd * 0.10
 
@@ -426,6 +452,9 @@ elif count_sideKwinderkd == 4 or 5:
 standardized_sideKwinderkd = ("{:.2f}".format(sideKwinderkd))
 
 # Tandummkd---------------------------------------------------------------------------   
+if count_Tandummkd == 1:
+    Tandummkd = Tandummkd * 1.00
+
 if count_Tandummkd == 2:
     Tandummkd = Tandummkd * 0.10
 
@@ -438,6 +467,9 @@ elif count_Tandummkd == 4 or 5:
 standardized_Tandummkd = ("{:.2f}".format(Tandummkd))
 
 # o3zonekd---------------------------------------------------------------------------   
+if count_o3zonekd == 1:
+    o3zonekd = o3zonekd * 1.00
+
 if count_o3zonekd == 2:
     o3zonekd = o3zonekd * 0.10
 
@@ -450,7 +482,10 @@ elif count_o3zonekd == 4 or 5:
 standardized_o3zonekd = ("{:.2f}".format(o3zonekd))
 
 # keauxdakd---------------------------------------------------------------------------   
-if count_keauxdakd == 2:
+if count_keauxdakd == 1:
+    keauxdakd = keauxdakd * 1.00
+
+elif count_keauxdakd == 2:
     keauxdakd = keauxdakd * 0.10
 
 elif count_keauxdakd == 3:
@@ -462,7 +497,10 @@ elif count_keauxdakd == 4 or 5:
 standardized_keauxdakd = ("{:.2f}".format(keauxdakd))
 
 # mulligankd---------------------------------------------------------------------------   
-if count_mulligankd == 2:
+if count_mulligankd == 1:
+    mulligankd = mulligankd * 1.00
+
+elif count_mulligankd == 2:
     mulligankd = mulligankd * 0.10
 
 elif count_mulligankd == 3:
@@ -474,7 +512,10 @@ elif count_mulligankd == 4 or 5:
 standardized_mulligankd = ("{:.2f}".format(mulligankd))
 
 # saitamakd---------------------------------------------------------------------------   
-if count_saitamakd == 2:
+if count_saitamakd == 1:
+    saitamakdkd = saitamakd * 1.00
+
+elif count_saitamakd == 2:
     saitamakd = saitamakd * 0.10
 
 elif count_saitamakd == 3:
@@ -486,7 +527,10 @@ elif count_saitamakd == 4 or 5:
 standardized_saitamakd = ("{:.2f}".format(saitamakd))
 
 # trubadoorkd---------------------------------------------------------------------------   
-if count_trubadoorkd == 2:
+if count_trubadoorkd == 1:
+    AK33kd = AK33kd * 1.00
+
+elif count_trubadoorkd == 2:
     trubadoorkd = trubadoorkd * 0.10
 
 elif count_trubadoorkd == 3:
@@ -498,6 +542,9 @@ elif count_trubadoorkd == 4 or 5:
 standardized_trubadoorkd = ("{:.2f}".format(trubadoorkd))
 
 # romKuluskd---------------------------------------------------------------------------   
+if count_romKuluskd == 1:
+    count_romKuluskd = count_romKuluskd * 1.00
+
 if count_romKuluskd == 2:
     romKuluskd = romKuluskd * 0.10
 
@@ -510,7 +557,10 @@ elif count_romKuluskd == 4 or 5:
 standardized_romKuluskd = ("{:.2f}".format(romKuluskd))
 
 # apolllo---------------------------------------------------------------------------   
-if count_apolllokd == 2:
+if count_romKuluskd == 1:
+    count_romKuluskd = count_romKuluskd * 1.00
+
+elif count_apolllokd == 2:
     apolllo = apolllokd * 0.10
 
 elif count_apolllokd == 3:
@@ -522,7 +572,10 @@ elif count_apolllokd == 4 or 5:
 standardized_apolllo = ("{:.2f}".format(apolllo))
 
 # can_nun---------------------------------------------------------------------------   
-if count_can_nunkd == 2:
+if can_nunkd == 1:
+    can_nunkd = can_nunkd * 1.00
+
+elif count_can_nunkd == 2:
     can_nun = can_nunkd * 0.10
 
 elif count_can_nunkd == 3:
@@ -535,8 +588,10 @@ standardized_can_nun = ("{:.2f}".format(can_nun))
 
 
 # jaknkife---------------------------------------------------------------------------   
+if jaknkifekd == 1:
+    jaknkifekd = jaknkifekd * 1.00
 
-if count_jaknkifekd == 2:
+elif count_jaknkifekd == 2:
     jaknkife = jaknkifekd * 0.10
 
 elif count_jaknkifekd == 3:
@@ -662,7 +717,8 @@ with open(kd_data, 'w') as f:
 
 with open(kd_data, "r") as file:
    kd_data_content = file.read()
-     
+
+print(player_stats)
 
 #website - 
 

@@ -30,7 +30,7 @@ Tandummall='pages/Tandumm/Tandumm-all.txt'
 o3zoneall='pages/o3zone/o3zone-all.txt'
 
     #keauxda----------------
-keauxdaall='pages/keauxda/keauxda-all.txt'
+# keauxdaall='pages/keauxda/keauxda-all.txt'
 
     #mulligan----------------
 mulliganall='pages/mulligan/mulligan-all.txt'
@@ -180,14 +180,14 @@ with open(o3zoneall, 'r') as file:
 
 #keauxda--------------------------------------------------------------------------- 
    #gets time
-keauxdatime = 0
-with open(keauxdaall, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
+# keauxdatime = 0
+# with open(keauxdaall, 'r') as file:
+#     content = file.read()
+#     fields = content.split(',')
  
-    for field in fields:
-        if 'minutesPlayed' in field:
-            keauxdatime = field.split(':')[1].strip()                 
+#     for field in fields:
+#         if 'minutesPlayed' in field:
+#             keauxdatime = field.split(':')[1].strip()                 
 
 #mulligan---------------------------------------------------------------------------     
    #gets time

@@ -23,7 +23,7 @@ Tandummduo='pages/Tandumm/Tandumm-duo.txt'
     #o3zone----------------
 o3zoneduo='pages/o3zone/o3zone-duo.txt'
     #keauxda----------------
-keauxdaduo='pages/keauxda/keauxda-duo.txt'
+# keauxdaduo='pages/keauxda/keauxda-duo.txt'
    #mulligan----------------
 mulliganduo='pages/mulligan/mulligan-duo.txt'
     #mcfly----------------
@@ -244,20 +244,20 @@ with open(o3zoneduo, 'r') as file:
 #keauxda---------------------------------------------------------------------------
 
 #duo stats
-keauxdaduowins = 0
-keauxdaduokills = 0
-keauxdaduotop5 = 0
-with open(keauxdaduo, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
+# keauxdaduowins = 0
+# keauxdaduokills = 0
+# keauxdaduotop5 = 0
+# with open(keauxdaduo, 'r') as file:
+#     content = file.read()
+#     fields = content.split(',')
  
-    for field in fields:
-        if "wins" in field: 
-            keauxdaduowins = field.split(':')[1].strip()
-        if 'totalk' in field:
-            keauxdaduokills = field.split(':')[1].strip()
-        if "top5" in field:
-            keauxdaduotop5 = field.split(':')[1].strip()        
+#     for field in fields:
+#         if "wins" in field: 
+#             keauxdaduowins = field.split(':')[1].strip()
+#         if 'totalk' in field:
+#             keauxdaduokills = field.split(':')[1].strip()
+#         if "top5" in field:
+#             keauxdaduotop5 = field.split(':')[1].strip()        
 
 #mulligan---------------------------------------------------------------------------
 #duo stats
@@ -434,7 +434,7 @@ player_stats = {
     },
      
     'keauxda': {
-        'Duo kills': int(keauxdaduokills), 'Duo Wins': int(keauxdaduowins), 'Duo Finished top 5': int(keauxdaduotop5)
+        # 'Duo kills': int(keauxdaduokills), 'Duo Wins': int(keauxdaduowins), 'Duo Finished top 5': int(keauxdaduotop5)
        
     },
     'mulligan': {

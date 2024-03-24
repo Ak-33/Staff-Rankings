@@ -24,7 +24,7 @@ Tandummsquad='pages/Tandumm/Tandumm-squad.txt'
     #o3zone----------------
 o3zonesquad='pages/o3zone/o3zone-squad.txt'
     #keauxda----------------
-keauxdasquad='pages/keauxda/keauxda-squad.txt'
+# keauxdasquad='pages/keauxda/keauxda-squad.txt'
     #mulligan----------------
 mulligansquad='pages/mulligan/mulligan-squad.txt'
     #mcfly----------------
@@ -231,20 +231,20 @@ with open(o3zonesquad, 'r') as file:
 #keauxda---------------------------------------------------------------------------
 
 #squads stats
-keauxdasquadwins = 0
-keauxdasquadkills = 0
-keauxdasquadtop3 = 0
-with open(keauxdasquad, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
+# keauxdasquadwins = 0
+# keauxdasquadkills = 0
+# keauxdasquadtop3 = 0
+# with open(keauxdasquad, 'r') as file:
+#     content = file.read()
+#     fields = content.split(',')
  
-    for field in fields:
-        if "wins" in field: 
-            keauxdasquadwins = field.split(':')[1].strip()
-        if 'totalk' in field:
-           keauxdasquadkills = field.split(':')[1].strip()
-        if "top3" in field:
-            keauxdasquadtop3 = field.split(':')[1].strip()             
+#     for field in fields:
+#         if "wins" in field: 
+#             keauxdasquadwins = field.split(':')[1].strip()
+#         if 'totalk' in field:
+#            keauxdasquadkills = field.split(':')[1].strip()
+#         if "top3" in field:
+#             keauxdasquadtop3 = field.split(':')[1].strip()             
 
 #mulligan---------------------------------------------------------------------------
  #squads stats
@@ -434,7 +434,7 @@ player_stats = {
     },
      
     'keauxda': {
-        'Squad kills': int(keauxdasquadkills), 'Squad Wins': int(keauxdasquadwins), 'Squad Finished top 3': int(keauxdasquadtop3)
+        # 'Squad kills': int(keauxdasquadkills), 'Squad Wins': int(keauxdasquadwins), 'Squad Finished top 3': int(keauxdasquadtop3)
        
     },
     'mulligan': {

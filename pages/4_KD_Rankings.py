@@ -23,7 +23,7 @@ Tandummall='pages/Tandumm/Tandumm-all.txt'
     #o3zone----------------
 o3zoneall='pages/o3zone/o3zone-all.txt'
     #keauxda----------------
-keauxdaall='pages/keauxda/keauxda-all.txt'
+# keauxdaall='pages/keauxda/keauxda-all.txt'
     #mulligan----------------
 mulliganall='pages/mulligan/mulligan-all.txt'
     #mcfly----------------
@@ -170,14 +170,14 @@ with open(o3zoneall, 'r') as file:
 
 #keauxda--------------------------------------------------------------------------- 
    #gets kd
-keauxdakd = 0
-with open(keauxdaall, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
+# keauxdakd = 0
+# with open(keauxdaall, 'r') as file:
+#     content = file.read()
+#     fields = content.split(',')
  
-    for field in fields:
-        if 'kd' in field:
-            keauxdakd = field.split(':')[1].strip()                 
+#     for field in fields:
+#         if 'kd' in field:
+#             keauxdakd = field.split(':')[1].strip()                 
 
 #mulligan---------------------------------------------------------------------------     
    #gets kd
@@ -273,7 +273,7 @@ ryptydekd = int(ryptydekd)
 sideKwinderkd = int(sideKwinderkd)
 Tandummkd = int(Tandummkd)
 o3zonekd = int(o3zonekd)
-keauxdakd = int(keauxdakd)
+# keauxdakd = int(keauxdakd)
 mulligankd = int(mulligankd)
 saitamakd = int(saitamakd)
 trubadoorkd = int(trubadoorkd)
@@ -302,7 +302,7 @@ count_ryptydekd = countDigits(ryptydekd)
 count_sideKwinderkd = countDigits(sideKwinderkd)
 count_Tandummkd = countDigits(Tandummkd)
 count_o3zonekd = countDigits(o3zonekd)
-count_keauxdakd = countDigits(keauxdakd)
+# count_keauxdakd = countDigits(keauxdakd)
 count_mulligankd = countDigits(mulligankd)
 count_saitamakd = countDigits(saitamakd)
 count_trubadoorkd = countDigits(trubadoorkd)
@@ -482,19 +482,19 @@ elif count_o3zonekd == 4 or 5:
 standardized_o3zonekd = ("{:.2f}".format(o3zonekd))
 
 # keauxdakd---------------------------------------------------------------------------   
-if count_keauxdakd == 1:
-    keauxdakd = keauxdakd * 1.00
+# if count_keauxdakd == 1:
+#     keauxdakd = keauxdakd * 1.00
 
-elif count_keauxdakd == 2:
-    keauxdakd = keauxdakd * 0.10
+# elif count_keauxdakd == 2:
+#     keauxdakd = keauxdakd * 0.10
 
-elif count_keauxdakd == 3:
-    keauxdakd = keauxdakd * 0.01
+# elif count_keauxdakd == 3:
+#     keauxdakd = keauxdakd * 0.01
 
-elif count_keauxdakd == 4 or 5:
-    keauxdakd = keauxdakd * 0.001
+# elif count_keauxdakd == 4 or 5:
+#     keauxdakd = keauxdakd * 0.001
   
-standardized_keauxdakd = ("{:.2f}".format(keauxdakd))
+# standardized_keauxdakd = ("{:.2f}".format(keauxdakd))
 
 # mulligankd---------------------------------------------------------------------------   
 if count_mulligankd == 1:
@@ -655,7 +655,7 @@ player_stats = {
     },
      
     'keauxda': {
-       'KD':(standardized_keauxdakd), 
+    #    'KD':(standardized_keauxdakd), 
        
     },
     'mulligan': {

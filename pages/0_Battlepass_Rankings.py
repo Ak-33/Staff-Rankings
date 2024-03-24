@@ -24,7 +24,7 @@ Tandummfile ='pages/Tandumm/Tandumm_stats.txt'
     #o3zone----------------
 o3zonefile ='pages/o3zone/o3zone_stats.txt'
     #keauxda----------------
-keauxdafile ='pages/keauxda/keauxda_stats.txt'
+# keauxdafile ='pages/keauxda/keauxda_stats.txt'
     #mulligan----------------
 mulliganfile ='pages/mulligan/mulligan_stats.txt'
     #mcfly----------------
@@ -168,14 +168,14 @@ with open(o3zonefile, 'r') as file:
 
 #keauxda--------------------------------------------------------------------------- 
    #gets BP level
-keauxdalevel = 0
-with open(keauxdafile, 'r') as file:
-    content = file.read()
-    fields = content.split(',')
+# keauxdalevel = 0
+# with open(keauxdafile, 'r') as file:
+#     content = file.read()
+#     fields = content.split(',')
  
-    for field in fields:
-        if 'level' in field:
-            keauxdalevel = field.split(':')[1].strip()                 
+#     for field in fields:
+#         if 'level' in field:
+#             keauxdalevel = field.split(':')[1].strip()                 
 
 #mulligan---------------------------------------------------------------------------     
    #gets BP level
@@ -313,7 +313,7 @@ player_stats = {
     },
      
     'keauxda': {
-       'Battlepass level':int(keauxdalevel), 
+    #    'Battlepass level':int(keauxdalevel), 
        
     },
     'mulligan': {

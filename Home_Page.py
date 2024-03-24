@@ -20,7 +20,6 @@ ryptyde_name ='Ryptyde15'
 sideKwinder_name ='calebjennings922'
 Tandumm_name ='Tandumm24'
 o3zone_name ='Samuel517'
-keauxda_name ='KeauXDa'
 mulligan_name = "ChristianKid18"
 mcfly_name ='Admiral_pile'
 saitama_name ='Kmoore123'
@@ -97,13 +96,6 @@ o3zonesolo='pages/o3zone/o3zone-solo.txt'
 o3zoneduo='pages/o3zone/o3zone-duo.txt'
 o3zonesquad='pages/o3zone/o3zone-squad.txt'
 o3zoneall='pages/o3zone/o3zone-all.txt'
-
-    #keauxda----------------
-keauxdafile ='pages/keauxda/keauxda_stats.txt'
-keauxdasolo='pages/keauxda/keauxda-solo.txt'
-keauxdaduo='pages/keauxda/keauxda-duo.txt'
-keauxdasquad='pages/keauxda/keauxda-squad.txt'
-keauxdaall='pages/keauxda/keauxda-all.txt'
 
     #mulligan----------------
 mulliganfile ='pages/mulligan/mulligan_stats.txt'
@@ -1009,82 +1001,82 @@ try:
         print("Sections not found in the expected format.")
 except:
     print('no matches played')
-try:       
-    #keauxda---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=keauxda_name, time_window=TimeWindow.SEASON)
+# try:       
+#     #keauxda---------------------------------------------------------------------------
+#     player_stats = api.stats.fetch_by_name(name=keauxda_name, time_window=TimeWindow.SEASON)
 
-    with open(keauxdafile, 'w') as file:
+#     with open(keauxdafile, 'w') as file:
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("keauxdas's Data written successfully!------------")
+#             for attribute in dir(player_stats):
+#                 if not attribute.startswith('__'):  # Skip special attributes
+#                     value = getattr(player_stats, attribute)
+#                     file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+#     print("keauxdas's Data written successfully!------------")
 
-    with open(keauxdafile, 'r') as file:
-        content = file.read()
+#     with open(keauxdafile, 'r') as file:
+#         content = file.read()
 
-    #gets rid of unneeded punctuation
-    with open(keauxdafile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(keauxdafile, 'w') as f:
-        f.write(assembled)
+#     #gets rid of unneeded punctuation
+#     with open(keauxdafile, 'r') as f:
+#         text = f.read()
+#         words = text.split()
+#         table = str.maketrans("", "", punctuation_to_remove)
+#         stripped = [w.translate(table) for w in words]
+#         assembled = " ".join(stripped)
+#     with open(keauxdafile, 'w') as f:
+#         f.write(assembled)
 
         
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(keauxdafile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+#         #for splits changes solo duo and squad and battlepass level properly 
+#     with open(keauxdafile, 'r') as f:
+#         text = f.read()
+#         replacements = {
+#         "solo": "==SOLO",
+#         "duo": "==DUO",
+#         "squad": "==SQUAD",
+#         "overall": "==ALL",
+#         "ltm": "==LTM",
+#         "battlePass:": "",
+#         "kills:": "totalk:"
+#     }
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(keauxdafile, 'w') as f:
-        f.write(updated_text)
+#     def replace_words(text, replacements):
+#         for old_word, new_word in replacements.items():
+#             text = text.replace(old_word, new_word)
+#         return text
+#     updated_text = replace_words(text, replacements)
+#     with open(keauxdafile, 'w') as f:
+#         f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(keauxdafile, 'r') as original_file:
-        content = original_file.read()
+#         #spits to sepret txt files
+#     with open(keauxdafile, 'r') as original_file:
+#         content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+#     # Splitting content using regular expressions to find sections
+#     sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+#     if len(sections) >= 4:
+#         all_section = "==ALL:" + sections[1]
+#         solo_section = "==SOLO:" + sections[2]
+#         duo_section = "==DUO:" + sections[3]
+#         squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/keauxda/keauxda-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
+#         with open('pages/keauxda/keauxda-solo.txt', 'w') as section1_file:
+#             section1_file.write(solo_section.strip())
         
-        with open('pages/keauxda/keauxda-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
+#         with open('pages/keauxda/keauxda-duo.txt', 'w') as section2_file:
+#             section2_file.write(duo_section.strip())
         
-        with open('pages/keauxda/keauxda-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+#         with open('pages/keauxda/keauxda-squad.txt', 'w') as section3_file:
+#             section3_file.write(squad_section.strip())
             
-        with open('pages/keauxda/keauxda-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
+#         with open('pages/keauxda/keauxda-all.txt', 'w') as section4_file:
+#             section4_file.write(all_section.strip())  
+#     else:
+#         print("Sections not found in the expected format.")
+# except:
+#     print('no matches played')
 try:       
    #mulligan---------------------------------------------------------------------------
     player_stats = api.stats.fetch_by_name(name=mulligan_name, time_window=TimeWindow.SEASON)

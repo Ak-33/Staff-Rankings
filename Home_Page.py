@@ -4,8 +4,10 @@ from fortnite_api import TimeWindow
 from fortnite_api import AccountType
 import re
 import string 
+import A_key
 
-api = fortnite_api.FortniteAPI(api_key='8eeca9b5-14ca-4afd-91d6-aed25f55d5b7')
+
+api = fortnite_api.FortniteAPI(A_key.api_key)
 symbols_to_keep = ":," 
 punctuation_to_remove =''.join(c for c in string.punctuation if c not in symbols_to_keep)
 
@@ -154,7 +156,7 @@ jaknkifeall='pages/jaknkife/jaknkife-all.txt'
 
 
 st.set_page_config(
-    page_title="McCall Staff Rankings - V:1.5.1",
+    page_title="McCall Staff Rankings - V:1.5.2",
     page_icon="🔫",
     layout= "wide"
 )

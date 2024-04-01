@@ -557,8 +557,8 @@ elif count_romKuluskd == 4 or 5:
 standardized_romKuluskd = ("{:.2f}".format(romKuluskd))
 
 # apolllo---------------------------------------------------------------------------   
-if count_romKuluskd == 1:
-    count_romKuluskd = count_romKuluskd * 1.00
+if count_apolllokd == 1:
+    count_apolllokd = count_apolllokd * 1.00
 
 elif count_apolllokd == 2:
     apolllo = apolllokd * 0.10
@@ -656,7 +656,7 @@ player_stats = {
      
     # 'keauxda': {
     #    'KD':(standardized_keauxdakd), 
-       
+    
     # },
     'mulligan': {
        'KD':(standardized_mulligankd), 

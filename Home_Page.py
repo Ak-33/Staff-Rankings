@@ -156,7 +156,7 @@ jaknkifeall='pages/jaknkife/jaknkife-all.txt'
 
 
 st.set_page_config(
-    page_title="McCall Staff Rankings - V:1.5.2",
+    page_title="McCall Staff Rankings - V:1.5.3",
     page_icon="🔫",
     layout= "wide"
 )
@@ -169,9 +169,9 @@ with st.spinner("# Please wait - Do not select a category until done"):
 
     st.title("Welcome to the McCall Staff Fortnite Rankings")
     st.subheader("How Refreash data:")
-    st.write("""After waiting on this initial loading screen, all data will be loaded. Do not return to the "Home Page" unless you want to refresh the data.""")
-    st.write("This is a Python script I wrote so my staff brothers and I can compare ourselves in Fortnite. If you want to learn more about Camp McCall, visit this. [link](%s)." % url, """Also, the maker for this site (Pixsol) has a personal Webpage called "[PixsolsProps](%s)" feel free give it a visit""" % Purl)
-    st.caption (""""McCall Staff Rankings" is not endorsed nor partnered with, Camp McCall or the SCBC in any official capacity""")
+    st.write("""After wainting on this initial loading screen all data will be loaded. Do not retern to the "Home Page" unless you want to refreash the data.""")
+    st.write("This is a python script I wrote so me and my staff brothers can compare one another in fortnite. If you want to learn more about Camp McCall vist this [link](%s)." % url, """Also, the maker for this site (Pixsol) has a personal Webpage called "[PixsolsProps](%s)" feel free give it a visit""" % Purl)
+    st.caption (""""McCall Staff Rankings" is not endorsed nor partnered with, Camp McCall or the SCBC in any offical capacity""")
 
 try:
     #Pixsol---------------------------------------------------------------------------

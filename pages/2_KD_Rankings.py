@@ -602,8 +602,6 @@ elif count_jaknkifekd == 4 or 5:
   
 standardized_jaknkife = ("{:.2f}".format(jaknkife))
 
-standardized_jaknkife = float(standardized_jaknkife)
-standardized_jaknkife = standardized_jaknkife * 6.169
 
 player_stats = {
     'AK33': {

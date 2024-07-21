@@ -259,8 +259,6 @@ with open(jaknkifefile, 'r') as file:
         if 'level' in field:
             jaknkifelevel = field.split(':')[1].strip()  
                                         
-jaknkifelevel = 999
-
 #Solo print stats and add more users above-----------------------------------------------------------------------------------------
 
 player_stats = {

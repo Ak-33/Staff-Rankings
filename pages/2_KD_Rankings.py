@@ -569,7 +569,7 @@ elif count_apolllokd == 3:
 elif count_apolllokd == 4 or 5:
     apolllo = apolllokd * 0.001
   
-standardized_apolllo = ("{:.2f}".format(apolllo))
+standardized_apolllo = ("{:.2f}".format(apolllokd))
 
 # can_nun---------------------------------------------------------------------------   
 if can_nunkd == 1:

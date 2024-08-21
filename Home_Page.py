@@ -156,11 +156,10 @@ jaknkifeall='pages/jaknkife/jaknkife-all.txt'
 
 
 st.set_page_config(
-    page_title="McCall Staff Rankings - V:1.5.3",
+    page_title="McCall Staff Rankings - V:1.5.5",
     page_icon="🔫",
     layout= "wide"
 )
-
 
 with st.spinner("# Please wait - Do not select a category until done"):
     st.sidebar.success("Select a stat category from above")
@@ -173,1448 +172,1448 @@ with st.spinner("# Please wait - Do not select a category until done"):
     st.write("This is a python script I wrote so me and my staff brothers can compare one another in fortnite. If you want to learn more about Camp McCall vist this [link](%s)." % url, """Also, the maker for this site (Pixsol) has a personal Webpage called "[PixsolsProps](%s)" feel free give it a visit""" % Purl)
     st.caption (""""McCall Staff Rankings" is not endorsed nor partnered with, Camp McCall or the SCBC in any offical capacity""")
 
-try:
-    #Pixsol---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=Ak33_name, time_window=TimeWindow.SEASON)
+    try:
+        #Pixsol---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=Ak33_name, time_window=TimeWindow.SEASON)
 
-    with open(AK33file, 'w') as file:
+        with open(AK33file, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("Pixsols's Data written successfully!------------")
+
+        with open(AK33file, 'r') as file:
+            content = file.read()
+
+        #gets rid of unneeded punctuation
+        with open(AK33file, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(AK33file, 'w') as f:
+            f.write(assembled)
+
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("Pixsols's Data written successfully!------------")
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(AK33file, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(AK33file, 'w') as f:
+            f.write(updated_text)
 
-    with open(AK33file, 'r') as file:
-        content = file.read()
 
-    #gets rid of unneeded punctuation
-    with open(AK33file, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(AK33file, 'w') as f:
-        f.write(assembled)
+            #spits to sepret txt files
+        with open(AK33file, 'r') as original_file:
+            content = original_file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(AK33file, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
+
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(AK33file, 'w') as f:
-        f.write(updated_text)
 
-
-        #spits to sepret txt files
-    with open(AK33file, 'r') as original_file:
-        content = original_file.read()
-
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
-
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
-        
-
-        with open('pages/pixsol/Ak33-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/pixsol/AK33-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/pixsol/AK33-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/pixsol/Ak33-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/pixsol/AK33-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print("no matches played")
-try:   
-    #mcfly---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=mcfly_name, time_window=TimeWindow.SEASON,account_type=AccountType.PSN )
-
-    with open(mcflyfile, 'w') as file:
+            with open('pages/pixsol/AK33-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("mcflys's Data written successfully!------------")
+            with open('pages/pixsol/AK33-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/pixsol/AK33-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print("no matches played")
+    try:   
+        #mcfly---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=mcfly_name, time_window=TimeWindow.SEASON,account_type=AccountType.PSN )
 
-    with open(mcflyfile, 'r') as file:
-        content = file.read()
+        with open(mcflyfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("mcflys's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(mcflyfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(mcflyfile, 'w') as f:
-        f.write(assembled)
+        with open(mcflyfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(mcflyfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "ltm": "==LTM",
-        "overall": "==ALL",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(mcflyfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(mcflyfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(mcflyfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(mcflyfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "ltm": "==LTM",
+            "overall": "==ALL",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(mcflyfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(mcflyfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(mcflyfile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/mcfly/mcfly-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/mcfly/mcfly-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/mcfly/mcfly-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/mcfly/mcfly-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/mcfly/mcfly-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:        
-    #vector-----------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=vector_name, time_window=TimeWindow.SEASON)
-
-    with open(vectorfile, 'w') as file:
+            with open('pages/mcfly/mcfly-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("Vector's Data written successfully!--------")
+            with open('pages/mcfly/mcfly-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/mcfly/mcfly-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:        
+        #vector-----------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=vector_name, time_window=TimeWindow.SEASON)
 
-    with open(vectorfile, 'r') as file:
-        content = file.read()
+        with open(vectorfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("Vector's Data written successfully!--------")
 
-    #gets rid of unneeded punctuation
-    with open(vectorfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(vectorfile, 'w') as f:
-        f.write(assembled)
+        with open(vectorfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(vectorfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "ltm": "==LTM",
-        "overall": "==ALL",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(vectorfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(vectorfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(vectorfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(vectorfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "ltm": "==LTM",
+            "overall": "==ALL",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(vectorfile, 'w') as f:
+            f.write(updated_text)
 
-        #spits to sepret txt files
-    with open(vectorfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(vectorfile, 'r') as original_file:
+            content = original_file.read()
 
-    sections = re.split(r'==\w+:', content)
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/vector/vector-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/vector/vector-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/vector/vector-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/vector/vector-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/vector/vector-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:
-    #lokey-----------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=lokey_name, time_window=TimeWindow.SEASON)
-
-    with open(lokeyfile, 'w') as file:
+            with open('pages/vector/vector-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("lokey's Data written successfully!--------")
+            with open('pages/vector/vector-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/vector/vector-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:
+        #lokey-----------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=lokey_name, time_window=TimeWindow.SEASON)
 
-    with open(lokeyfile, 'r') as file:
-        content = file.read()
+        with open(lokeyfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("lokey's Data written successfully!--------")
 
-    #gets rid of unneeded punctuation
-    with open(lokeyfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(lokeyfile, 'w') as f:
-        f.write(assembled)
+        with open(lokeyfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(lokeyfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(lokeyfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(lokeyfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(lokeyfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(lokeyfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(lokeyfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(lokeyfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(lokeyfile, 'r') as original_file:
+            content = original_file.read()
 
-    sections = re.split(r'==\w+:', content)
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/lokey/lokey-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/lokey/lokey-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/lokey/lokey-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/lokey/lokey-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/lokey/lokey-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:       
-    #LeFloor-----------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=LeFloor_name, time_window=TimeWindow.SEASON)
-
-    with open(LeFloorfile, 'w') as file:
+            with open('pages/lokey/lokey-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("LeFloor's Data written successfully!--------")
+            with open('pages/lokey/lokey-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/lokey/lokey-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:       
+        #LeFloor-----------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=LeFloor_name, time_window=TimeWindow.SEASON)
 
-    with open(LeFloorfile, 'r') as file:
-        content = file.read()
+        with open(LeFloorfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("LeFloor's Data written successfully!--------")
 
-    #gets rid of unneeded punctuation
-    with open(LeFloorfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(LeFloorfile, 'w') as f:
-        f.write(assembled)
+        with open(LeFloorfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(LeFloorfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(LeFloorfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(LeFloorfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(LeFloorfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(LeFloorfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(LeFloorfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(LeFloorfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(LeFloorfile, 'r') as original_file:
+            content = original_file.read()
 
-    sections = re.split(r'==\w+:', content)
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/LeFloor/LeFloor-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/LeFloor/LeFloor-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/LeFloor/LeFloor-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/LeFloor/LeFloor-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/LeFloor/LeFloor-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-except:
-    print('no matches played')
-try:       
-    #ghirradeil-----------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=ghirradeil_name, time_window=TimeWindow.SEASON)
-
-    with open(ghirradeilfile, 'w') as file:
+            with open('pages/LeFloor/LeFloor-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("ghirradeil's Data written successfully!--------")
+            with open('pages/LeFloor/LeFloor-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/LeFloor/LeFloor-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+    except:
+        print('no matches played')
+    try:       
+        #ghirradeil-----------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=ghirradeil_name, time_window=TimeWindow.SEASON)
 
-    with open(ghirradeilfile, 'r') as file:
-        content = file.read()
+        with open(ghirradeilfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("ghirradeil's Data written successfully!--------")
 
-    #gets rid of unneeded punctuation
-    with open(ghirradeilfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(ghirradeilfile, 'w') as f:
-        f.write(assembled)
+        with open(ghirradeilfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(ghirradeilfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(ghirradeilfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(ghirradeilfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(ghirradeilfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(ghirradeilfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(ghirradeilfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(ghirradeilfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(ghirradeilfile, 'r') as original_file:
+            content = original_file.read()
 
-    sections = re.split(r'==\w+:', content)
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/ghirradeil/ghirradeil-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/ghirradeil/ghirradeil-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/ghirradeil/ghirradeil-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/ghirradeil/ghirradeil-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/ghirradeil/ghirradeil-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:       
-    #phlash---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=phlash_name, time_window=TimeWindow.SEASON)
-
-    with open(phlashfile, 'w') as file:
+            with open('pages/ghirradeil/ghirradeil-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("phlash's Data written successfully!------------")
+            with open('pages/ghirradeil/ghirradeil-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/ghirradeil/ghirradeil-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:       
+        #phlash---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=phlash_name, time_window=TimeWindow.SEASON)
 
-    with open(phlashfile, 'r') as file:
-        content = file.read()
+        with open(phlashfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("phlash's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(phlashfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(phlashfile, 'w') as f:
-        f.write(assembled)
+        with open(phlashfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(phlashfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "overall": "==ALL",
-        "squad": "==SQUAD",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(phlashfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(phlashfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(phlashfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(phlashfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "overall": "==ALL",
+            "squad": "==SQUAD",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(phlashfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(phlashfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(phlashfile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/phlash/phlash-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/phlash/phlash-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/phlash/phlash-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/phlash/phlash-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/phlash/phlash-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:       
-    #ryptyde---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=ryptyde_name, time_window=TimeWindow.SEASON)
-
-    with open(ryptydefile, 'w') as file:
+            with open('pages/phlash/phlash-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("ryptydes's Data written successfully!------------")
+            with open('pages/phlash/phlash-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/phlash/phlash-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:       
+        #ryptyde---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=ryptyde_name, time_window=TimeWindow.SEASON)
 
-    with open(ryptydefile, 'r') as file:
-        content = file.read()
+        with open(ryptydefile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("ryptydes's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(ryptydefile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(ryptydefile, 'w') as f:
-        f.write(assembled)
+        with open(ryptydefile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(ryptydefile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(ryptydefile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(ryptydefile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(ryptydefile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(ryptydefile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(ryptydefile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(ryptydefile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(ryptydefile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/ryptyde/ryptyde-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/ryptyde/ryptyde-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/ryptyde/ryptyde-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/ryptyde/ryptyde-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/ryptyde/ryptyde-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:       
-    #sideKwinder---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=sideKwinder_name, time_window=TimeWindow.SEASON)
-
-    with open(sideKwinderfile, 'w') as file:
+            with open('pages/ryptyde/ryptyde-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("sideKwinders's Data written successfully!------------")
+            with open('pages/ryptyde/ryptyde-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/ryptyde/ryptyde-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:       
+        #sideKwinder---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=sideKwinder_name, time_window=TimeWindow.SEASON)
 
-    with open(sideKwinderfile, 'r') as file:
-        content = file.read()
+        with open(sideKwinderfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("sideKwinders's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(sideKwinderfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(sideKwinderfile, 'w') as f:
-        f.write(assembled)
+        with open(sideKwinderfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(sideKwinderfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(sideKwinderfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(sideKwinderfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(sideKwinderfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(sideKwinderfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(sideKwinderfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(sideKwinderfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(sideKwinderfile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/sideKwinder/sideKwinder-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/sideKwinder/sideKwinder-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/sideKwinder/sideKwinder-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/sideKwinder/sideKwinder-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/sideKwinder/sideKwinder-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:
-    #Tandumm---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=Tandumm_name, time_window=TimeWindow.SEASON)
-
-    with open(Tandummfile, 'w') as file:
+            with open('pages/sideKwinder/sideKwinder-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("Tandumms's Data written successfully!------------")
+            with open('pages/sideKwinder/sideKwinder-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/sideKwinder/sideKwinder-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:
+        #Tandumm---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=Tandumm_name, time_window=TimeWindow.SEASON)
 
-    with open(Tandummfile, 'r') as file:
-        content = file.read()
+        with open(Tandummfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("Tandumms's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(Tandummfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(Tandummfile, 'w') as f:
-        f.write(assembled)
+        with open(Tandummfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(Tandummfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(Tandummfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(Tandummfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(Tandummfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(Tandummfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(Tandummfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(Tandummfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(Tandummfile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/Tandumm/Tandumm-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/Tandumm/Tandumm-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/Tandumm/Tandumm-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/Tandumm/Tandumm-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/Tandumm/Tandumm-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:        
-    #o3zone---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=o3zone_name, time_window=TimeWindow.SEASON)
-
-    with open(o3zonefile, 'w') as file:
+            with open('pages/Tandumm/Tandumm-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("o3zones's Data written successfully!------------")
+            with open('pages/Tandumm/Tandumm-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/Tandumm/Tandumm-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:        
+        #o3zone---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=o3zone_name, time_window=TimeWindow.SEASON)
 
-    with open(o3zonefile, 'r') as file:
-        content = file.read()
+        with open(o3zonefile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("o3zones's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(o3zonefile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(o3zonefile, 'w') as f:
-        f.write(assembled)
+        with open(o3zonefile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(o3zonefile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(o3zonefile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(o3zonefile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(o3zonefile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(o3zonefile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(o3zonefile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(o3zonefile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(o3zonefile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/o3zone/o3zone-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/o3zone/o3zone-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/o3zone/o3zone-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/o3zone/o3zone-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/o3zone/o3zone-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-# try:       
-#     #keauxda---------------------------------------------------------------------------
-#     player_stats = api.stats.fetch_by_name(name=keauxda_name, time_window=TimeWindow.SEASON)
-
-#     with open(keauxdafile, 'w') as file:
+            with open('pages/o3zone/o3zone-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-#             for attribute in dir(player_stats):
-#                 if not attribute.startswith('__'):  # Skip special attributes
-#                     value = getattr(player_stats, attribute)
-#                     file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-#     print("keauxdas's Data written successfully!------------")
+            with open('pages/o3zone/o3zone-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/o3zone/o3zone-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    # try:       
+    #     #keauxda---------------------------------------------------------------------------
+    #     player_stats = api.stats.fetch_by_name(name=keauxda_name, time_window=TimeWindow.SEASON)
 
-#     with open(keauxdafile, 'r') as file:
-#         content = file.read()
+    #     with open(keauxdafile, 'w') as file:
+                
+    #             for attribute in dir(player_stats):
+    #                 if not attribute.startswith('__'):  # Skip special attributes
+    #                     value = getattr(player_stats, attribute)
+    #                     file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+    #     print("keauxdas's Data written successfully!------------")
 
-#     #gets rid of unneeded punctuation
-#     with open(keauxdafile, 'r') as f:
-#         text = f.read()
-#         words = text.split()
-#         table = str.maketrans("", "", punctuation_to_remove)
-#         stripped = [w.translate(table) for w in words]
-#         assembled = " ".join(stripped)
-#     with open(keauxdafile, 'w') as f:
-#         f.write(assembled)
+    #     with open(keauxdafile, 'r') as file:
+    #         content = file.read()
 
-        
-#         #for splits changes solo duo and squad and battlepass level properly 
-#     with open(keauxdafile, 'r') as f:
-#         text = f.read()
-#         replacements = {
-#         "solo": "==SOLO",
-#         "duo": "==DUO",
-#         "squad": "==SQUAD",
-#         "overall": "==ALL",
-#         "ltm": "==LTM",
-#         "battlePass:": "",
-#         "kills:": "totalk:"
-#     }
+    #     #gets rid of unneeded punctuation
+    #     with open(keauxdafile, 'r') as f:
+    #         text = f.read()
+    #         words = text.split()
+    #         table = str.maketrans("", "", punctuation_to_remove)
+    #         stripped = [w.translate(table) for w in words]
+    #         assembled = " ".join(stripped)
+    #     with open(keauxdafile, 'w') as f:
+    #         f.write(assembled)
+
             
-#     def replace_words(text, replacements):
-#         for old_word, new_word in replacements.items():
-#             text = text.replace(old_word, new_word)
-#         return text
-#     updated_text = replace_words(text, replacements)
-#     with open(keauxdafile, 'w') as f:
-#         f.write(updated_text)
+    #         #for splits changes solo duo and squad and battlepass level properly 
+    #     with open(keauxdafile, 'r') as f:
+    #         text = f.read()
+    #         replacements = {
+    #         "solo": "==SOLO",
+    #         "duo": "==DUO",
+    #         "squad": "==SQUAD",
+    #         "overall": "==ALL",
+    #         "ltm": "==LTM",
+    #         "battlePass:": "",
+    #         "kills:": "totalk:"
+    #     }
+                
+    #     def replace_words(text, replacements):
+    #         for old_word, new_word in replacements.items():
+    #             text = text.replace(old_word, new_word)
+    #         return text
+    #     updated_text = replace_words(text, replacements)
+    #     with open(keauxdafile, 'w') as f:
+    #         f.write(updated_text)
 
 
-#         #spits to sepret txt files
-#     with open(keauxdafile, 'r') as original_file:
-#         content = original_file.read()
+    #         #spits to sepret txt files
+    #     with open(keauxdafile, 'r') as original_file:
+    #         content = original_file.read()
 
-#     # Splitting content using regular expressions to find sections
-#     sections = re.split(r'==\w+:', content)
+    #     # Splitting content using regular expressions to find sections
+    #     sections = re.split(r'==\w+:', content)
 
-#     if len(sections) >= 4:
-#         all_section = "==ALL:" + sections[1]
-#         solo_section = "==SOLO:" + sections[2]
-#         duo_section = "==DUO:" + sections[3]
-#         squad_section = "==SQUAD:" + sections[4]
+    #     if len(sections) >= 4:
+    #         all_section = "==ALL:" + sections[1]
+    #         solo_section = "==SOLO:" + sections[2]
+    #         duo_section = "==DUO:" + sections[3]
+    #         squad_section = "==SQUAD:" + sections[4]
 
-#         with open('pages/keauxda/keauxda-solo.txt', 'w') as section1_file:
-#             section1_file.write(solo_section.strip())
-        
-#         with open('pages/keauxda/keauxda-duo.txt', 'w') as section2_file:
-#             section2_file.write(duo_section.strip())
-        
-#         with open('pages/keauxda/keauxda-squad.txt', 'w') as section3_file:
-#             section3_file.write(squad_section.strip())
+    #         with open('pages/keauxda/keauxda-solo.txt', 'w') as section1_file:
+    #             section1_file.write(solo_section.strip())
             
-#         with open('pages/keauxda/keauxda-all.txt', 'w') as section4_file:
-#             section4_file.write(all_section.strip())  
-#     else:
-#         print("Sections not found in the expected format.")
-# except:
-#     print('no matches played')
-try:       
-   #mulligan---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=mulligan_name, time_window=TimeWindow.SEASON)
-
-    with open(mulliganfile, 'w') as file:
+    #         with open('pages/keauxda/keauxda-duo.txt', 'w') as section2_file:
+    #             section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("mulligans's Data written successfully!------------")
+    #         with open('pages/keauxda/keauxda-squad.txt', 'w') as section3_file:
+    #             section3_file.write(squad_section.strip())
+                
+    #         with open('pages/keauxda/keauxda-all.txt', 'w') as section4_file:
+    #             section4_file.write(all_section.strip())  
+    #     else:
+    #         print("Sections not found in the expected format.")
+    # except:
+    #     print('no matches played')
+    try:       
+    #mulligan---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=mulligan_name, time_window=TimeWindow.SEASON)
 
-    with open(mulliganfile, 'r') as file:
-        content = file.read()
+        with open(mulliganfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("mulligans's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(mulliganfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(mulliganfile, 'w') as f:
-        f.write(assembled)
+        with open(mulliganfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(mulliganfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(mulliganfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(mulliganfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(mulliganfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(mulliganfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(mulliganfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(mulliganfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(mulliganfile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/mulligan/mulligan-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/mulligan/mulligan-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/mulligan/mulligan-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/mulligan/mulligan-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/mulligan/mulligan-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:
-    #saitama---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=saitama_name, time_window=TimeWindow.SEASON, account_type=AccountType.XBL)
-
-    with open(saitamafile, 'w') as file:
+            with open('pages/mulligan/mulligan-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("saitamas's Data written successfully!------------")
+            with open('pages/mulligan/mulligan-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/mulligan/mulligan-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:
+        #saitama---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=saitama_name, time_window=TimeWindow.SEASON, account_type=AccountType.XBL)
 
-    with open(saitamafile, 'r') as file:
-        content = file.read()
+        with open(saitamafile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("saitamas's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(saitamafile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(saitamafile, 'w') as f:
-        f.write(assembled)
+        with open(saitamafile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(saitamafile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(saitamafile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(saitamafile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(saitamafile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(saitamafile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(saitamafile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(saitamafile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(saitamafile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/saitama/saitama-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/saitama/saitama-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/saitama/saitama-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/saitama/saitama-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/saitama/saitama-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:       
-    #trubadoor---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=trubadoor_name, time_window=TimeWindow.SEASON, account_type=AccountType.XBL)
-
-    with open(trubadoorfile, 'w') as file:
+            with open('pages/saitama/saitama-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("trubadoors's Data written successfully!------------")
+            with open('pages/saitama/saitama-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/saitama/saitama-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:       
+        #trubadoor---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=trubadoor_name, time_window=TimeWindow.SEASON, account_type=AccountType.XBL)
 
-    with open(trubadoorfile, 'r') as file:
-        content = file.read()
+        with open(trubadoorfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("trubadoors's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(trubadoorfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(trubadoorfile, 'w') as f:
-        f.write(assembled)
+        with open(trubadoorfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(trubadoorfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "ltm": "==LTM",
-        "overall": "==ALL",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(trubadoorfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(trubadoorfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(trubadoorfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(trubadoorfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "ltm": "==LTM",
+            "overall": "==ALL",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(trubadoorfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(trubadoorfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(trubadoorfile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/trubadoor/trubadoor-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/trubadoor/trubadoor-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/trubadoor/trubadoor-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/trubadoor/trubadoor-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/trubadoor/trubadoor-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:       
-    #romKulus---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=romKulus_name, time_window=TimeWindow.SEASON)
-
-    with open(romKulusfile, 'w') as file:
+            with open('pages/trubadoor/trubadoor-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("romKuluss's Data written successfully!------------")
+            with open('pages/trubadoor/trubadoor-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/trubadoor/trubadoor-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:       
+        #romKulus---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=romKulus_name, time_window=TimeWindow.SEASON)
 
-    with open(romKulusfile, 'r') as file:
-        content = file.read()
+        with open(romKulusfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("romKuluss's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(romKulusfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(romKulusfile, 'w') as f:
-        f.write(assembled)
+        with open(romKulusfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(romKulusfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(romKulusfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(romKulusfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(romKulusfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(romKulusfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(romKulusfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(romKulusfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(romKulusfile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/romKulus/romKulus-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/romKulus/romKulus-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/romKulus/romKulus-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/romKulus/romKulus-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/romKulus/romKulus-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-try:       
-    #can_nun---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=can_nun_name, time_window=TimeWindow.SEASON)
-
-    with open(can_nunfile, 'w') as file:
+            with open('pages/romKulus/romKulus-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("can_nuns's Data written successfully!------------")
+            with open('pages/romKulus/romKulus-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/romKulus/romKulus-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
+    try:       
+        #can_nun---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=can_nun_name, time_window=TimeWindow.SEASON)
 
-    with open(can_nunfile, 'r') as file:
-        content = file.read()
+        with open(can_nunfile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("can_nuns's Data written successfully!------------")
 
-    #gets rid of unneeded punctuation
-    with open(can_nunfile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(can_nunfile, 'w') as f:
-        f.write(assembled)
+        with open(can_nunfile, 'r') as file:
+            content = file.read()
 
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(can_nunfile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "ltm": "==LTM",
-        "overall": "==ALL",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+        #gets rid of unneeded punctuation
+        with open(can_nunfile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(can_nunfile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(can_nunfile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(can_nunfile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "ltm": "==LTM",
+            "overall": "==ALL",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(can_nunfile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(can_nunfile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(can_nunfile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
 
-        with open('pages/can_nun/can_nun-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/can_nun/can_nun-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/can_nun/can_nun-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/can_nun/can_nun-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-        with open('pages/can_nun/can_nun-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())  
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-       
-try:
-    #apolllo---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=apolllo_name, time_window=TimeWindow.SEASON)
-
-    with open(apolllofile, 'w') as file:
+            with open('pages/can_nun/can_nun-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("apolllos's Data written successfully!------------")
-
-    with open(apolllofile, 'r') as file:
-        content = file.read()
-
-    #gets rid of unneeded punctuation
-    with open(apolllofile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(apolllofile, 'w') as f:
-        f.write(assembled)
-
+            with open('pages/can_nun/can_nun-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/can_nun/can_nun-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())  
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
         
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(apolllofile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+    try:
+        #apolllo---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=apolllo_name, time_window=TimeWindow.SEASON)
+
+        with open(apolllofile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("apolllos's Data written successfully!------------")
+
+        with open(apolllofile, 'r') as file:
+            content = file.read()
+
+        #gets rid of unneeded punctuation
+        with open(apolllofile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(apolllofile, 'w') as f:
+            f.write(assembled)
+
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(apolllofile, 'w') as f:
-        f.write(updated_text)
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(apolllofile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(apolllofile, 'w') as f:
+            f.write(updated_text)
 
 
-        #spits to sepret txt files
-    with open(apolllofile, 'r') as original_file:
-        content = original_file.read()
+            #spits to sepret txt files
+        with open(apolllofile, 'r') as original_file:
+            content = original_file.read()
 
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
 
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
-        
-
-        with open('pages/apolllo/apolllo-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/apolllo/apolllo-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/apolllo/apolllo-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
             
-        with open('pages/apolllo/apolllo-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')
-        
-try:      
-    #jaknkife---------------------------------------------------------------------------
-    player_stats = api.stats.fetch_by_name(name=jaknkife_name, time_window=TimeWindow.SEASON)
 
-    with open(jaknkifefile, 'w') as file:
+            with open('pages/apolllo/apolllo-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
             
-            for attribute in dir(player_stats):
-                if not attribute.startswith('__'):  # Skip special attributes
-                    value = getattr(player_stats, attribute)
-                    file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
-    print("jaknkifes's Data written successfully!------------")
-
-    with open(jaknkifefile, 'r') as file:
-        content = file.read()
-
-    #gets rid of unneeded punctuation
-    with open(jaknkifefile, 'r') as f:
-        text = f.read()
-        words = text.split()
-        table = str.maketrans("", "", punctuation_to_remove)
-        stripped = [w.translate(table) for w in words]
-        assembled = " ".join(stripped)
-    with open(jaknkifefile, 'w') as f:
-        f.write(assembled)
-
-        
-        #for splits changes solo duo and squad and battlepass level properly 
-    with open(jaknkifefile, 'r') as f:
-        text = f.read()
-        replacements = {
-        "solo": "==SOLO",
-        "duo": "==DUO",
-        "squad": "==SQUAD",
-        "overall": "==ALL",
-        "ltm": "==LTM",
-        "battlePass:": "",
-        "kills:": "totalk:"
-    }
+            with open('pages/apolllo/apolllo-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
             
-    def replace_words(text, replacements):
-        for old_word, new_word in replacements.items():
-            text = text.replace(old_word, new_word)
-        return text
-    updated_text = replace_words(text, replacements)
-    with open(jaknkifefile, 'w') as f:
-        f.write(updated_text)
-
-
-        #spits to sepret txt files
-    with open(jaknkifefile, 'r') as original_file:
-        content = original_file.read()
-
-    # Splitting content using regular expressions to find sections
-    sections = re.split(r'==\w+:', content)
-
-    if len(sections) >= 4:
-        all_section = "==ALL:" + sections[1]
-        solo_section = "==SOLO:" + sections[2]
-        duo_section = "==DUO:" + sections[3]
-        squad_section = "==SQUAD:" + sections[4]
-        
-
-        with open('pages/jaknkife/jaknkife-solo.txt', 'w') as section1_file:
-            section1_file.write(solo_section.strip())
-        
-        with open('pages/jaknkife/jaknkife-duo.txt', 'w') as section2_file:
-            section2_file.write(duo_section.strip())
-        
-        with open('pages/jaknkife/jaknkife-squad.txt', 'w') as section3_file:
-            section3_file.write(squad_section.strip())
+            with open('pages/apolllo/apolllo-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/apolllo/apolllo-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')
             
-        with open('pages/jaknkife/jaknkife-all.txt', 'w') as section4_file:
-            section4_file.write(all_section.strip())
-    else:
-        print("Sections not found in the expected format.")
-except:
-    print('no matches played')       
+    try:      
+        #jaknkife---------------------------------------------------------------------------
+        player_stats = api.stats.fetch_by_name(name=jaknkife_name, time_window=TimeWindow.SEASON)
+
+        with open(jaknkifefile, 'w') as file:
+                
+                for attribute in dir(player_stats):
+                    if not attribute.startswith('__'):  # Skip special attributes
+                        value = getattr(player_stats, attribute)
+                        file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+        print("jaknkifes's Data written successfully!------------")
+
+        with open(jaknkifefile, 'r') as file:
+            content = file.read()
+
+        #gets rid of unneeded punctuation
+        with open(jaknkifefile, 'r') as f:
+            text = f.read()
+            words = text.split()
+            table = str.maketrans("", "", punctuation_to_remove)
+            stripped = [w.translate(table) for w in words]
+            assembled = " ".join(stripped)
+        with open(jaknkifefile, 'w') as f:
+            f.write(assembled)
+
+            
+            #for splits changes solo duo and squad and battlepass level properly 
+        with open(jaknkifefile, 'r') as f:
+            text = f.read()
+            replacements = {
+            "solo": "==SOLO",
+            "duo": "==DUO",
+            "squad": "==SQUAD",
+            "overall": "==ALL",
+            "ltm": "==LTM",
+            "battlePass:": "",
+            "kills:": "totalk:"
+        }
+                
+        def replace_words(text, replacements):
+            for old_word, new_word in replacements.items():
+                text = text.replace(old_word, new_word)
+            return text
+        updated_text = replace_words(text, replacements)
+        with open(jaknkifefile, 'w') as f:
+            f.write(updated_text)
+
+
+            #spits to sepret txt files
+        with open(jaknkifefile, 'r') as original_file:
+            content = original_file.read()
+
+        # Splitting content using regular expressions to find sections
+        sections = re.split(r'==\w+:', content)
+
+        if len(sections) >= 4:
+            all_section = "==ALL:" + sections[1]
+            solo_section = "==SOLO:" + sections[2]
+            duo_section = "==DUO:" + sections[3]
+            squad_section = "==SQUAD:" + sections[4]
+            
+
+            with open('pages/jaknkife/jaknkife-solo.txt', 'w') as section1_file:
+                section1_file.write(solo_section.strip())
+            
+            with open('pages/jaknkife/jaknkife-duo.txt', 'w') as section2_file:
+                section2_file.write(duo_section.strip())
+            
+            with open('pages/jaknkife/jaknkife-squad.txt', 'w') as section3_file:
+                section3_file.write(squad_section.strip())
+                
+            with open('pages/jaknkife/jaknkife-all.txt', 'w') as section4_file:
+                section4_file.write(all_section.strip())
+        else:
+            print("Sections not found in the expected format.")
+    except:
+        print('no matches played')       
         
            
  #end of users. Add more above ------------------------------------------------------------------------------------------------------          

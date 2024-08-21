@@ -1614,11 +1614,7 @@ try:
     else:
         print("Sections not found in the expected format.")
 except:
-    print('no matches played')
-            
-        
-        
-        
+    print('no matches played')       
         
            
  #end of users. Add more above ------------------------------------------------------------------------------------------------------          

@@ -410,7 +410,7 @@ with open(Vulkansquad, 'r') as file:
 #Squad print stats and add more users above-----------------------------------------------------------------------------------------
 
 player_stats = {
-    'AK33': {
+    'Pixsol': {
        'Squad kills': int(AK33squadkills), 'Squad Wins': int(AK33squadwins), 'Squad Finished top 3': int(AK33squadtop3)
        
     },
@@ -418,7 +418,7 @@ player_stats = {
         'Squad kills': int(vectorsquadkills),  'Squad Wins': int(vectorsquadwins), 'Squad Finished top 3': int(vectorsquadtop3)
         
     },
-    'lokey': {
+    'Lo-key': {
         'Squad kills': int(lokeysquadkills),  'Squad Wins': int(lokeysquadwins), 'Squad Finished top 3': int(lokeysquadtop3)
     },
     
@@ -426,19 +426,19 @@ player_stats = {
        'Squad kills': int(LeFloorsquadkills),  'Squad Wins': int(LeFloorsquadwins), 'Squad Finished top 3': int(LeFloorsquadtop3)
     },
     
-     'ghirradeil': {
+     'Ghirradeil': {
        'Squad kills': int(ghirradeilsquadkills),  'Squad Wins': int(ghirradeilsquadwins), 'Squad Finished top 3': int(ghirradeilsquadtop3)
     },
      
-     'phlash': {
+     'Phlash': {
         'Squad kills': int(phlashsquadkills),  'Squad Wins': int(phlashsquadwins), 'Squad Finished top 3': int(phlashsquadtop3)
     },
      
-     'ryptyde': {
+     'Ryptyde': {
         'Squad kills': int(ryptydesquadkills),  'Squad Wins': int(ryptydesquadwins), 'Squad Finished top 3': int(ryptydesquadtop3)
     },
      
-     'sideKwinder': {
+     'SideKwinder': {
         'Squad kills': int(sideKwindersquadkills), 'Squad Wins': int(sideKwindersquadwins), 'Squad Finished top 3': int(sideKwindersquadtop3)
        
     },
@@ -448,7 +448,7 @@ player_stats = {
        
     },
      
-     'o3zone': {
+     'O3-zone': {
        'Squad kills': int(o3zonesquadkills), 'Squad Wins': int(o3zonesquadwins), 'Squad Finished top 3': int(o3zonesquadtop3)
        
     },
@@ -457,37 +457,37 @@ player_stats = {
     #     # 'Squad kills': int(keauxdasquadkills), 'Squad Wins': int(keauxdasquadwins), 'Squad Finished top 3': int(keauxdasquadtop3)
        
     # },
-    'mulligan': {
+    'Mulligan': {
         'Squad kills': int(mulligansquadkills), 'Squad Wins': int(mulligansquadwins), 'Squad Finished top 3': int(mulligansquadtop3)
        
     },
     
-    'mcfly': {
+    'Micfly': {
         'Squad kills': int(mcflysquadkills), 'Squad Wins': int(mcflysquadwins), 'Squad Finished top 3': int(mcflysquadtop3)
        
     },
-    'saitama': {
+    'Saitama': {
         'Squad kills': int(saitamasquadkills), 'Squad Wins': int(saitamasquadwins), 'Squad Finished top 3': int(saitamasquadtop3)
        
     },
-    'trubadoor': {
+    'Trubadoor': {
        'Squad kills': int(trubadoorsquadkills), 'Squad Wins': int(trubadoorsquadwins), 'Squad Finished top 3': int(trubadoorsquadtop3)
        
     },
-    'romKulus': {
+    'RomKulus': {
        'Squad kills': int(romKulussquadkills), 'Squad kills': int(romKulussquadkills), 'Squad Wins': int(romKulussquadwins), 'Squad Finished top 3': int(romKulussquadtop3)
              
     },
-    'can_nun': {
+    'Can nun': {
         'Squad kills': int(can_nunsquadkills), 'Squad Wins': int(can_nunsquadwins), 'Squad Finished top 3': int(can_nunsquadtop3)
     },
     
     
-    'apolllo': {
+    'Apolllo': {
         'Squad kills': int(apolllosquadkills), 'Squad Wins': int(apolllosquadwins), 'Squad Finished top 3': int(apolllosquadtop3)
     },
     
-    'jaknkife': {
+    'Jaknkife': {
         'Squad kills': int(jaknkifesquadkills), 'Squad Wins': int(jaknkifesquadwins), 'Squad Finished top 3': int(jaknkifesquadtop3)
     },
     

@@ -434,12 +434,12 @@ with open(Vulkansolo, 'r') as file:
 #Solo print stats and add more users above-----------------------------------------------------------------------------------------
 
 player_stats = {
-    'AK33': {
+    'Pixsol': {
         'Solo kills': int(AK33solokills), 'Solo Wins': int(AK33solowins), 'Solo Finished top 10': int(AK33solotop10)
               
     },
     
-     'mcfly': {
+     'Micfly': {
         'Solo kills': int(mcflysolokills), 'Solo Wins': int(mcflysolowins), 'Solo Finished top 10': int(mcflysolotop10)
        
     },
@@ -448,7 +448,7 @@ player_stats = {
         'Solo kills': int(vectorsolokills),  'Solo Wins': int(vectorsolowins), 'Solo Finished top 10': int(vectorsolotop10)
         
     },
-    'lokey': {
+    'Lo-kee': {
         'Solo kills': int(lokeysolokills),  'Solo Wins': int(lokeysolowins), 'Solo Finished top 10': int(lokeysolotop10)
     },
     
@@ -456,19 +456,19 @@ player_stats = {
        'Solo kills': int(LeFloorsolokills),  'Solo Wins': int(LeFloorsolowins), 'Solo Finished top 10': int(LeFloorsolotop10)
     },
     
-     'ghirradeil': {
+     'Ghirradeil': {
         'Solo kills': int(ghirradeilsolokills),  'Solo Wins': int(ghirradeilsolowins), 'Solo Finished top 10': int(ghirradeilsolotop10)
     },
      
-     'phlash': {
+     'Phlash': {
         'Solo kills': int(phlashsolokills),  'Solo Wins': int(phlashsolowins), 'Solo Finished top 10': int(phlashsolotop10)
     },
      
-     'ryptyde': {
+     'Ryptyde': {
         'Solo kills': int(ryptydesolokills),  'Solo Wins': int(ryptydesolowins), 'Solo Finished top 10': int(ryptydesolotop10)
     },
      
-     'sideKwinder': {
+     'SideKwinder': {
         'Solo kills': int(sideKwindersolokills), 'Solo Wins': int(sideKwindersolowins), 'Solo Finished top 10': int(sideKwindersolotop10)
        
     },
@@ -478,7 +478,7 @@ player_stats = {
        
     },
      
-     'o3zone': {
+     '03-zone': {
        'Solo kills': int(o3zonesolokills), 'Solo Wins': int(o3zonesolowins), 'Solo Finished top 10': int(o3zonesolotop10)
        
     },
@@ -487,32 +487,32 @@ player_stats = {
     #  'Solo kills': int(keauxdasolokills), 'Solo Wins': int(keauxdasolowins), 'Solo Finished top 10': int(keauxdasolotop10)
        
     # },
-    'mulligan': {
+    'Mulligan': {
        'Solo kills': int(mulligansolokills), 'Solo Wins': int(mulligansolowins), 'Solo Finished top 10': int(mulligansolotop10)
        
     },
    
-    'saitama': {
+    'Saitama': {
         'Solo kills': int(saitamasolokills), 'Solo Wins': int(saitamasolowins), 'Solo Finished top 10': int(saitamasolotop10)
        
     },
-    'trubadoor': {
+    'Trubadoor': {
         'Solo kills': int(trubadoorsolokills), 'Solo Wins': int(trubadoorsolowins), 'Solo Finished top 10': int(trubadoorsolotop10)
        
     },
-    'romKulus': {
+    'RomKulus': {
         'Solo kills': int(romKulussolokills), 'Solo Wins': int(romKulussolowins), 'Solo Finished top 10': int(romKulussolotop10)
              
     },
-    'can_nun': {
+    'Can nun': {
       'Solo kills': int(can_nunsolokills), 'Solo Wins': int(can_nunsolowins), 'Solo Finished top 10': int(can_nunsolotop10)
        },
                 
-    'apolllo': {
+    'Apolllo': {
         'Solo kills': int(apolllosolokills), 'Solo Wins': int(apolllosolowins), 'Solo Finished top 10': int(apolllosolotop10)
         },
     
-    'jaknkife': {
+    'Jaknkife': {
       'Solo kills': int(jaknkifesolokills), 'Solo Wins': int(jaknkifesolowins), 'Solo Finished top 10': int(jaknkifesolotop10)
        },
     

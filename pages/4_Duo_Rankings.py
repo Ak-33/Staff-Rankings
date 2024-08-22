@@ -404,12 +404,12 @@ with open(Vulkanduo, 'r') as file:
 #Solo print stats and add more users above-----------------------------------------------------------------------------------------
 
 player_stats = {
-    'AK33': {
+    'Pixsol': {
       'Duo kills': int(AK33duokills), 'Duo Wins': int(AK33duowins), 'Duo Finished top 5': int(AK33duotop5)
               
     },
     
-     'mcfly': {
+     'Micfly': {
        'Duo kills': int(mcflyduokills), 'Duo Wins': int(mcflyduowins), 'Duo Finished top 5': int(mcflyduotop5)
        
     },
@@ -418,7 +418,7 @@ player_stats = {
         'Duo kills': int(vectorduokills),  'Duo Wins': int(vectorduowins), 'Duo Finished top 5': int(vectorduotop5)
         
     },
-    'lokey': {
+    'Lo-kee': {
        'Duo kills': int(lokeyduokills),  'Duo Wins': int(lokeyduowins), 'Duo Finished top 5': int(lokeyduotop5)
     },
     
@@ -426,19 +426,19 @@ player_stats = {
         'Duo kills': int(LeFloorduokills),  'Duo Wins': int(LeFloorduowins), 'Duo Finished top 5': int(LeFloorduotop5)
     },
     
-     'ghirradeil': {
+     'Ghirradeil': {
         'Duo kills': int(ghirradeilduokills),  'Duo Wins': int(ghirradeilduowins), 'Duo Finished top 5': int(ghirradeilduotop5)
     },
      
-     'phlash': {
+     'Phlash': {
         'Duo kills': int(phlashduokills),  'Duo Wins': int(phlashduowins), 'Duo Finished top 5': int(phlashduotop5)
     },
      
-     'ryptyde': {
+     'Ryptyde': {
         'Duo kills': int(ryptydeduokills),  'Duo Wins': int(ryptydeduowins), 'Duo Finished top 5': int(ryptydeduotop5)
     },
      
-     'sideKwinder': {
+     'SideKwinder': {
         'Duo kills': int(sideKwinderduokills), 'Duo Wins': int(sideKwinderduowins), 'Duo Finished top 5': int(sideKwinderduotop5)
        
     },
@@ -448,7 +448,7 @@ player_stats = {
        
     },
      
-     'o3zone': {
+     'O3-zone': {
         'Duo kills': int(o3zoneduokills), 'Duo Wins': int(o3zoneduowins), 'Duo Finished top 5': int(o3zoneduotop5)
        
     },
@@ -457,33 +457,33 @@ player_stats = {
     #     'Duo kills': int(keauxdaduokills), 'Duo Wins': int(keauxdaduowins), 'Duo Finished top 5': int(keauxdaduotop5)
        
     # },
-    'mulligan': {
+    'Mulligan': {
        'Duo kills': int(mulliganduokills), 'Duo Wins': int(mulliganduowins), 'Duo Finished top 5': int(mulliganduotop5)
        
     },
    
-    'saitama': {
+    'Saitama': {
        'Duo kills': int(saitamaduokills), 'Duo Wins': int(saitamaduowins), 'Duo Finished top 5': int(saitamaduotop5)
        
     },
-    'trubadoor': {
+    'Trubadoor': {
         'Duo kills': int(trubadoorduokills), 'Duo Wins': int(trubadoorduowins), 'Duo Finished top 5': int(trubadoorduotop5)
        
     },
-    'romKulus': {
+    'RomKulus': {
        'Duo kills': int(romKulusduokills), 'Duo Wins': int(romKulusduowins), 'Duo Finished top 5': int(romKulusduotop5)
              
     },
-    'can_nun': {
+    'Can nun': {
     'Duo kills': int(can_nunduokills), 'Duo Wins': int(can_nunduowins), 'Duo Finished top 5': int(can_nunduotop5)
     },
     
-    'apolllo': {
+    'Apolllo': {
     'Duo kills': int(apollloduokills), 'Duo Wins': int(apollloduowins), 'Duo Finished top 5': int(apollloduotop5)
     },
     
     
-    'jaknkife': {
+    'Jaknkife': {
     'Duo kills': int(jaknkifeduokills), 'Duo Wins': int(jaknkifeduowins), 'Duo Finished top 5': int(jaknkifeduotop5)
     },
     

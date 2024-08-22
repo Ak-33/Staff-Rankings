@@ -393,10 +393,11 @@ elif count_lokeykd == 4 or 5:
 standardized_lokeykd = ("{:.2f}".format(lokeykd))
 
 # LeFloorkd---------------------------------------------------------------------------   
+
 if count_LeFloorkd == 1:
     LeFloorkd = LeFloorkd * 1.00
 
-if count_LeFloorkd == 2:
+elif count_LeFloorkd == 2:
     LeFloorkd = LeFloorkd * 0.10
 
 elif count_LeFloorkd == 3:
@@ -544,7 +545,7 @@ standardized_saitamakd = ("{:.2f}".format(saitamakd))
 
 # trubadoorkd---------------------------------------------------------------------------   
 if count_trubadoorkd == 1:
-    AK33kd = AK33kd * 1.00
+    trubadoorkd = trubadoorkd * 1.00
 
 elif count_trubadoorkd == 2:
     trubadoorkd = trubadoorkd * 0.10
@@ -619,6 +620,9 @@ elif count_jaknkifekd == 4 or 5:
 standardized_jaknkife = ("{:.2f}".format(jaknkife))
 
 # Vulkan---------------------------------------------------------------------------   
+if Vulkankd == 1:
+    Vulkankd = Vulkankd * 1.00
+
 if count_Vulkankd == 2:
     Vulkan = Vulkankd * 0.10
 
@@ -632,11 +636,11 @@ standardized_Vulkan = ("{:.2f}".format(Vulkan))
 
 
 player_stats = {
-    'AK33': {
+    'Pixsol': {
        'KD':(standardized_AK33kd), 
     },
     
-     'mcfly': {
+     'Micfly': {
        'KD':(standardized_mcflykd), 
        
     },
@@ -645,7 +649,7 @@ player_stats = {
        'KD':(standardized_vectorkd), 
         
     },
-    'lokey': {
+    'lo-kee': {
        'KD':(standardized_lokeykd), 
     },
     
@@ -653,19 +657,19 @@ player_stats = {
        'KD':(standardized_LeFloorkd), 
     },
     
-     'ghirradeil': {
+     'Ghirradeil': {
        'KD':(standardized_ghirradeilkd), 
     },
      
-     'phlash': {
+     'Phlash': {
        'KD':(standardized_phlashkd), 
     },
      
-     'ryptyde': {
+     'Ryptyde': {
        'KD':(standardized_ryptydekd),
     },
      
-     'sideKwinder': {
+     'SideKwinder': {
        'KD':(standardized_sideKwinderkd), 
        
     },
@@ -675,7 +679,7 @@ player_stats = {
        
     },
      
-     'o3zone': {
+     'O3-zone': {
        'KD':(standardized_o3zonekd), 
        
     },
@@ -684,39 +688,39 @@ player_stats = {
     #    'KD':(standardized_keauxdakd), 
     
     # },
-    'mulligan': {
+    'Mulligan': {
        'KD':(standardized_mulligankd), 
        
     },
    
-    'saitama': {
+    'Saitama': {
        'KD':(standardized_saitamakd), 
        
     },
-    'trubadoor': {
+    'Trubadoor': {
        'KD':(standardized_trubadoorkd), 
        
     },
-    'romKulus': {
+    'RomKulus': {
        'KD':(standardized_romKuluskd), 
              
     },
  
- 'apolllo': {
-       'KD':(standardized_apolllo),
-       },
+    'Apolllo': {
+        'KD':(standardized_apolllo),
+    },
  
-  'can_nun': {
-       'KD':(standardized_can_nun),
-       },
-  
-  'jaknkife': {
-       'KD':(standardized_jaknkife),
-       },
-  
-  'Vulkan': {
-       'KD':(standardized_Vulkan),
-       },
+    'Can nun': {
+        'KD':(standardized_can_nun),
+    },
+    
+    'Jaknkife': {
+        'KD':(standardized_jaknkife),
+    },
+    
+    'Vulkan': {
+        'KD':(standardized_Vulkan),
+    },
 
    }
 

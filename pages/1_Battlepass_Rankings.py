@@ -275,11 +275,11 @@ with open(Vulkanfile, 'r') as file:
 #Solo print stats and add more users above-----------------------------------------------------------------------------------------
 
 player_stats = {
-    'AK33': {
+    'Pixsol': {
        'Battlepass level':int(AK33level), 
     },
     
-     'mcfly': {
+     'Micfly': {
        'Battlepass level':int(mcflylevel), 
        
     },
@@ -288,7 +288,7 @@ player_stats = {
        'Battlepass level':int(vectorlevel), 
         
     },
-    'lokey': {
+    'lo-kee': {
        'Battlepass level':int(lokeylevel), 
     },
     
@@ -296,19 +296,19 @@ player_stats = {
        'Battlepass level':int(LeFloorlevel), 
     },
     
-     'ghirradeil': {
+     'Ghirradeil': {
        'Battlepass level':int(ghirradeillevel), 
     },
      
-     'phlash': {
+     'Phlash': {
        'Battlepass level':int(phlashlevel), 
     },
      
-     'ryptyde': {
+     'Ryptyde': {
        'Battlepass level':int(ryptydelevel),
     },
      
-     'sideKwinder': {
+     'SideKwinder': {
        'Battlepass level':int(sideKwinderlevel), 
        
     },
@@ -318,7 +318,7 @@ player_stats = {
        
     },
      
-     'o3zone': {
+     'O3-zone': {
        'Battlepass level':int(o3zonelevel), 
        
     },
@@ -327,32 +327,32 @@ player_stats = {
     #    'Battlepass level':int(keauxdalevel), 
        
     # },
-    'mulligan': {
+    'Mulligan': {
        'Battlepass level':int(mulliganlevel), 
        
     },
    
-    'saitama': {
+    'Saitama': {
        'Battlepass level':int(saitamalevel), 
        
     },
-    'trubadoor': {
+    'Trubadoor': {
        'Battlepass level':int(trubadoorlevel), 
        
     },
-    'romKulus': {
+    'RomKulus': {
        'Battlepass level':int(romKuluslevel), 
              
     },
-    'can_nun': {
+    'Can nun': {
        'Battlepass level':int(can_nunlevel),
        },
     
-    'apolllo': {
+    'Apolllo': {
        'Battlepass level':int(apolllolevel),
        },
     
-    'jaknkife': {
+    'Jaknkife': {
        'Battlepass level':int(jaknkifelevel),
        },
                     

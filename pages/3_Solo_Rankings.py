@@ -41,6 +41,8 @@ can_nunsolo='pages/can_nun/can_nun-solo.txt'
 apolllosolo='pages/apolllo/apolllo-solo.txt'
     #jaknkife----------------
 jaknkifesolo='pages/jaknkife/jaknkife-solo.txt'
+ #Vulkan----------------
+Vulkansolo='pages/Vulkan/Vulkan-solo.txt'
 
 
 
@@ -408,7 +410,26 @@ with open(jaknkifesolo, 'r') as file:
             jaknkifesolokills = field.split(':')[1].strip()
         
         if "top10" in field:
-            jaknkifesolotop10 = field.split(':')[1].strip()  
+            jaknkifesolotop10 = field.split(':')[1].strip() 
+
+#Vulkan-----------------------------------------------------------------------------
+#solo stats
+Vulkansolowins = 0
+Vulkansolokills = 0
+Vulkansolotop10 = 0
+with open(Vulkansolo, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+
+    for field in fields:
+        if "wins" in field: 
+            Vulkansolowins = field.split(':')[1].strip()
+        
+        if 'totalk' in field:
+            Vulkansolokills = field.split(':')[1].strip()
+        
+        if "top10" in field:
+            Vulkansolotop10 = field.split(':')[1].strip()   
            
 #Solo print stats and add more users above-----------------------------------------------------------------------------------------
 
@@ -493,6 +514,10 @@ player_stats = {
     
     'jaknkife': {
       'Solo kills': int(jaknkifesolokills), 'Solo Wins': int(jaknkifesolowins), 'Solo Finished top 10': int(jaknkifesolotop10)
+       },
+    
+    'Vulkan': {
+      'Solo kills': int(Vulkansolokills), 'Solo Wins': int(Vulkansolowins), 'Solo Finished top 10': int(Vulkansolotop10)
        },
 
    }

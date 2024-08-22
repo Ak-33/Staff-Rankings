@@ -40,6 +40,8 @@ can_nunall='pages/can_nun/can_nun-all.txt'
 apollloall='pages/apolllo/apolllo-all.txt'
     #jaknkife----------------
 jaknkifeall='pages/jaknkife/jaknkife-all.txt'
+    #Vulkan----------------
+Vulkanall='pages/Vulkan/Vulkan-all.txt'
 
 
 
@@ -256,7 +258,19 @@ with open(jaknkifeall, 'r') as file:
  
     for field in fields:
         if 'kd' in field:
-            jaknkifekd = field.split(':')[1].strip()    
+            jaknkifekd = field.split(':')[1].strip() 
+            
+
+#Vulkan---------------------------------------------------------------------------   
+   #gets kd
+Vulkankd = 0
+with open(Vulkanall, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'kd' in field:
+            Vulkankd = field.split(':')[1].strip()       
                          
 
 
@@ -281,6 +295,7 @@ romKuluskd = int(romKuluskd)
 apolllokd = int(apolllokd)            
 can_nunkd = int(can_nunkd)
 jaknkifekd = int(jaknkifekd)
+Vulkankd = int(Vulkankd)
 
 #Def to couint how many digits are in the kd stat
 def countDigits(n):
@@ -311,6 +326,7 @@ count_can_nunkd = countDigits(can_nunkd)
 count_apolllokd = countDigits(apolllokd)
 count_can_nunkd = countDigits(can_nunkd)
 count_jaknkifekd = countDigits(jaknkifekd)
+count_Vulkankd = countDigits(Vulkankd)
 
 
 
@@ -602,6 +618,18 @@ elif count_jaknkifekd == 4 or 5:
   
 standardized_jaknkife = ("{:.2f}".format(jaknkife))
 
+# Vulkan---------------------------------------------------------------------------   
+if count_Vulkankd == 2:
+    Vulkan = Vulkankd * 0.10
+
+elif count_Vulkankd == 3:
+    Vulkan = Vulkankd * 0.01
+
+elif count_Vulkankd == 4 or 5:
+    Vulkan = Vulkankd * 0.001
+  
+standardized_Vulkan = ("{:.2f}".format(Vulkan))
+
 
 player_stats = {
     'AK33': {
@@ -685,7 +713,10 @@ player_stats = {
   'jaknkife': {
        'KD':(standardized_jaknkife),
        },
-
+  
+  'Vulkan': {
+       'KD':(standardized_Vulkan),
+       },
 
    }
 

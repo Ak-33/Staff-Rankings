@@ -41,6 +41,8 @@ can_nunfile ='pages/can_nun/can_nun_stats.txt'
 apolllofile ='pages/apolllo/apolllo_stats.txt'
   #jaknkife----------------
 jaknkifefile ='pages/jaknkife/jaknkife_stats.txt'
+    #Vulkan----------------
+Vulkanfile ='pages/Vulkan/Vulkan_stats.txt'
 
 
 #Pixsol---------------------------------------------------------------------------    
@@ -258,6 +260,17 @@ with open(jaknkifefile, 'r') as file:
     for field in fields:
         if 'level' in field:
             jaknkifelevel = field.split(':')[1].strip()  
+            
+#Vulkan--------------------------------------------------------------------------- 
+   #gets BP level
+Vulkanlevel = 0
+with open(Vulkanfile, 'r') as file:
+    content = file.read()
+    fields = content.split(',')
+ 
+    for field in fields:
+        if 'level' in field:
+            Vulkanlevel = field.split(':')[1].strip()  
                                         
 #Solo print stats and add more users above-----------------------------------------------------------------------------------------
 
@@ -342,6 +355,10 @@ player_stats = {
     'jaknkife': {
        'Battlepass level':int(jaknkifelevel),
        },
+                    
+    'Vulkan': {
+        'Battlepass level':int(Vulkanlevel),
+        },
 
    }
 

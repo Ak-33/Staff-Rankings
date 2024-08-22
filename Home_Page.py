@@ -168,7 +168,7 @@ Vulkanall='pages/Vulkan/Vulkan-all.txt'
 
 
 st.set_page_config(
-    page_title="McCall Staff Rankings - V:1.5.5-Multi",
+    page_title="McCall Staff Rankings - V:2.0.0",
     page_icon="🔫",
     layout= "wide"
 )

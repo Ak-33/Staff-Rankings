@@ -363,7 +363,7 @@ elif count_mcflykd == 4 or 5:
 standardized_mcflykd = ("{:.2f}".format(mcflykd))
 
 # vectorkd---------------------------------------------------------------------------   
-if count_mcflykd == 1:
+if count_vectorkd == 1:
     vectorkd = vectorkd * 1.00
     
 elif count_vectorkd == 2:

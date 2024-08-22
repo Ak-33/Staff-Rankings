@@ -31,6 +31,7 @@ romKulus_name ='Cr1spyNugg3t'
 can_nun_name ='can-nun'
 apolllo_name = "Milwaukee Wiscon"
 jaknkife_name = "AnnoyingComet1"
+Vulkan_name = "thegreycoat123"
 
     #files_names
        
@@ -157,6 +158,13 @@ jaknkifesolo='pages/jaknkife/jaknkife-solo.txt'
 jaknkifeduo='pages/jaknkife/jaknkife-duo.txt'
 jaknkifesquad='pages/jaknkife/jaknkife-squad.txt'
 jaknkifeall='pages/jaknkife/jaknkife-all.txt'
+
+#Vulkan----------------
+Vulkanfile ='pages/Vulkan/Vulkan_stats.txt'
+Vulkansolo='pages/Vulkan/Vulkan-solo.txt'
+Vulkanduo='pages/Vulkan/Vulkan-duo.txt'
+Vulkansquad='pages/Vulkan/Vulkan-squad.txt'
+Vulkanall='pages/Vulkan/Vulkan-all.txt'
 
 
 st.set_page_config(
@@ -1083,6 +1091,7 @@ with st.spinner("# Please wait - Do not select a category until done"):
         #         print("Sections not found in the expected format.")
         # except:
         #     print('no matches played')
+    
     def batch2():   
         try:       
         #mulligan---------------------------------------------------------------------------
@@ -1619,7 +1628,86 @@ with st.spinner("# Please wait - Do not select a category until done"):
             else:
                 print("Sections not found in the expected format.")
         except:
-            print('no matches played')       
+            print('no matches played') 
+        
+        try:   
+            #Vulkan---------------------------------------------------------------------------
+            player_stats = api.stats.fetch_by_name(name=Vulkan_name, time_window=TimeWindow.SEASON)
+
+            with open(Vulkanfile, 'w') as file:
+                    
+                    for attribute in dir(player_stats):
+                        if not attribute.startswith('__'):  # Skip special attributes
+                            value = getattr(player_stats, attribute)
+                            file.write(f"{attribute}: {str(value)}\n")  # Write attribute and value to file
+            print("Vulkans's Data written successfully!------------")
+
+            with open(Vulkanfile, 'r') as file:
+                content = file.read()
+
+            #gets rid of unneeded punctuation
+            with open(Vulkanfile, 'r') as f:
+                text = f.read()
+                words = text.split()
+                table = str.maketrans("", "", punctuation_to_remove)
+                stripped = [w.translate(table) for w in words]
+                assembled = " ".join(stripped)
+            with open(Vulkanfile, 'w') as f:
+                f.write(assembled)
+
+                
+                #for splits changes solo duo and squad and battlepass level properly 
+            with open(Vulkanfile, 'r') as f:
+                text = f.read()
+                replacements = {
+                "solo": "==SOLO",
+                "duo": "==DUO",
+                "squad": "==SQUAD",
+                "overall": "==ALL",
+                "ltm": "==LTM",
+                "battlePass:": "",
+                "kills:": "totalk:"
+            }
+                    
+            def replace_words(text, replacements):
+                for old_word, new_word in replacements.items():
+                    text = text.replace(old_word, new_word)
+                return text
+            updated_text = replace_words(text, replacements)
+            with open(Vulkanfile, 'w') as f:
+                f.write(updated_text)
+
+
+                #spits to sepret txt files
+            with open(Vulkanfile, 'r') as original_file:
+                content = original_file.read()
+
+            # Splitting content using regular expressions to find sections
+            sections = re.split(r'==\w+:', content)
+
+            if len(sections) >= 4:
+                all_section = "==ALL:" + sections[1]
+                solo_section = "==SOLO:" + sections[2]
+                duo_section = "==DUO:" + sections[3]
+                squad_section = "==SQUAD:" + sections[4]
+                
+
+                with open('pages/Vulkan/Vulkan-solo.txt', 'w') as section1_file:
+                    section1_file.write(solo_section.strip())
+                
+                with open('pages/Vulkan/Vulkan-duo.txt', 'w') as section2_file:
+                    section2_file.write(duo_section.strip())
+                
+                with open('pages/Vulkan/Vulkan-squad.txt', 'w') as section3_file:
+                    section3_file.write(squad_section.strip())
+                    
+                with open('pages/Vulkan/Vulkan-all.txt', 'w') as section4_file:
+                    section4_file.write(all_section.strip())
+            else:
+                print("Sections not found in the expected format.")        
+        except:
+            print('no matches played')         
+          
         
         # Creating threads
     thread1 = threading.Thread(target=batch1)
